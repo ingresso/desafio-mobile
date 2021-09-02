@@ -9,20 +9,20 @@ import SwiftUI
 
 struct CatalogView: View {
     
-    var catalogVM = CatalogViewModel()
-    
-    private let gridItems = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    private let gridItems = [GridItem(.flexible()), GridItem(.flexible())]
+    @ObservedObject var catalogVM : CatalogViewModel = CatalogViewModel()
+
     
     var body: some View {
         NavigationView{
             ScrollView{
                 LazyVGrid(columns: gridItems, spacing: 20) {
-                    ForEach(0..<5) { _ in
-                        //MovieCellView()
+                    ForEach(catalogVM.catalogItems[0..<catalogVM.catalogItems.count]) { item in
+                        MovieCellView(currentItem: item)
                     }
                 }
-                
-            } .navigationTitle("Filmes")
+            }
+            .navigationTitle("Filmes")
         }
     }
 }

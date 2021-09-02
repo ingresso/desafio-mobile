@@ -9,10 +9,10 @@ import Foundation
 import Combine
 import Alamofire
 
-class CatalogViewModel: ObservableObject, Identifiable {
+class CatalogViewModel: ObservableObject {
     
     private var subscription = Set<AnyCancellable>()
-    @Published var items : [Item] = []
+    @Published var catalogItems = [Item]()
     @Published var catalog : Catalog = Catalog(items: [], count: 0)
     
     
@@ -41,8 +41,8 @@ class CatalogViewModel: ObservableObject, Identifiable {
                 
             }, receiveValue: { (receivedValue : [Item]) in
                 
-                self.items = receivedValue
-                print(self.items[0])
+                self.catalogItems = receivedValue
+                print(self.catalogItems[0])
             }).store(in: &subscription)
             
     
@@ -53,8 +53,12 @@ class CatalogViewModel: ObservableObject, Identifiable {
         AF.request(CatalogEndpoint.getAll).response { (responseData) in
             guard let data = responseData.data else {return}
             do{
-                let catalogList = try JSONDecoder().decode(Catalog.self, from: data)
+                let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                
+                let catalogList = try decoder.decode(Catalog.self, from: data)
                 self.catalog = catalogList
+                self.catalogItems = catalogList.items
                 //print(catalogList.items[0])
                 //LOG Count registers
             } catch {

@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 // MARK: - Catalog
-public struct Catalog: Codable {
+public struct Catalog: Decodable {
     public let items: [Item]
     public let count: Int
     
@@ -20,7 +20,7 @@ public struct Catalog: Codable {
 }
 
 // MARK: - Item
-public struct Item: Codable {
+public struct Item: Decodable, Identifiable {
     public let id, title, originalTitle: String
     public let movieIdUrl: String
     public let ancineId, countryOrigin: String
@@ -32,12 +32,7 @@ public struct Item: Codable {
     public let urlKey: String
     public let isPlaying: Bool
     public let countIsPlaying: Int
-    public let premiereDate: PremiereDate? = PremiereDate(localDate: nil,
-                                                          isToday: false,
-                                                          dayOfWeek: "",
-                                                          dayAndMonth: "",
-                                                          hour: "",
-                                                          year: "")
+    public let premiereDate: PremiereDate?
     public let creationDate: String
     public let city: String
     public let siteUrl, nationalSiteUrl: String
@@ -53,7 +48,7 @@ public struct Item: Codable {
         case images, genres, trailers, rottenTomatoe
     }
     
-    init(id: String, title: String, originalTitle: String, movieIdUrl: String, ancineId: String, countryOrigin: String, priority: Int, contentRating: String, duration: String, rating: Int, synopsis: String, cast: String, director: String, distributor: String, inPreSale: Bool, isReexhibition: Bool, urlKey: String, isPlaying: Bool, countIsPlaying: Int, creationDate: String, city: String, siteUrl: String, nationalSiteUrl: String, images: [Image], genres: [String], trailers: [Trailer], rottenTomatoe: RottenTomatoe?) {
+    init(id: String, title: String, originalTitle: String, movieIdUrl: String, ancineId: String, countryOrigin: String, priority: Int, contentRating: String, duration: String, rating: Int, synopsis: String, cast: String, director: String, distributor: String, inPreSale: Bool, isReexhibition: Bool, urlKey: String, isPlaying: Bool, countIsPlaying: Int,premiereDate: PremiereDate?, creationDate: String, city: String, siteUrl: String, nationalSiteUrl: String, images: [Image], genres: [String], trailers: [Trailer], rottenTomatoe: RottenTomatoe?) {
         self.id = id
         self.title = title
         self.originalTitle = originalTitle
@@ -73,6 +68,7 @@ public struct Item: Codable {
         self.urlKey = urlKey
         self.isPlaying = isPlaying
         self.countIsPlaying = countIsPlaying
+        self.premiereDate = premiereDate
         self.creationDate = creationDate
         self.city = city
         self.siteUrl = siteUrl
@@ -85,7 +81,7 @@ public struct Item: Codable {
 }
 
 // MARK: - Image
-public struct Image: Codable {
+public struct Image: Decodable {
     public let url: String
     public let type: String
     
@@ -96,15 +92,24 @@ public struct Image: Codable {
 }
 
 // MARK: - PremiereDate
-public struct PremiereDate: Codable {
+public struct PremiereDate: Decodable {
     public let localDate: Date?
     public let isToday: Bool?
     public let dayOfWeek, dayAndMonth, hour, year: String?
     
+    init(localDate: Date? = nil ,isToday: Bool?, dayOfWeek : String?, dayAndMonth: String?, hour: String?, year : String?) {
+        self.localDate = localDate
+        self.isToday = isToday
+        self.dayOfWeek = dayOfWeek
+        self.dayAndMonth = dayAndMonth
+        self.hour = hour
+        self.year = year
+    }
+    
 }
 
 // MARK: - RottenTomatoe
-public struct RottenTomatoe: Codable {
+public struct RottenTomatoe: Decodable {
     public let id, criticsRating, criticsScore, audienceRating: String
     public let audienceScore: String
     public let originalUrl: String
@@ -113,7 +118,7 @@ public struct RottenTomatoe: Codable {
 }
 
 // MARK: - Trailer
-public struct Trailer: Codable {
+public struct Trailer: Decodable {
     public let type: String
     public let url: String
     public let embeddedUrl: String
