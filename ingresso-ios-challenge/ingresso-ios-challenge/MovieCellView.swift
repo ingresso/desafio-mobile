@@ -6,17 +6,33 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MovieCellView: View {
+//    let item : Item
+//    let imageUrl = try item.images[0].url.asURL()
+        
+
     var body: some View {
         ZStack{
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        }
+            HStack{
+                Text("Data de lançamento")
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.red.opacity(0.5))
+                    )
+                    .foregroundColor(.white)
+                    
+                    
+            }
+            
+        }//.background(KFImage())
+        .cornerRadius(3.0)
     }
 }
 
 struct MovieCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCellView()
+        MovieCellView().previewDevice("iPhone 12")
     }
 }

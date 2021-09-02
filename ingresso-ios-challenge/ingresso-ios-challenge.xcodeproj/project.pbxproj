@@ -11,6 +11,8 @@
 		4A69126C26DA8FC1006A973E /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */; };
 		4A69126E26DA8FD0006A973E /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126D26DA8FD0006A973E /* CatalogView.swift */; };
 		4A69127226DA904D006A973E /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69127126DA904D006A973E /* MovieCellView.swift */; };
+		4A69127626DAA06E006A973E /* CatalogEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69127526DAA06E006A973E /* CatalogEndpoint.swift */; };
+		4A69127926DAA0B8006A973E /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69127826DAA0B8006A973E /* APIConfiguration.swift */; };
 		4A77A9F526D8835C00A89B3A /* ingresso_ios_challengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77A9F426D8835C00A89B3A /* ingresso_ios_challengeApp.swift */; };
 		4A77A9F726D8835C00A89B3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77A9F626D8835C00A89B3A /* ContentView.swift */; };
 		4A77A9F926D8835E00A89B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A77A9F826D8835E00A89B3A /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 		4A69126D26DA8FD0006A973E /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
 		4A69127126DA904D006A973E /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
+		4A69127526DAA06E006A973E /* CatalogEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogEndpoint.swift; sourceTree = "<group>"; };
+		4A69127826DAA0B8006A973E /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		4A77A9F126D8835C00A89B3A /* ingresso-ios-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ingresso-ios-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A77A9F426D8835C00A89B3A /* ingresso_ios_challengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingresso_ios_challengeApp.swift; sourceTree = "<group>"; };
 		4A77A9F626D8835C00A89B3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,22 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		4A69127426DA9FF5006A973E /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				4A69127526DAA06E006A973E /* CatalogEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		4A69127726DAA0A0006A973E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4A69127826DAA0B8006A973E /* APIConfiguration.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		4A77A9E826D8835C00A89B3A = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +170,8 @@
 		4A77A9F326D8835C00A89B3A /* ingresso-ios-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				4A69127726DAA0A0006A973E /* Util */,
+				4A69127426DA9FF5006A973E /* Endpoint */,
 				4A69126A26DA8F2C006A973E /* ViewModel */,
 				4A69126926DA8F13006A973E /* View */,
 				4A77AA1F26D9869C00A89B3A /* Model */,
@@ -443,8 +465,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A69127626DAA06E006A973E /* CatalogEndpoint.swift in Sources */,
 				4A69126C26DA8FC1006A973E /* CatalogViewModel.swift in Sources */,
 				4A69127226DA904D006A973E /* MovieCellView.swift in Sources */,
+				4A69127926DAA0B8006A973E /* APIConfiguration.swift in Sources */,
 				4A69126826D98F58006A973E /* Catalog.swift in Sources */,
 				4A77A9F726D8835C00A89B3A /* ContentView.swift in Sources */,
 				4A77A9F526D8835C00A89B3A /* ingresso_ios_challengeApp.swift in Sources */,

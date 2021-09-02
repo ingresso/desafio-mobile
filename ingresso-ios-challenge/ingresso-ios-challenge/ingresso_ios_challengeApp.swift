@@ -11,7 +11,7 @@ import SwiftUI
 struct ingresso_ios_challengeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CatalogView()
         }
     }
 }
