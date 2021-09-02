@@ -11,27 +11,22 @@ struct CatalogView: View {
     
     var catalogVM = CatalogViewModel()
     
+    private let gridItems = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
     var body: some View {
-        ZStack{
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
- 
-            Button(action: {
-                catalogVM.fetchCatalogs()
-            })
-            {
-                Text("Login")
-                    .foregroundColor(.white)
-                    .font(.system(size: 24, weight: .medium))
-            }.frame(maxWidth: .infinity)
-            .padding(.vertical, 20)
-            .background(Color.blue.opacity(0.9))
-            .cornerRadius(10)
-            .padding(.horizontal, 15)
+        NavigationView{
+            ScrollView{
+                LazyVGrid(columns: gridItems, spacing: 20) {
+                    ForEach(0..<5) { _ in
+                        //MovieCellView()
+                    }
+                }
                 
-            
+            } .navigationTitle("Filmes")
         }
     }
 }
+
 
 
 

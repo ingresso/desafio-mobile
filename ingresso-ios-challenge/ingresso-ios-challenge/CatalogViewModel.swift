@@ -12,11 +12,13 @@ import Alamofire
 class CatalogViewModel: ObservableObject, Identifiable {
     
     private var subscription = Set<AnyCancellable>()
-    @Published var catalogs : [Item] = []
+    @Published var items : [Item] = []
+    @Published var catalog : Catalog = Catalog(items: [], count: 0)
+    
     
     init() {
-        fetchCatalogs()
-        
+       // fetchCatalogs()
+        getCatalogs()
     }
     
     func fetchCatalogs(){
@@ -29,19 +31,62 @@ class CatalogViewModel: ObservableObject, Identifiable {
             .sink(receiveCompletion: {completion in
                 switch completion{
                 case .finished:
+                    //LOG
                     ()
                 case .failure(let failture):
                     print("deu erro")
+                    //LOG
                     print(failture.localizedDescription)
                 }
                 
             }, receiveValue: { (receivedValue : [Item]) in
-                self.catalogs = receivedValue
-                print(self.catalogs[0])
+                
+                self.items = receivedValue
+                print(self.items[0])
             }).store(in: &subscription)
             
     
     }
     
     
+    func getCatalogs() {
+        AF.request(CatalogEndpoint.getAll).response { (responseData) in
+            guard let data = responseData.data else {return}
+            do{
+                let catalogList = try JSONDecoder().decode(Catalog.self, from: data)
+                self.catalog = catalogList
+                //print(catalogList.items[0])
+                //LOG Count registers
+            } catch {
+                print(error)//LOG
+            }
+            
+        }
+        
+        
+    }
+    
+    
 }
+    
+
+
+
+
+    extension Data{
+        func parseData(removeString string: String) -> Data? {
+            let dataAsString = String(data: self, encoding: .utf8)
+            let parseDataAsString = dataAsString?.replacingOccurrences(of: string, with: "")
+            guard let data = parseDataAsString?.data(using: .utf8) else {
+                return nil
+            }
+            return data
+        }
+    
+    }
+    
+
+
+    
+ 
+
