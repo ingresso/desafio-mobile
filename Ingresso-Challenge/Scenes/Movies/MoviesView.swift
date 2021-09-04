@@ -22,7 +22,7 @@ struct MoviesView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns) {
                     Rectangle().frame(height: 150)
                     Rectangle().frame(height: 150)
