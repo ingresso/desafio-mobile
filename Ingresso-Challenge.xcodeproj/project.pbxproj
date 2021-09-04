@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DAECD40C26E3FC1C004EA880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD40B26E3FC1C004EA880 /* AppDelegate.swift */; };
+		DAECD40E26E3FC1C004EA880 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD40D26E3FC1C004EA880 /* SceneDelegate.swift */; };
+		DAECD41026E3FC1C004EA880 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD40F26E3FC1C004EA880 /* MoviesView.swift */; };
+		DAECD41226E3FC1C004EA880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAECD41126E3FC1C004EA880 /* Assets.xcassets */; };
+		DAECD41526E3FC1C004EA880 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAECD41426E3FC1C004EA880 /* Preview Assets.xcassets */; };
+		DAECD41826E3FC1C004EA880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAECD41626E3FC1C004EA880 /* LaunchScreen.storyboard */; };
+		DAECD42026E3FE98004EA880 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD41F26E3FE98004EA880 /* UIColor+Extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DAECD40826E3FC1C004EA880 /* Ingresso-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ingresso-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAECD40B26E3FC1C004EA880 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DAECD40D26E3FC1C004EA880 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DAECD40F26E3FC1C004EA880 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
+		DAECD41126E3FC1C004EA880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DAECD41426E3FC1C004EA880 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DAECD41726E3FC1C004EA880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DAECD41926E3FC1C004EA880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAECD41F26E3FE98004EA880 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAECD40526E3FC1C004EA880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DAECD3FF26E3FC1B004EA880 = {
+			isa = PBXGroup;
+			children = (
+				DAECD40A26E3FC1C004EA880 /* Ingresso-Challenge */,
+				DAECD40926E3FC1C004EA880 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAECD40926E3FC1C004EA880 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD40826E3FC1C004EA880 /* Ingresso-Challenge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAECD40A26E3FC1C004EA880 /* Ingresso-Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD42326E40242004EA880 /* Application */,
+				DAECD42126E401F4004EA880 /* Scenes */,
+				DAECD42526E4028C004EA880 /* Extensions */,
+				DAECD42426E4026D004EA880 /* Resources */,
+				DAECD41326E3FC1C004EA880 /* Preview Content */,
+			);
+			path = "Ingresso-Challenge";
+			sourceTree = "<group>";
+		};
+		DAECD41326E3FC1C004EA880 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD41426E3FC1C004EA880 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DAECD42126E401F4004EA880 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD42226E401FB004EA880 /* Movies */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DAECD42226E401FB004EA880 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD40F26E3FC1C004EA880 /* MoviesView.swift */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		DAECD42326E40242004EA880 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD40B26E3FC1C004EA880 /* AppDelegate.swift */,
+				DAECD40D26E3FC1C004EA880 /* SceneDelegate.swift */,
+				DAECD41926E3FC1C004EA880 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		DAECD42426E4026D004EA880 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD41126E3FC1C004EA880 /* Assets.xcassets */,
+				DAECD41626E3FC1C004EA880 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DAECD42526E4028C004EA880 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD41F26E3FE98004EA880 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAECD40726E3FC1C004EA880 /* Ingresso-Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAECD41C26E3FC1C004EA880 /* Build configuration list for PBXNativeTarget "Ingresso-Challenge" */;
+			buildPhases = (
+				DAECD40426E3FC1C004EA880 /* Sources */,
+				DAECD40526E3FC1C004EA880 /* Frameworks */,
+				DAECD40626E3FC1C004EA880 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ingresso-Challenge";
+			productName = "Ingresso-Challenge";
+			productReference = DAECD40826E3FC1C004EA880 /* Ingresso-Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAECD40026E3FC1C004EA880 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					DAECD40726E3FC1C004EA880 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = DAECD40326E3FC1C004EA880 /* Build configuration list for PBXProject "Ingresso-Challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DAECD3FF26E3FC1B004EA880;
+			productRefGroup = DAECD40926E3FC1C004EA880 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAECD40726E3FC1C004EA880 /* Ingresso-Challenge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAECD40626E3FC1C004EA880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAECD41826E3FC1C004EA880 /* LaunchScreen.storyboard in Resources */,
+				DAECD41526E3FC1C004EA880 /* Preview Assets.xcassets in Resources */,
+				DAECD41226E3FC1C004EA880 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAECD40426E3FC1C004EA880 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAECD40C26E3FC1C004EA880 /* AppDelegate.swift in Sources */,
+				DAECD42026E3FE98004EA880 /* UIColor+Extension.swift in Sources */,
+				DAECD40E26E3FC1C004EA880 /* SceneDelegate.swift in Sources */,
+				DAECD41026E3FC1C004EA880 /* MoviesView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DAECD41626E3FC1C004EA880 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAECD41726E3FC1C004EA880 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DAECD41A26E3FC1C004EA880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DAECD41B26E3FC1C004EA880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAECD41D26E3FC1C004EA880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Ingresso-Challenge/Preview Content\"";
+				DEVELOPMENT_TEAM = P2F8K76LP8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Ingresso-Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yuri.Ingresso-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DAECD41E26E3FC1C004EA880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Ingresso-Challenge/Preview Content\"";
+				DEVELOPMENT_TEAM = P2F8K76LP8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Ingresso-Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yuri.Ingresso-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAECD40326E3FC1C004EA880 /* Build configuration list for PBXProject "Ingresso-Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAECD41A26E3FC1C004EA880 /* Debug */,
+				DAECD41B26E3FC1C004EA880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAECD41C26E3FC1C004EA880 /* Build configuration list for PBXNativeTarget "Ingresso-Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAECD41D26E3FC1C004EA880 /* Debug */,
+				DAECD41E26E3FC1C004EA880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DAECD40026E3FC1C004EA880 /* Project object */;
+}
