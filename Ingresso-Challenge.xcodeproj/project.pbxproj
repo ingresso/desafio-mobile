@@ -15,6 +15,10 @@
 		DAECD41826E3FC1C004EA880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAECD41626E3FC1C004EA880 /* LaunchScreen.storyboard */; };
 		DAECD42026E3FE98004EA880 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD41F26E3FE98004EA880 /* UIColor+Extension.swift */; };
 		DAECD42726E404B9004EA880 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD42626E404B9004EA880 /* MovieCell.swift */; };
+		DAECD42A26E410CC004EA880 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD42926E410CC004EA880 /* NetworkService.swift */; };
+		DAECD42D26E4122B004EA880 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD42C26E4122B004EA880 /* APIResponse.swift */; };
+		DAECD43226E412A2004EA880 /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD43126E412A2004EA880 /* DataSourceProtocol.swift */; };
+		DAECD43426E412BC004EA880 /* APIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD43326E412BC004EA880 /* APIDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		DAECD41926E3FC1C004EA880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAECD41F26E3FE98004EA880 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		DAECD42626E404B9004EA880 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		DAECD42926E410CC004EA880 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DAECD42C26E4122B004EA880 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		DAECD43126E412A2004EA880 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
+		DAECD43326E412BC004EA880 /* APIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				DAECD42326E40242004EA880 /* Application */,
+				DAECD42826E410A8004EA880 /* Network */,
 				DAECD42126E401F4004EA880 /* Scenes */,
 				DAECD42526E4028C004EA880 /* Extensions */,
 				DAECD42426E4026D004EA880 /* Resources */,
@@ -119,6 +128,33 @@
 				DAECD41F26E3FE98004EA880 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DAECD42826E410A8004EA880 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD42B26E4121C004EA880 /* Models */,
+				DAECD43026E41292004EA880 /* DataSources */,
+				DAECD42926E410CC004EA880 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DAECD42B26E4121C004EA880 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD42C26E4122B004EA880 /* APIResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DAECD43026E41292004EA880 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				DAECD43126E412A2004EA880 /* DataSourceProtocol.swift */,
+				DAECD43326E412BC004EA880 /* APIDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,10 +227,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAECD43226E412A2004EA880 /* DataSourceProtocol.swift in Sources */,
+				DAECD42D26E4122B004EA880 /* APIResponse.swift in Sources */,
+				DAECD43426E412BC004EA880 /* APIDataSource.swift in Sources */,
 				DAECD40C26E3FC1C004EA880 /* AppDelegate.swift in Sources */,
 				DAECD42026E3FE98004EA880 /* UIColor+Extension.swift in Sources */,
 				DAECD40E26E3FC1C004EA880 /* SceneDelegate.swift in Sources */,
 				DAECD42726E404B9004EA880 /* MovieCell.swift in Sources */,
+				DAECD42A26E410CC004EA880 /* NetworkService.swift in Sources */,
 				DAECD41026E3FC1C004EA880 /* MoviesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
