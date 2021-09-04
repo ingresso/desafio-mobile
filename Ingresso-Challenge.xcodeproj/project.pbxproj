@@ -14,6 +14,7 @@
 		DAECD41526E3FC1C004EA880 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAECD41426E3FC1C004EA880 /* Preview Assets.xcassets */; };
 		DAECD41826E3FC1C004EA880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAECD41626E3FC1C004EA880 /* LaunchScreen.storyboard */; };
 		DAECD42026E3FE98004EA880 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD41F26E3FE98004EA880 /* UIColor+Extension.swift */; };
+		DAECD42726E404B9004EA880 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD42626E404B9004EA880 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DAECD41726E3FC1C004EA880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAECD41926E3FC1C004EA880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAECD41F26E3FE98004EA880 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		DAECD42626E404B9004EA880 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				DAECD40F26E3FC1C004EA880 /* MoviesView.swift */,
+				DAECD42626E404B9004EA880 /* MovieCell.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				DAECD40C26E3FC1C004EA880 /* AppDelegate.swift in Sources */,
 				DAECD42026E3FE98004EA880 /* UIColor+Extension.swift in Sources */,
 				DAECD40E26E3FC1C004EA880 /* SceneDelegate.swift in Sources */,
+				DAECD42726E404B9004EA880 /* MovieCell.swift in Sources */,
 				DAECD41026E3FC1C004EA880 /* MoviesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

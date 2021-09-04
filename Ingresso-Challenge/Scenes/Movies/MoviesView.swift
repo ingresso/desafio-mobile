@@ -23,16 +23,16 @@ struct MoviesView: View {
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: columns) {
-                    Rectangle().frame(height: 150)
-                    Rectangle().frame(height: 150)
-                    Rectangle().frame(height: 150)
-                    Rectangle().frame(height: 150)
-                    Rectangle().frame(height: 150)
-                    Rectangle().frame(height: 150)
-                    Rectangle().frame(height: 150)
-                    Rectangle().frame(height: 150)
-                    Rectangle().frame(height: 150)
+                LazyVGrid(columns: columns, spacing: 16) {
+                    MovieCell()
+                    MovieCell()
+                    MovieCell()
+                    MovieCell()
+                    MovieCell()
+                    MovieCell()
+                    MovieCell()
+                    MovieCell()
+                    MovieCell()
                 }.padding(.horizontal, 4)
             }
             .navigationTitle("Filmes")
