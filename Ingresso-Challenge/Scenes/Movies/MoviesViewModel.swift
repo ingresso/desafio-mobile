@@ -22,7 +22,7 @@ final class MoviesViewModel: ObservableObject {
             switch result {
             case .success(let apiResponse):
                 DispatchQueue.main.async {
-                    self.movies = apiResponse.items.map({ $0.toDomain() })
+                    self.movies = apiResponse.items.map({ Movie(from: $0) })
                 }
             case .failure(_):
                 self.showErrorAlert = true

@@ -37,10 +37,6 @@ struct Item: Codable {
     let trailers: [Trailer]
     let boxOfficeId, partnershipType: Data?
     let rottenTomatoe: RottenTomatoe?
-    
-    func toDomain() -> Movie {
-        return Movie(id: self.id, title: self.title, imageURL: self.images.first?.url)
-    }
 }
 
 // MARK: - Image

@@ -19,7 +19,7 @@ struct MovieCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .bottom) {
-                if let imageString = movie.imageURL, let imageURL = URL(string: imageString) {
+                if let imageString = movie.imagesURL.portrait, let imageURL = URL(string: imageString) {
                     // Async image loading, display placeholder while fetching data
                     URLImage(imageURL) {
                         Image("placeholder").resizable().aspectRatio(contentMode: .fit)
@@ -38,18 +38,19 @@ struct MovieCell: View {
                         .aspectRatio(contentMode: .fit)
                 }
                 
-                Text("09/09/21")
-                    .italic()
-                    .font(.system(size: 12))
-                    .fontWeight(.heavy)
-                    .foregroundColor(.white)
-                    .padding(.vertical, 4)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .border(Color.white, width: 1)
-                    .padding(4)
-                    .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
+                if let movieDate = movie.premiereDate {
+                    Text(movieDate)
+                        .italic()
+                        .font(.system(size: 12))
+                        .fontWeight(.heavy)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 4)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .border(Color.white, width: 1)
+                        .padding(4)
+                        .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
+                }
             }
-            .background(Color(.imageBackgroundGray))
             
             Text(movie.title)
                 .font(.footnote)
