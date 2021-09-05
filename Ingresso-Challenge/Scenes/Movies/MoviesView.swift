@@ -9,30 +9,31 @@ import SwiftUI
 
 struct MoviesView: View {
     
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-    ]
+    @ObservedObject var viewModel: MoviesViewModel
     
-    init() {
+    init(viewModel: MoviesViewModel) {
+        self.viewModel = viewModel
+        self.viewModel.getMovies()
+        
         // Config navigation bar title color
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
+    
+    let columns = [
+        GridItem(.flexible(), spacing: 16),
+        GridItem(.flexible(), spacing: 16),
+        GridItem(.flexible(), spacing: 16),
+    ]
     
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 16) {
-                    MovieCell()
-                    MovieCell()
-                    MovieCell()
-                    MovieCell()
-                    MovieCell()
-                    MovieCell()
-                    MovieCell()
-                    MovieCell()
-                    MovieCell()
+                    ForEach(viewModel.movies) { movie in
+                        MovieCell(movie)
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+//                            .background(Color.red)
+                    }
                 }.padding(.horizontal, 4)
             }
             .navigationTitle("Filmes")
@@ -48,6 +49,6 @@ struct MoviesView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MoviesView()
+        MoviesView(viewModel: MoviesViewModel())
     }
 }
