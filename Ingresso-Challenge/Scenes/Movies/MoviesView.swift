@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import URLImage
+import URLImageStore
 
 struct MoviesView: View {
     
@@ -18,6 +20,9 @@ struct MoviesView: View {
         // Config navigation bar title color
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
+    
+    // Config image cache
+    let urlImageService = URLImageService(fileStore: URLImageFileStore(), inMemoryStore: URLImageInMemoryStore())
     
     let columns = [
         GridItem(.flexible(), spacing: 16),
@@ -32,7 +37,6 @@ struct MoviesView: View {
                     ForEach(viewModel.movies) { movie in
                         MovieCell(movie)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-//                            .background(Color.red)
                     }
                 }.padding(.horizontal, 4)
             }
@@ -43,7 +47,7 @@ struct MoviesView: View {
                     .foregroundColor(Color(.primaryBlue))
             })
             .background(Color(.primaryGray).ignoresSafeArea())
-        }
+        }.environment(\.urlImageService, urlImageService)
     }
 }
 

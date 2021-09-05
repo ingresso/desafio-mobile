@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct MovieCell: View {
     
@@ -18,17 +19,18 @@ struct MovieCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
-                if let imageString = movie.imageURL {
-                    if let data = try? Data(contentsOf: URL(string: imageString)!) {
-                        Image(uiImage: UIImage(data: data) ?? UIImage(named: "placeholder")!)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                if let imageString = movie.imageURL, let imageURL = URL(string: imageString) {
+                    // Async image loading, display placeholder while fetching data
+                    URLImage(imageURL) {
+                        Image("placeholder").resizable().aspectRatio(contentMode: .fit)
+                    } inProgress: { _ in
+                        Image("placeholder").resizable().aspectRatio(contentMode: .fit)
+                    } failure: { _, _ in
+                        Image("placeholder").resizable().aspectRatio(contentMode: .fit)
+                    } content: { image in
+                        image.resizable().aspectRatio(contentMode: .fit)
                     }
-                    else {
-                        Image("placeholder")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
+
                 }
                 else {
                     Image("placeholder")

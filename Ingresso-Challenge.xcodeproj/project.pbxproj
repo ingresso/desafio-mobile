@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA23CF7426E56A1F004E1C94 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = DA23CF7326E56A1F004E1C94 /* URLImageStore */; };
+		DA23CF7626E56A1F004E1C94 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = DA23CF7526E56A1F004E1C94 /* URLImage */; };
 		DAECD40C26E3FC1C004EA880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD40B26E3FC1C004EA880 /* AppDelegate.swift */; };
 		DAECD40E26E3FC1C004EA880 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD40D26E3FC1C004EA880 /* SceneDelegate.swift */; };
 		DAECD41026E3FC1C004EA880 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD40F26E3FC1C004EA880 /* MoviesView.swift */; };
@@ -47,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA23CF7626E56A1F004E1C94 /* URLImage in Frameworks */,
+				DA23CF7426E56A1F004E1C94 /* URLImageStore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +207,10 @@
 			dependencies = (
 			);
 			name = "Ingresso-Challenge";
+			packageProductDependencies = (
+				DA23CF7326E56A1F004E1C94 /* URLImageStore */,
+				DA23CF7526E56A1F004E1C94 /* URLImage */,
+			);
 			productName = "Ingresso-Challenge";
 			productReference = DAECD40826E3FC1C004EA880 /* Ingresso-Challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -230,6 +238,9 @@
 				Base,
 			);
 			mainGroup = DAECD3FF26E3FC1B004EA880;
+			packageReferences = (
+				DA23CF7226E56A1F004E1C94 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = DAECD40926E3FC1C004EA880 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -465,6 +476,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA23CF7226E56A1F004E1C94 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA23CF7326E56A1F004E1C94 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA23CF7226E56A1F004E1C94 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+		DA23CF7526E56A1F004E1C94 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA23CF7226E56A1F004E1C94 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DAECD40026E3FC1C004EA880 /* Project object */;
 }
