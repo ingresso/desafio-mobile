@@ -45,6 +45,7 @@ struct MoviesView: View {
             .navigationBarItems(trailing: Button(action: {}) {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color(.primaryBlue))
+                    .imageScale(.large)
             })
             .background(Color(.primaryGray).ignoresSafeArea())
         }.environment(\.urlImageService, urlImageService)
