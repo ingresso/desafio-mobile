@@ -18,7 +18,7 @@ struct MovieCell: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            ZStack {
+            ZStack(alignment: .bottom) {
                 if let imageString = movie.imageURL, let imageURL = URL(string: imageString) {
                     // Async image loading, display placeholder while fetching data
                     URLImage(imageURL) {
@@ -38,12 +38,16 @@ struct MovieCell: View {
                         .aspectRatio(contentMode: .fit)
                 }
                 
-                VStack {
-//                    Spacer()
-                    Text("09/09/21")
-                        .fontWeight(.medium)
-                        .foregroundColor(.white)
-                }
+                Text("09/09/21")
+                    .italic()
+                    .font(.system(size: 12))
+                    .fontWeight(.heavy)
+                    .foregroundColor(.white)
+                    .padding(.vertical, 4)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .border(Color.white, width: 1)
+                    .padding(4)
+                    .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
             }
             .background(Color(.imageBackgroundGray))
             
