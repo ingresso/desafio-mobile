@@ -21,11 +21,7 @@ struct SearchListCell: View {
                 Text("Ação").font(.footnote).foregroundColor(.secondary)
                 Text("\(movie.duration) min").font(.footnote).foregroundColor(.secondary)
                 
-                Text(movie.contentRating)
-                    .font(.system(size: 10))
-                    .fontWeight(.heavy)
-                    .padding(4)
-                    .background(Color.red)
+                ContentRatingView(movie: movie)
             }
             
             Spacer()

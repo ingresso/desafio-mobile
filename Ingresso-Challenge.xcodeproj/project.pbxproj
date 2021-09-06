@@ -17,6 +17,7 @@
 		DAE4D35826E697A3002BB04E /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4D35726E697A3002BB04E /* MovieDetailView.swift */; };
 		DAE4D35A26E69D55002BB04E /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4D35926E69D55002BB04E /* UINavigationController+Extension.swift */; };
 		DAE4D35F26E6ABD9002BB04E /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4D35E26E6ABD9002BB04E /* MovieDetailViewModel.swift */; };
+		DAE4D36126E6CB4F002BB04E /* ContentRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4D36026E6CB4F002BB04E /* ContentRatingView.swift */; };
 		DAECD40C26E3FC1C004EA880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD40B26E3FC1C004EA880 /* AppDelegate.swift */; };
 		DAECD40E26E3FC1C004EA880 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD40D26E3FC1C004EA880 /* SceneDelegate.swift */; };
 		DAECD41026E3FC1C004EA880 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD40F26E3FC1C004EA880 /* MoviesView.swift */; };
@@ -42,6 +43,7 @@
 		DAE4D35726E697A3002BB04E /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		DAE4D35926E69D55002BB04E /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		DAE4D35E26E6ABD9002BB04E /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		DAE4D36026E6CB4F002BB04E /* ContentRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRatingView.swift; sourceTree = "<group>"; };
 		DAECD40826E3FC1C004EA880 /* Ingresso-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ingresso-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAECD40B26E3FC1C004EA880 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAECD40D26E3FC1C004EA880 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DA23CF8426E5A8B2004E1C94 /* AsyncImage.swift */,
+				DAE4D36026E6CB4F002BB04E /* ContentRatingView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				DA23CF7E26E5A033004E1C94 /* SearchBar.swift in Sources */,
 				DAECD42726E404B9004EA880 /* MovieCell.swift in Sources */,
 				DAECD42A26E410CC004EA880 /* NetworkService.swift in Sources */,
+				DAE4D36126E6CB4F002BB04E /* ContentRatingView.swift in Sources */,
 				DAECD41026E3FC1C004EA880 /* MoviesView.swift in Sources */,
 				DAECD43B26E41E62004EA880 /* Movie.swift in Sources */,
 				DAE4D35826E697A3002BB04E /* MovieDetailView.swift in Sources */,

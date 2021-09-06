@@ -61,11 +61,7 @@ struct MovieDetailView: View {
                 VStack(alignment: .leading) {
                     Group {
                         Text("Detalhes").font(.headline).fontWeight(.bold).padding(.bottom, 2)
-                        Text(viewModel.movie.contentRating)
-                            .font(.system(size: 10))
-                            .fontWeight(.heavy)
-                            .padding(4)
-                            .background(Color.red)
+                        ContentRatingView(movie: viewModel.movie)
                             .padding(.bottom)
                         
                         Text("Duração").font(.headline).fontWeight(.bold).padding(.bottom, 2)
