@@ -30,4 +30,11 @@ final class MoviesViewModel: ObservableObject {
             }
         }
     }
+    
+    /// Creates the Movie Detail ViewModel to be passed to see movie details
+    /// - Parameter movie: The selected movie
+    /// - Returns: Movie Detail ViewModel
+    func didTapMovie(movie: Movie) -> MovieDetailViewModel {
+        return MovieDetailViewModel(movie: movie)
+    }
 }

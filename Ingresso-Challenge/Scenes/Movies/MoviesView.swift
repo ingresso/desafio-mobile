@@ -35,8 +35,11 @@ struct MoviesView: View {
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(viewModel.movies) { movie in
-                        MovieCell(movie)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        NavigationLink(destination: MovieDetailView(viewModel: viewModel.didTapMovie(movie: movie))) {
+                            MovieCell(movie)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     }
                 }.padding(.horizontal, 4)
             }
