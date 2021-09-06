@@ -13,6 +13,10 @@ struct MovieDetailView: View {
     
     @ObservedObject var viewModel: MovieDetailViewModel
     
+    init(viewModel: MovieDetailViewModel) {
+        self.viewModel = viewModel
+    }
+    
     let defaultHeaderHeight = UIScreen.main.bounds.height / 4
     
     var body: some View {
@@ -35,6 +39,7 @@ struct MovieDetailView: View {
                     }
                     .frame(height: defaultHeaderHeight) // default size
                     
+                    // Movie infos
                     HStack(alignment: .bottom) {
                         AsyncImage(imageString: viewModel.movie.imagesURL.portrait)
                             .frame(height: 200)
@@ -49,10 +54,51 @@ struct MovieDetailView: View {
                         Spacer()
                     }
                     .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [.clear, Color(.primaryGray)]), startPoint: .top, endPoint: .bottom))
+                    .background(LinearGradient(gradient: Gradient(colors: [.clear, Color(.darkerGray)]), startPoint: .top, endPoint: .bottom))
                 }
                 
+                //
+                VStack(alignment: .leading) {
+                    Group {
+                        Text("Detalhes").font(.headline).fontWeight(.bold).padding(.bottom, 2)
+                        Text(viewModel.movie.contentRating)
+                            .font(.system(size: 10))
+                            .fontWeight(.heavy)
+                            .padding(4)
+                            .background(Color.red)
+                            .padding(.bottom)
+                        
+                        Text("Duração").font(.headline).fontWeight(.bold).padding(.bottom, 2)
+                        Text("\(viewModel.movie.duration) min").font(.footnote).padding(.bottom)
+                        
+                        Text("Nome Original").font(.headline).fontWeight(.bold).padding(.bottom, 2)
+                        Text(viewModel.movie.originalTitle).font(.footnote).padding(.bottom)
+                        
+                        Text("Elenco").fontWeight(.heavy).padding(.bottom, 2)
+                        Text(viewModel.movie.cast).font(.footnote).padding(.bottom)
+                    }
+                    
+                    Group {
+                        Text("Sinopse").font(.headline).fontWeight(.bold).padding(.bottom, 2)
+                        Text(viewModel.movie.synopsis).font(.footnote).padding(.bottom)
+                        
+                        Text("Diretor").font(.headline).fontWeight(.bold).padding(.bottom, 2)
+                        Text(viewModel.movie.director).font(.footnote).padding(.bottom)
+                        
+                        Text("Distribuidor").font(.headline).fontWeight(.bold).padding(.bottom, 2)
+                        Text(viewModel.movie.distributor).font(.footnote).padding(.bottom)
+                        
+                        Text("Pais de Origem").font(.headline).fontWeight(.bold).padding(.bottom, 2)
+                        Text(viewModel.movie.countryOrigin).font(.footnote).padding(.bottom)
+                    }
+                }
+                .padding()
+                .frame(width: UIScreen.main.bounds.width - 16)
+                .background(Color(.darkerGray))
+                .padding(.top, 16)
             }
-        }.background(Color(.primaryGray).edgesIgnoringSafeArea(.all))
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .background(Color(.primaryGray).edgesIgnoringSafeArea(.all))
     }
 }
