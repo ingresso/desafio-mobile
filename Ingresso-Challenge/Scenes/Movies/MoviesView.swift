@@ -16,9 +16,6 @@ struct MoviesView: View {
     init(viewModel: MoviesViewModel) {
         self.viewModel = viewModel
         self.viewModel.getMovies()
-        
-        // Config navigation bar title color
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     // Config image cache
