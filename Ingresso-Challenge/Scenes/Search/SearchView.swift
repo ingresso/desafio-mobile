@@ -25,7 +25,7 @@ struct SearchView: View {
                     // Search results list
                     ScrollView(.vertical, showsIndicators: false) {
                         ForEach(movies.filter({ $0.title.lowercased().contains(searchText.lowercased()) })) { movie in
-                            NavigationLink(destination: Text("Detalhes")){
+                            NavigationLink(destination: MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))){
                                 SearchListCell(movie: movie)
                             }
                             .buttonStyle(PlainButtonStyle())
