@@ -19,24 +19,7 @@ struct MovieCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .bottom) {
-                if let imageString = movie.imagesURL.portrait, let imageURL = URL(string: imageString) {
-                    // Async image loading, display placeholder while fetching data
-                    URLImage(imageURL) {
-                        Image("placeholder").resizable().aspectRatio(contentMode: .fit)
-                    } inProgress: { _ in
-                        Image("placeholder").resizable().aspectRatio(contentMode: .fit)
-                    } failure: { _, _ in
-                        Image("placeholder").resizable().aspectRatio(contentMode: .fit)
-                    } content: { image in
-                        image.resizable().aspectRatio(contentMode: .fit)
-                    }
-
-                }
-                else {
-                    Image("placeholder")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
+                AsyncImage(imageString: movie.imagesURL.portrait)
                 
                 if let movieDate = movie.premiereDate {
                     Text(movieDate)

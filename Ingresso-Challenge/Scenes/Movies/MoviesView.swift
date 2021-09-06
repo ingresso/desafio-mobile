@@ -42,13 +42,18 @@ struct MoviesView: View {
             }
             .navigationTitle("Filmes")
             .navigationBarTitleDisplayMode(.large)
-            .navigationBarItems(trailing: Button(action: {}) {
+            .navigationBarItems(trailing: Button(action: {viewModel.showSearchView.toggle()}) {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color(.primaryBlue))
                     .imageScale(.large)
             })
             .background(Color(.primaryGray).ignoresSafeArea())
-        }.environment(\.urlImageService, urlImageService)
+        }
+        .fullScreenCover(isPresented: $viewModel.showSearchView, content: {
+            SearchView(movies: viewModel.movies, showSearchView: $viewModel.showSearchView)
+            
+        })
+        .environment(\.urlImageService, urlImageService)
     }
 }
 

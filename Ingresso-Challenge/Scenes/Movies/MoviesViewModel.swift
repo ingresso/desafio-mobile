@@ -12,6 +12,7 @@ final class MoviesViewModel: ObservableObject {
     
     @Published var movies: [Movie] = []
     @Published var showErrorAlert: Bool = false
+    @Published var showSearchView: Bool = false
     
     init() {
         self.dataSource = APIDataSource()
