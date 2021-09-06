@@ -10,27 +10,39 @@ import Kingfisher
 
 struct MovieCellView: View {
     let currentItem : Item
-    let defaultImageUrl = "https://media.istockphoto.com/vectors/creative-vector-illustration-of-old-retro-film-strip-frame-set-on-vector-id1008655852"
+    let defaultImageUrl = """
+                          https://media.istockphoto.com/vectors/creative-vector-illustration-of-old-retro-film-strip-frame-set-on-vector-id1008655852
+                          """
     
     var body: some View {
-        ZStack{
-            VStack{
-                Spacer()
-                HStack{
-        
-                    Text("data")
+
+        VStack{
+            HStack{
+                ZStack{
+                    KFImage(URL(string: currentItem.images.first?.url ?? defaultImageUrl))
+                        .resizable()
+                        .frame(width: 110, height: 150)
+                        .scaledToFill()
+                        .border(Color.black)
+                        .shadow(color: .white, radius: 6, x: 0.0, y: 0.0)
+                        .opacity(0.8)
+                    
+                    VStack{
+                       Spacer()
+                    (((currentItem.premiereDate?.localDateFormated) != nil) ? Text((currentItem.premiereDate?.localDateFormated)!)
                         .foregroundColor(.white)
-                        .padding(.bottom, 4)
+                        .font(.system(size: 25))
+                        :
+                        Text(""))
+                        .border(Color.white, width: 1)
+                        
+                    }
+                    Spacer()
                 }
             }
-            
-        }.background(KFImage(URL(string: currentItem.images.first?.url ?? defaultImageUrl)))
-        .cornerRadius(3.0)
-        .frame(width: 130, height: 180)
-        .shadow(color: .white, radius: 6, x: 0.0, y: 0.0)
-        .scaledToFit()
-        .border(Color.black, width: 1)     
-        
+            Text(currentItem.title)
+                .foregroundColor(Color.white)
+        }
         
     }
 }

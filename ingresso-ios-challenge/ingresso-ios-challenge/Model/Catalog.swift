@@ -96,6 +96,16 @@ public struct PremiereDate: Decodable {
     public let localDate: Date?
     public let isToday: Bool?
     public let dayOfWeek, dayAndMonth, hour, year: String?
+    public var localDateFormated : String?
+    {
+        if let date = localDate{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            dateFormatter.dateFormat = "dd/MM/yy"
+            return dateFormatter.string(from: date)
+        }
+        return nil
+    }
     
     init(localDate: Date? = nil ,isToday: Bool?, dayOfWeek : String?, dayAndMonth: String?, hour: String?, year : String?) {
         self.localDate = localDate
@@ -104,6 +114,8 @@ public struct PremiereDate: Decodable {
         self.dayAndMonth = dayAndMonth
         self.hour = hour
         self.year = year
+       
+        
     }
     
 }
@@ -125,3 +137,5 @@ public struct Trailer: Decodable {
     
     
 }
+
+
