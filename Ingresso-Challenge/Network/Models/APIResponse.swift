@@ -33,7 +33,8 @@ struct Item: Codable {
     let siteURL, nationalSiteURL: String
     let images: [APIImage]
     let genres, ratingDescriptors: [String]
-    let completeTags, tags: [String]
+    let completeTags: [CompleteTag]
+    let tags: [String]
     let trailers: [Trailer]
     let boxOfficeId, partnershipType: Data?
     let rottenTomatoe: RottenTomatoe?
@@ -75,4 +76,11 @@ struct Trailer: Codable {
     let type: String // Plataform where trailer is hosted, ie. Youtube
     let url: String
     let embeddedUrl: String
+}
+
+// MARK: - CompleteTag
+struct CompleteTag: Codable {
+    let name: String
+    let background: String
+    let color: String
 }

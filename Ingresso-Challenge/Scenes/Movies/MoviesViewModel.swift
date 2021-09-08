@@ -25,8 +25,10 @@ final class MoviesViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.movies = apiResponse.items.map({ Movie(from: $0) })
                 }
-            case .failure(_):
-                self.showErrorAlert = true
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showErrorAlert = true
+                }
             }
         }
     }
