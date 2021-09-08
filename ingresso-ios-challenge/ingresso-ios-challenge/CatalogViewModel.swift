@@ -12,17 +12,17 @@ import Alamofire
 class CatalogViewModel: ObservableObject {
     
     private var subscription = Set<AnyCancellable>()
-    @Published var catalogItems = [Item]()
+    @Published var catalogItemsAvailableSoon = [Item]()
     
     init() {
-       fetchCatalogs()
+        fetchCatalogs()
     }
     
     
     func fetchCatalogs(){
         
         let decoderStrategy = JSONDecoder()
-            decoderStrategy.dateDecodingStrategy = .iso8601
+        decoderStrategy.dateDecodingStrategy = .iso8601
         
         let urlRequest = CatalogEndpoint.getAll
         
@@ -32,7 +32,7 @@ class CatalogViewModel: ObservableObject {
             .sink(receiveCompletion: {completion in
                 switch completion{
                 case .finished:
-                    //LOG
+                    //LOG count registers
                     ()
                 case .failure(let failture):
                     //LOG
@@ -40,17 +40,23 @@ class CatalogViewModel: ObservableObject {
                 }
                 
             }, receiveValue: { (receivedValue : [Item]) in
-                self.catalogItems = receivedValue
+                
+                
+                var datedFilmes = receivedValue.filter { $0.premiereDate != nil }
+                datedFilmes = datedFilmes.sorted(by: {$0.premiereDate?.localDate?.compare(($1.premiereDate?.localDate)!) == .orderedAscending})
+                
+                self.catalogItemsAvailableSoon = datedFilmes
+                
                 
             }).store(in: &subscription)
-            
+        
     }
     
 }
-    
-    
 
 
-    
- 
+
+
+
+
 

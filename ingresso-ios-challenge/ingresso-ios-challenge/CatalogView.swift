@@ -24,9 +24,9 @@ struct CatalogView: View {
         NavigationView{
             ScrollView{
                 LazyVGrid(columns: gridItems, spacing: 20) {
-                    ForEach(catalogVM.catalogItems[0..<catalogVM.catalogItems.count]) { item in
+                    ForEach(catalogVM.catalogItemsAvailableSoon[0..<catalogVM.catalogItemsAvailableSoon.count]) { item in
                         MovieCellView(currentItem: item)
-                            .padding()
+                            .padding(.top, 20)
                         
                     }
                 }

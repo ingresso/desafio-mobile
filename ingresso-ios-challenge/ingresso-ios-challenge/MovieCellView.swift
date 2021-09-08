@@ -15,7 +15,7 @@ struct MovieCellView: View {
                           """
     
     var body: some View {
-
+        
         VStack{
             HStack{
                 ZStack{
@@ -28,13 +28,13 @@ struct MovieCellView: View {
                         .opacity(0.8)
                     
                     VStack{
-                       Spacer()
-                    (((currentItem.premiereDate?.localDateFormated) != nil) ? Text((currentItem.premiereDate?.localDateFormated)!)
-                        .foregroundColor(.white)
-                        .font(.system(size: 25))
-                        :
-                        Text(""))
-                        .border(Color.white, width: 1)
+                        Spacer()
+                        (((currentItem.premiereDate?.localDateFormated) != nil) ? Text((currentItem.premiereDate?.localDateFormated)!)
+                            .foregroundColor(.white)
+                            .font(.system(size: 25))
+                            :
+                            Text(""))
+                            .border(Color.white, width: 1)
                         
                     }
                     Spacer()
@@ -42,6 +42,7 @@ struct MovieCellView: View {
             }
             Text(currentItem.title)
                 .foregroundColor(Color.white)
+            
         }
         
     }
