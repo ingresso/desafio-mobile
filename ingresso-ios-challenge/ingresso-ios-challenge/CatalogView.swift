@@ -12,7 +12,6 @@ struct CatalogView: View {
     @ObservedObject var catalogVM : CatalogViewModel = CatalogViewModel()
     private let gridItems = [GridItem(.flexible()), GridItem(.flexible())]
     
-    
     init(){
         UINavigationBar.appearance()
             .largeTitleTextAttributes = [.foregroundColor : UIColor.init(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))]
@@ -20,14 +19,13 @@ struct CatalogView: View {
     
     
     var body: some View {
-        
         NavigationView{
             ScrollView{
                 LazyVGrid(columns: gridItems, spacing: 20) {
                     ForEach(catalogVM.catalogItemsAvailableSoon[0..<catalogVM.catalogItemsAvailableSoon.count]) { item in
                         MovieCellView(currentItem: item)
                             .padding(.top, 20)
-                        
+                            
                     }
                 }
             }

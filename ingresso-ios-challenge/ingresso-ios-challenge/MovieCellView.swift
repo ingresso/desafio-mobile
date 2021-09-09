@@ -11,7 +11,7 @@ import Kingfisher
 struct MovieCellView: View {
     let currentItem : Item
     let defaultImageUrl = """
-                          https://media.istockphoto.com/vectors/creative-vector-illustration-of-old-retro-film-strip-frame-set-on-vector-id1008655852
+                          https://play-lh.googleusercontent.com/aAh_erLSqnztKNtJg6VFKkT1JkgIC1Vx9Mp2K2qg5ahtFUanQxj8G0m1raNKji5cDW8
                           """
     
     var body: some View {
@@ -21,11 +21,13 @@ struct MovieCellView: View {
                 ZStack{
                     KFImage(URL(string: currentItem.images.first?.url ?? defaultImageUrl))
                         .resizable()
+                        .animation(.easeIn)
                         .frame(width: 110, height: 150)
                         .scaledToFill()
                         .border(Color.black)
                         .shadow(color: .white, radius: 6, x: 0.0, y: 0.0)
                         .opacity(0.8)
+                        
                     
                     VStack{
                         Spacer()
@@ -42,6 +44,7 @@ struct MovieCellView: View {
             }
             Text(currentItem.title)
                 .foregroundColor(Color.white)
+                
             
         }
         

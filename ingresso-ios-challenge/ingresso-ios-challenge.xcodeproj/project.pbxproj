@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3E396D26E97116004A8F8E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3E396C26E97116004A8F8E /* HomeScreen.swift */; };
 		4A69126826D98F58006A973E /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126726D98F58006A973E /* Catalog.swift */; };
 		4A69126C26DA8FC1006A973E /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */; };
 		4A69126E26DA8FD0006A973E /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126D26DA8FD0006A973E /* CatalogView.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		0D4660BD7822D5E7550F6BFA /* Pods-ingresso-ios-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challenge.debug.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		0F593BD2E3DEA14E7AC5CC33 /* Pods-ingresso-ios-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challengeTests/Pods-ingresso-ios-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		4A3E396C26E97116004A8F8E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		4A69126726D98F58006A973E /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 		4A69126D26DA8FD0006A973E /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				4A69126D26DA8FD0006A973E /* CatalogView.swift */,
 				4A69127126DA904D006A973E /* MovieCellView.swift */,
+				4A3E396C26E97116004A8F8E /* HomeScreen.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				4A69127226DA904D006A973E /* MovieCellView.swift in Sources */,
 				4A69127926DAA0B8006A973E /* APIConfiguration.swift in Sources */,
 				4A69126826D98F58006A973E /* Catalog.swift in Sources */,
+				4A3E396D26E97116004A8F8E /* HomeScreen.swift in Sources */,
 				4A77A9F726D8835C00A89B3A /* ContentView.swift in Sources */,
 				4A77A9F526D8835C00A89B3A /* ingresso_ios_challengeApp.swift in Sources */,
 				4A69126E26DA8FD0006A973E /* CatalogView.swift in Sources */,

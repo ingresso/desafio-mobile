@@ -18,7 +18,6 @@ class CatalogViewModel: ObservableObject {
         fetchCatalogs()
     }
     
-    
     func fetchCatalogs(){
         
         let decoderStrategy = JSONDecoder()
@@ -32,16 +31,16 @@ class CatalogViewModel: ObservableObject {
             .sink(receiveCompletion: {completion in
                 switch completion{
                 case .finished:
-                    //LOG count registers
-                    ()
+                    NSLog("FetchCatalogs registers success")
+                
                 case .failure(let failture):
-                    //LOG
-                    print(failture.localizedDescription)
+                
+                    NSLog(failture.localizedDescription)
                 }
                 
             }, receiveValue: { (receivedValue : [Item]) in
                 
-                
+                NSLog("FetchCatalogs registers count : \(receivedValue.count)")
                 var datedFilmes = receivedValue.filter { $0.premiereDate != nil }
                 datedFilmes = datedFilmes.sorted(by: {$0.premiereDate?.localDate?.compare(($1.premiereDate?.localDate)!) == .orderedAscending})
                 
