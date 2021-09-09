@@ -39,11 +39,13 @@ struct MovieCellView: View {
                             .border(Color.white, width: 1)
                         
                     }
-                    Spacer()
+                   
                 }
             }
             Text(currentItem.title)
                 .foregroundColor(Color.white)
+                .frame(height: 50, alignment: .top)
+                
                 
             
         }
