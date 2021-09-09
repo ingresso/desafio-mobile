@@ -1,0 +1,801 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A3E396D26E97116004A8F8E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3E396C26E97116004A8F8E /* HomeScreen.swift */; };
+		4A69126826D98F58006A973E /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126726D98F58006A973E /* Catalog.swift */; };
+		4A69126C26DA8FC1006A973E /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */; };
+		4A69126E26DA8FD0006A973E /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126D26DA8FD0006A973E /* CatalogView.swift */; };
+		4A69127226DA904D006A973E /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69127126DA904D006A973E /* MovieCellView.swift */; };
+		4A69127626DAA06E006A973E /* CatalogEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69127526DAA06E006A973E /* CatalogEndpoint.swift */; };
+		4A69127926DAA0B8006A973E /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69127826DAA0B8006A973E /* APIConfiguration.swift */; };
+		4A77A9F526D8835C00A89B3A /* ingresso_ios_challengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77A9F426D8835C00A89B3A /* ingresso_ios_challengeApp.swift */; };
+		4A77A9F726D8835C00A89B3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77A9F626D8835C00A89B3A /* ContentView.swift */; };
+		4A77A9F926D8835E00A89B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A77A9F826D8835E00A89B3A /* Assets.xcassets */; };
+		4A77A9FC26D8835E00A89B3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A77A9FB26D8835E00A89B3A /* Preview Assets.xcassets */; };
+		4A77AA0726D8835E00A89B3A /* ingresso_ios_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77AA0626D8835E00A89B3A /* ingresso_ios_challengeTests.swift */; };
+		4A77AA1226D8835E00A89B3A /* ingresso_ios_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77AA1126D8835E00A89B3A /* ingresso_ios_challengeUITests.swift */; };
+		AFAF1B3AAE559B91078AAF6F /* Pods_ingresso_ios_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E53C72C124B55429F7878C /* Pods_ingresso_ios_challengeTests.framework */; };
+		EA63F86D70BC2FB999D51E3F /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA775D7ED52200B167F76C3 /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework */; };
+		F39DDD64699E62C19F8488A8 /* Pods_ingresso_ios_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF35E3A29FB58FC3D59C99E /* Pods_ingresso_ios_challenge.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A77AA0326D8835E00A89B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A77A9E926D8835C00A89B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A77A9F026D8835C00A89B3A;
+			remoteInfo = "ingresso-ios-challenge";
+		};
+		4A77AA0E26D8835E00A89B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A77A9E926D8835C00A89B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A77A9F026D8835C00A89B3A;
+			remoteInfo = "ingresso-ios-challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D4660BD7822D5E7550F6BFA /* Pods-ingresso-ios-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challenge.debug.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		0F593BD2E3DEA14E7AC5CC33 /* Pods-ingresso-ios-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challengeTests/Pods-ingresso-ios-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		4A3E396C26E97116004A8F8E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		4A69126726D98F58006A973E /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
+		4A69126D26DA8FD0006A973E /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		4A69127126DA904D006A973E /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
+		4A69127526DAA06E006A973E /* CatalogEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogEndpoint.swift; sourceTree = "<group>"; };
+		4A69127826DAA0B8006A973E /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		4A77A9F126D8835C00A89B3A /* ingresso-ios-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ingresso-ios-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A77A9F426D8835C00A89B3A /* ingresso_ios_challengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingresso_ios_challengeApp.swift; sourceTree = "<group>"; };
+		4A77A9F626D8835C00A89B3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4A77A9F826D8835E00A89B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A77A9FB26D8835E00A89B3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A77A9FD26D8835E00A89B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A77AA0226D8835E00A89B3A /* ingresso-ios-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ingresso-ios-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A77AA0626D8835E00A89B3A /* ingresso_ios_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingresso_ios_challengeTests.swift; sourceTree = "<group>"; };
+		4A77AA0826D8835E00A89B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A77AA0D26D8835E00A89B3A /* ingresso-ios-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ingresso-ios-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A77AA1126D8835E00A89B3A /* ingresso_ios_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingresso_ios_challengeUITests.swift; sourceTree = "<group>"; };
+		4A77AA1326D8835E00A89B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60E53C72C124B55429F7878C /* Pods_ingresso_ios_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ingresso_ios_challengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		766E5B52596B34C0E935B8D6 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7AA775D7ED52200B167F76C3 /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD7AB5C3EE44205E22CEE58 /* Pods-ingresso-ios-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challengeTests/Pods-ingresso-ios-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C1782C00201404827385F9B /* Pods-ingresso-ios-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challenge.release.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge.release.xcconfig"; sourceTree = "<group>"; };
+		B2D0CD8C1A512FF7A6F4AD26 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEF35E3A29FB58FC3D59C99E /* Pods_ingresso_ios_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ingresso_ios_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A77A9EE26D8835C00A89B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F39DDD64699E62C19F8488A8 /* Pods_ingresso_ios_challenge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A77A9FF26D8835E00A89B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFAF1B3AAE559B91078AAF6F /* Pods_ingresso_ios_challengeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A77AA0A26D8835E00A89B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA63F86D70BC2FB999D51E3F /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FA3F808800B08EBEC05A711 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D4660BD7822D5E7550F6BFA /* Pods-ingresso-ios-challenge.debug.xcconfig */,
+				8C1782C00201404827385F9B /* Pods-ingresso-ios-challenge.release.xcconfig */,
+				B2D0CD8C1A512FF7A6F4AD26 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig */,
+				766E5B52596B34C0E935B8D6 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig */,
+				7FD7AB5C3EE44205E22CEE58 /* Pods-ingresso-ios-challengeTests.debug.xcconfig */,
+				0F593BD2E3DEA14E7AC5CC33 /* Pods-ingresso-ios-challengeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4A69126926DA8F13006A973E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A69126D26DA8FD0006A973E /* CatalogView.swift */,
+				4A69127126DA904D006A973E /* MovieCellView.swift */,
+				4A3E396C26E97116004A8F8E /* HomeScreen.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4A69126A26DA8F2C006A973E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		4A69127426DA9FF5006A973E /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				4A69127526DAA06E006A973E /* CatalogEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		4A69127726DAA0A0006A973E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4A69127826DAA0B8006A973E /* APIConfiguration.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		4A77A9E826D8835C00A89B3A = {
+			isa = PBXGroup;
+			children = (
+				4A77A9F326D8835C00A89B3A /* ingresso-ios-challenge */,
+				4A77AA0526D8835E00A89B3A /* ingresso-ios-challengeTests */,
+				4A77AA1026D8835E00A89B3A /* ingresso-ios-challengeUITests */,
+				4A77A9F226D8835C00A89B3A /* Products */,
+				1FA3F808800B08EBEC05A711 /* Pods */,
+				ACC1C1C5C00CFEAF7F0D9072 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4A77A9F226D8835C00A89B3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A77A9F126D8835C00A89B3A /* ingresso-ios-challenge.app */,
+				4A77AA0226D8835E00A89B3A /* ingresso-ios-challengeTests.xctest */,
+				4A77AA0D26D8835E00A89B3A /* ingresso-ios-challengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A77A9F326D8835C00A89B3A /* ingresso-ios-challenge */ = {
+			isa = PBXGroup;
+			children = (
+				4A69127726DAA0A0006A973E /* Util */,
+				4A69127426DA9FF5006A973E /* Endpoint */,
+				4A69126A26DA8F2C006A973E /* ViewModel */,
+				4A69126926DA8F13006A973E /* View */,
+				4A77AA1F26D9869C00A89B3A /* Model */,
+				4A77A9F426D8835C00A89B3A /* ingresso_ios_challengeApp.swift */,
+				4A77A9F626D8835C00A89B3A /* ContentView.swift */,
+				4A77A9F826D8835E00A89B3A /* Assets.xcassets */,
+				4A77A9FD26D8835E00A89B3A /* Info.plist */,
+				4A77A9FA26D8835E00A89B3A /* Preview Content */,
+			);
+			path = "ingresso-ios-challenge";
+			sourceTree = "<group>";
+		};
+		4A77A9FA26D8835E00A89B3A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4A77A9FB26D8835E00A89B3A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A77AA0526D8835E00A89B3A /* ingresso-ios-challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A77AA0626D8835E00A89B3A /* ingresso_ios_challengeTests.swift */,
+				4A77AA0826D8835E00A89B3A /* Info.plist */,
+			);
+			path = "ingresso-ios-challengeTests";
+			sourceTree = "<group>";
+		};
+		4A77AA1026D8835E00A89B3A /* ingresso-ios-challengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A77AA1126D8835E00A89B3A /* ingresso_ios_challengeUITests.swift */,
+				4A77AA1326D8835E00A89B3A /* Info.plist */,
+			);
+			path = "ingresso-ios-challengeUITests";
+			sourceTree = "<group>";
+		};
+		4A77AA1F26D9869C00A89B3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A69126726D98F58006A973E /* Catalog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACC1C1C5C00CFEAF7F0D9072 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEF35E3A29FB58FC3D59C99E /* Pods_ingresso_ios_challenge.framework */,
+				7AA775D7ED52200B167F76C3 /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework */,
+				60E53C72C124B55429F7878C /* Pods_ingresso_ios_challengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A77A9F026D8835C00A89B3A /* ingresso-ios-challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A77AA1626D8835E00A89B3A /* Build configuration list for PBXNativeTarget "ingresso-ios-challenge" */;
+			buildPhases = (
+				6DE78D11BDF607C82268109F /* [CP] Check Pods Manifest.lock */,
+				4A77A9ED26D8835C00A89B3A /* Sources */,
+				4A77A9EE26D8835C00A89B3A /* Frameworks */,
+				4A77A9EF26D8835C00A89B3A /* Resources */,
+				876D0B17376F1FF6ABF865AD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ingresso-ios-challenge";
+			productName = "ingresso-ios-challenge";
+			productReference = 4A77A9F126D8835C00A89B3A /* ingresso-ios-challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A77AA0126D8835E00A89B3A /* ingresso-ios-challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A77AA1926D8835E00A89B3A /* Build configuration list for PBXNativeTarget "ingresso-ios-challengeTests" */;
+			buildPhases = (
+				56F7748670DC8593D4C7510E /* [CP] Check Pods Manifest.lock */,
+				4A77A9FE26D8835E00A89B3A /* Sources */,
+				4A77A9FF26D8835E00A89B3A /* Frameworks */,
+				4A77AA0026D8835E00A89B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A77AA0426D8835E00A89B3A /* PBXTargetDependency */,
+			);
+			name = "ingresso-ios-challengeTests";
+			productName = "ingresso-ios-challengeTests";
+			productReference = 4A77AA0226D8835E00A89B3A /* ingresso-ios-challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A77AA0C26D8835E00A89B3A /* ingresso-ios-challengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A77AA1C26D8835E00A89B3A /* Build configuration list for PBXNativeTarget "ingresso-ios-challengeUITests" */;
+			buildPhases = (
+				8A9C280F98B5877047DE6D14 /* [CP] Check Pods Manifest.lock */,
+				4A77AA0926D8835E00A89B3A /* Sources */,
+				4A77AA0A26D8835E00A89B3A /* Frameworks */,
+				4A77AA0B26D8835E00A89B3A /* Resources */,
+				7B2C6BC0F61D9F86E7C586CA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A77AA0F26D8835E00A89B3A /* PBXTargetDependency */,
+			);
+			name = "ingresso-ios-challengeUITests";
+			productName = "ingresso-ios-challengeUITests";
+			productReference = 4A77AA0D26D8835E00A89B3A /* ingresso-ios-challengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A77A9E926D8835C00A89B3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					4A77A9F026D8835C00A89B3A = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					4A77AA0126D8835E00A89B3A = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 4A77A9F026D8835C00A89B3A;
+					};
+					4A77AA0C26D8835E00A89B3A = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 4A77A9F026D8835C00A89B3A;
+					};
+				};
+			};
+			buildConfigurationList = 4A77A9EC26D8835C00A89B3A /* Build configuration list for PBXProject "ingresso-ios-challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A77A9E826D8835C00A89B3A;
+			productRefGroup = 4A77A9F226D8835C00A89B3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A77A9F026D8835C00A89B3A /* ingresso-ios-challenge */,
+				4A77AA0126D8835E00A89B3A /* ingresso-ios-challengeTests */,
+				4A77AA0C26D8835E00A89B3A /* ingresso-ios-challengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A77A9EF26D8835C00A89B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A77A9FC26D8835E00A89B3A /* Preview Assets.xcassets in Resources */,
+				4A77A9F926D8835E00A89B3A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A77AA0026D8835E00A89B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A77AA0B26D8835E00A89B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56F7748670DC8593D4C7510E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ingresso-ios-challengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DE78D11BDF607C82268109F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ingresso-ios-challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B2C6BC0F61D9F86E7C586CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		876D0B17376F1FF6ABF865AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A9C280F98B5877047DE6D14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A77A9ED26D8835C00A89B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A69127626DAA06E006A973E /* CatalogEndpoint.swift in Sources */,
+				4A69126C26DA8FC1006A973E /* CatalogViewModel.swift in Sources */,
+				4A69127226DA904D006A973E /* MovieCellView.swift in Sources */,
+				4A69127926DAA0B8006A973E /* APIConfiguration.swift in Sources */,
+				4A69126826D98F58006A973E /* Catalog.swift in Sources */,
+				4A3E396D26E97116004A8F8E /* HomeScreen.swift in Sources */,
+				4A77A9F726D8835C00A89B3A /* ContentView.swift in Sources */,
+				4A77A9F526D8835C00A89B3A /* ingresso_ios_challengeApp.swift in Sources */,
+				4A69126E26DA8FD0006A973E /* CatalogView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A77A9FE26D8835E00A89B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A77AA0726D8835E00A89B3A /* ingresso_ios_challengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A77AA0926D8835E00A89B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A77AA1226D8835E00A89B3A /* ingresso_ios_challengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A77AA0426D8835E00A89B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A77A9F026D8835C00A89B3A /* ingresso-ios-challenge */;
+			targetProxy = 4A77AA0326D8835E00A89B3A /* PBXContainerItemProxy */;
+		};
+		4A77AA0F26D8835E00A89B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A77A9F026D8835C00A89B3A /* ingresso-ios-challenge */;
+			targetProxy = 4A77AA0E26D8835E00A89B3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4A77AA1426D8835E00A89B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A77AA1526D8835E00A89B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A77AA1726D8835E00A89B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D4660BD7822D5E7550F6BFA /* Pods-ingresso-ios-challenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ingresso-ios-challenge/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ingresso-ios-challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.philippe.ingresso-ios-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A77AA1826D8835E00A89B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C1782C00201404827385F9B /* Pods-ingresso-ios-challenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ingresso-ios-challenge/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ingresso-ios-challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.philippe.ingresso-ios-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A77AA1A26D8835E00A89B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD7AB5C3EE44205E22CEE58 /* Pods-ingresso-ios-challengeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ingresso-ios-challengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.philippe.ingresso-ios-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ingresso-ios-challenge.app/ingresso-ios-challenge";
+			};
+			name = Debug;
+		};
+		4A77AA1B26D8835E00A89B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F593BD2E3DEA14E7AC5CC33 /* Pods-ingresso-ios-challengeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ingresso-ios-challengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.philippe.ingresso-ios-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ingresso-ios-challenge.app/ingresso-ios-challenge";
+			};
+			name = Release;
+		};
+		4A77AA1D26D8835E00A89B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2D0CD8C1A512FF7A6F4AD26 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ingresso-ios-challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.philippe.ingresso-ios-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ingresso-ios-challenge";
+			};
+			name = Debug;
+		};
+		4A77AA1E26D8835E00A89B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 766E5B52596B34C0E935B8D6 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ingresso-ios-challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.philippe.ingresso-ios-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ingresso-ios-challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A77A9EC26D8835C00A89B3A /* Build configuration list for PBXProject "ingresso-ios-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A77AA1426D8835E00A89B3A /* Debug */,
+				4A77AA1526D8835E00A89B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A77AA1626D8835E00A89B3A /* Build configuration list for PBXNativeTarget "ingresso-ios-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A77AA1726D8835E00A89B3A /* Debug */,
+				4A77AA1826D8835E00A89B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A77AA1926D8835E00A89B3A /* Build configuration list for PBXNativeTarget "ingresso-ios-challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A77AA1A26D8835E00A89B3A /* Debug */,
+				4A77AA1B26D8835E00A89B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A77AA1C26D8835E00A89B3A /* Build configuration list for PBXNativeTarget "ingresso-ios-challengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A77AA1D26D8835E00A89B3A /* Debug */,
+				4A77AA1E26D8835E00A89B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A77A9E926D8835C00A89B3A /* Project object */;
+}

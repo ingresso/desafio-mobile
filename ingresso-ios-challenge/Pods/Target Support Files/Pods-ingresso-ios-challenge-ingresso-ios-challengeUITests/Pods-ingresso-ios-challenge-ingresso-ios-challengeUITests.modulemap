@@ -1,0 +1,6 @@
+framework module Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests {
+  umbrella header "Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
