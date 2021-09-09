@@ -3,16 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3E396D26E97116004A8F8E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3E396C26E97116004A8F8E /* HomeScreen.swift */; };
+		4A69126826D98F58006A973E /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126726D98F58006A973E /* Catalog.swift */; };
+		4A69126C26DA8FC1006A973E /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */; };
+		4A69126E26DA8FD0006A973E /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69126D26DA8FD0006A973E /* CatalogView.swift */; };
+		4A69127226DA904D006A973E /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69127126DA904D006A973E /* MovieCellView.swift */; };
+		4A69127626DAA06E006A973E /* CatalogEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69127526DAA06E006A973E /* CatalogEndpoint.swift */; };
+		4A69127926DAA0B8006A973E /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69127826DAA0B8006A973E /* APIConfiguration.swift */; };
 		4A77A9F526D8835C00A89B3A /* ingresso_ios_challengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77A9F426D8835C00A89B3A /* ingresso_ios_challengeApp.swift */; };
 		4A77A9F726D8835C00A89B3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77A9F626D8835C00A89B3A /* ContentView.swift */; };
 		4A77A9F926D8835E00A89B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A77A9F826D8835E00A89B3A /* Assets.xcassets */; };
 		4A77A9FC26D8835E00A89B3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A77A9FB26D8835E00A89B3A /* Preview Assets.xcassets */; };
 		4A77AA0726D8835E00A89B3A /* ingresso_ios_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77AA0626D8835E00A89B3A /* ingresso_ios_challengeTests.swift */; };
 		4A77AA1226D8835E00A89B3A /* ingresso_ios_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77AA1126D8835E00A89B3A /* ingresso_ios_challengeUITests.swift */; };
+		AFAF1B3AAE559B91078AAF6F /* Pods_ingresso_ios_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E53C72C124B55429F7878C /* Pods_ingresso_ios_challengeTests.framework */; };
+		EA63F86D70BC2FB999D51E3F /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA775D7ED52200B167F76C3 /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework */; };
+		F39DDD64699E62C19F8488A8 /* Pods_ingresso_ios_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF35E3A29FB58FC3D59C99E /* Pods_ingresso_ios_challenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D4660BD7822D5E7550F6BFA /* Pods-ingresso-ios-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challenge.debug.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		0F593BD2E3DEA14E7AC5CC33 /* Pods-ingresso-ios-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challengeTests/Pods-ingresso-ios-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		4A3E396C26E97116004A8F8E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		4A69126726D98F58006A973E /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
+		4A69126D26DA8FD0006A973E /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		4A69127126DA904D006A973E /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
+		4A69127526DAA06E006A973E /* CatalogEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogEndpoint.swift; sourceTree = "<group>"; };
+		4A69127826DAA0B8006A973E /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		4A77A9F126D8835C00A89B3A /* ingresso-ios-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ingresso-ios-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A77A9F426D8835C00A89B3A /* ingresso_ios_challengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingresso_ios_challengeApp.swift; sourceTree = "<group>"; };
 		4A77A9F626D8835C00A89B3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +64,13 @@
 		4A77AA0D26D8835E00A89B3A /* ingresso-ios-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ingresso-ios-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A77AA1126D8835E00A89B3A /* ingresso_ios_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingresso_ios_challengeUITests.swift; sourceTree = "<group>"; };
 		4A77AA1326D8835E00A89B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60E53C72C124B55429F7878C /* Pods_ingresso_ios_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ingresso_ios_challengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		766E5B52596B34C0E935B8D6 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7AA775D7ED52200B167F76C3 /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD7AB5C3EE44205E22CEE58 /* Pods-ingresso-ios-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challengeTests/Pods-ingresso-ios-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C1782C00201404827385F9B /* Pods-ingresso-ios-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challenge.release.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge.release.xcconfig"; sourceTree = "<group>"; };
+		B2D0CD8C1A512FF7A6F4AD26 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEF35E3A29FB58FC3D59C99E /* Pods_ingresso_ios_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ingresso_ios_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39DDD64699E62C19F8488A8 /* Pods_ingresso_ios_challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFAF1B3AAE559B91078AAF6F /* Pods_ingresso_ios_challengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +94,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA63F86D70BC2FB999D51E3F /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FA3F808800B08EBEC05A711 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D4660BD7822D5E7550F6BFA /* Pods-ingresso-ios-challenge.debug.xcconfig */,
+				8C1782C00201404827385F9B /* Pods-ingresso-ios-challenge.release.xcconfig */,
+				B2D0CD8C1A512FF7A6F4AD26 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig */,
+				766E5B52596B34C0E935B8D6 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig */,
+				7FD7AB5C3EE44205E22CEE58 /* Pods-ingresso-ios-challengeTests.debug.xcconfig */,
+				0F593BD2E3DEA14E7AC5CC33 /* Pods-ingresso-ios-challengeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4A69126926DA8F13006A973E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A69126D26DA8FD0006A973E /* CatalogView.swift */,
+				4A69127126DA904D006A973E /* MovieCellView.swift */,
+				4A3E396C26E97116004A8F8E /* HomeScreen.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4A69126A26DA8F2C006A973E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A69126B26DA8FC1006A973E /* CatalogViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		4A69127426DA9FF5006A973E /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				4A69127526DAA06E006A973E /* CatalogEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		4A69127726DAA0A0006A973E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4A69127826DAA0B8006A973E /* APIConfiguration.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		4A77A9E826D8835C00A89B3A = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +155,8 @@
 				4A77AA0526D8835E00A89B3A /* ingresso-ios-challengeTests */,
 				4A77AA1026D8835E00A89B3A /* ingresso-ios-challengeUITests */,
 				4A77A9F226D8835C00A89B3A /* Products */,
+				1FA3F808800B08EBEC05A711 /* Pods */,
+				ACC1C1C5C00CFEAF7F0D9072 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +173,11 @@
 		4A77A9F326D8835C00A89B3A /* ingresso-ios-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				4A69127726DAA0A0006A973E /* Util */,
+				4A69127426DA9FF5006A973E /* Endpoint */,
+				4A69126A26DA8F2C006A973E /* ViewModel */,
+				4A69126926DA8F13006A973E /* View */,
+				4A77AA1F26D9869C00A89B3A /* Model */,
 				4A77A9F426D8835C00A89B3A /* ingresso_ios_challengeApp.swift */,
 				4A77A9F626D8835C00A89B3A /* ContentView.swift */,
 				4A77A9F826D8835E00A89B3A /* Assets.xcassets */,
@@ -130,6 +213,24 @@
 			path = "ingresso-ios-challengeUITests";
 			sourceTree = "<group>";
 		};
+		4A77AA1F26D9869C00A89B3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A69126726D98F58006A973E /* Catalog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACC1C1C5C00CFEAF7F0D9072 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEF35E3A29FB58FC3D59C99E /* Pods_ingresso_ios_challenge.framework */,
+				7AA775D7ED52200B167F76C3 /* Pods_ingresso_ios_challenge_ingresso_ios_challengeUITests.framework */,
+				60E53C72C124B55429F7878C /* Pods_ingresso_ios_challengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A77AA1626D8835E00A89B3A /* Build configuration list for PBXNativeTarget "ingresso-ios-challenge" */;
 			buildPhases = (
+				6DE78D11BDF607C82268109F /* [CP] Check Pods Manifest.lock */,
 				4A77A9ED26D8835C00A89B3A /* Sources */,
 				4A77A9EE26D8835C00A89B3A /* Frameworks */,
 				4A77A9EF26D8835C00A89B3A /* Resources */,
+				876D0B17376F1FF6ABF865AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +257,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A77AA1926D8835E00A89B3A /* Build configuration list for PBXNativeTarget "ingresso-ios-challengeTests" */;
 			buildPhases = (
+				56F7748670DC8593D4C7510E /* [CP] Check Pods Manifest.lock */,
 				4A77A9FE26D8835E00A89B3A /* Sources */,
 				4A77A9FF26D8835E00A89B3A /* Frameworks */,
 				4A77AA0026D8835E00A89B3A /* Resources */,
@@ -172,9 +276,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A77AA1C26D8835E00A89B3A /* Build configuration list for PBXNativeTarget "ingresso-ios-challengeUITests" */;
 			buildPhases = (
+				8A9C280F98B5877047DE6D14 /* [CP] Check Pods Manifest.lock */,
 				4A77AA0926D8835E00A89B3A /* Sources */,
 				4A77AA0A26D8835E00A89B3A /* Frameworks */,
 				4A77AA0B26D8835E00A89B3A /* Resources */,
+				7B2C6BC0F61D9F86E7C586CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,13 +360,123 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		56F7748670DC8593D4C7510E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ingresso-ios-challengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DE78D11BDF607C82268109F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ingresso-ios-challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B2C6BC0F61D9F86E7C586CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		876D0B17376F1FF6ABF865AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ingresso-ios-challenge/Pods-ingresso-ios-challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A9C280F98B5877047DE6D14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A77A9ED26D8835C00A89B3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A69127626DAA06E006A973E /* CatalogEndpoint.swift in Sources */,
+				4A69126C26DA8FC1006A973E /* CatalogViewModel.swift in Sources */,
+				4A69127226DA904D006A973E /* MovieCellView.swift in Sources */,
+				4A69127926DAA0B8006A973E /* APIConfiguration.swift in Sources */,
+				4A69126826D98F58006A973E /* Catalog.swift in Sources */,
+				4A3E396D26E97116004A8F8E /* HomeScreen.swift in Sources */,
 				4A77A9F726D8835C00A89B3A /* ContentView.swift in Sources */,
 				4A77A9F526D8835C00A89B3A /* ingresso_ios_challengeApp.swift in Sources */,
+				4A69126E26DA8FD0006A973E /* CatalogView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +630,7 @@
 		};
 		4A77AA1726D8835E00A89B3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D4660BD7822D5E7550F6BFA /* Pods-ingresso-ios-challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -435,6 +652,7 @@
 		};
 		4A77AA1826D8835E00A89B3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C1782C00201404827385F9B /* Pods-ingresso-ios-challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,6 +674,7 @@
 		};
 		4A77AA1A26D8835E00A89B3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD7AB5C3EE44205E22CEE58 /* Pods-ingresso-ios-challengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -477,6 +696,7 @@
 		};
 		4A77AA1B26D8835E00A89B3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F593BD2E3DEA14E7AC5CC33 /* Pods-ingresso-ios-challengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +718,7 @@
 		};
 		4A77AA1D26D8835E00A89B3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2D0CD8C1A512FF7A6F4AD26 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -517,6 +738,7 @@
 		};
 		4A77AA1E26D8835E00A89B3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 766E5B52596B34C0E935B8D6 /* Pods-ingresso-ios-challenge-ingresso-ios-challengeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
