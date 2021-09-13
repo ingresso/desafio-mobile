@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct ComingSoonMovies: View {
+    
+    @State private var isLoading = false
+    
+    @State var parsedMovies = Movies(items: [])
+    @State var movieArray = [Movie]()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Welcome")
+        .onAppear {
+            ApiCall().getMovies { (movies) in
+                parsedMovies = movies
+                self.movieArray = parsedMovies.items
+            }
+        }
+        ProgressView()
+            .progressViewStyle(CircularProgressViewStyle(tint: .orange))
     }
 }
 
