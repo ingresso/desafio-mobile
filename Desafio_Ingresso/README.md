@@ -10,7 +10,7 @@
 
 ## Comentários:
 
-O projeto está organizado conforme padrão MVVM. 
+O projeto está organizado conforme padrão MVVM e usa Observer para detectar quaisquer mudanças no Array de filmes.
 
 ## Considerações finais:
 

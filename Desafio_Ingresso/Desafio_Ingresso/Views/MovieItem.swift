@@ -24,7 +24,7 @@ struct MovieItem: View {
             
             Rectangle()
                 .strokeBorder(Color.white,lineWidth: 2)
-                .background(Circle().foregroundColor(.clear))
+                .background(Rectangle().foregroundColor(.black).opacity(0.5))
                 .frame(width: 110, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .offset(y: -35)
             

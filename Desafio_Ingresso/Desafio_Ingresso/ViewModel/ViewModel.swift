@@ -8,18 +8,32 @@
 import Foundation
 import Combine
 
-class ApiCall {
+final class ViewModel: ObservableObject {
     
-    func getMovies(completion:@escaping (Movies) -> ()) {
-        guard let url = URL(string: "https://api-content.ingresso.com/v0/events/coming-soon/partnership/desafio") else { return }
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            let movies = try! JSONDecoder().decode(Movies.self, from: data!)
-            print(movies)
-            
-            DispatchQueue.main.async {
-                completion(movies)
+    @Published var movies: [Movie] = []
+    
+    func fetchAllMovies(handler: @escaping () -> Void) {
+        if let url = URL(string: "https://api-content.ingresso.com/v0/events/coming-soon/partnership/desafio") {
+            print(url)
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { (data, response, error) in
+                if error == nil {
+                    let decoder = JSONDecoder()
+                    if let moviesData = data {
+                        do {
+                            let movies = try decoder.decode(Movies.self, from: moviesData)
+                            DispatchQueue.main.async {
+                                self.movies = movies.items
+                                return handler()
+                            }
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+                handler()
             }
+            task.resume()
         }
-        .resume()
     }
 }

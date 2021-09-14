@@ -9,11 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State static var parsedMovies = [Movie]()
+    @State private var isLoading = false
+    @ObservedObject var viewModel = ViewModel()
     
     var body: some View {
         
-        ComingSoonMovies()
+        ZStack {
+            
+            ComingSoonMovies()
+            
+            if isLoading {
+                Loading()
+            }
+        }
+        .onAppear {
+            isLoading = true
+            viewModel.fetchAllMovies() {
+                print(viewModel.movies)
+                isLoading = false
+            }
+        }
     }
 }
 

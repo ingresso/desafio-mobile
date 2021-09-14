@@ -9,20 +9,13 @@ import SwiftUI
 
 struct ComingSoonMovies: View {
     
-    @State private var isLoading = false
-    
     @State var parsedMovies = [Movie]()
     
     var body: some View {
         ZStack {
-            Text("Welcome")
-            .onAppear {
-                isLoading = true
-                ApiCall().getMovies { (movies) in
-                    parsedMovies = movies.items
-                    isLoading = false
-                }
-            }
+            
+            
+        
         }
     }
     
