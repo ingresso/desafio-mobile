@@ -17,7 +17,6 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: ViewModel
     
     init() {
-        UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barTintColor = UIColor(.secondary)
     }
     
@@ -61,7 +60,7 @@ struct ContentView: View {
                     fakeLoadTime = 12.7
                 }
                 else {
-                    fakeLoadTime = 3
+                    fakeLoadTime = 2
                 }
                 
                 //Conta uns segundos antes de apresentar a tela de filmes, só para podermos apreciar a beleza da tela de carregamento.

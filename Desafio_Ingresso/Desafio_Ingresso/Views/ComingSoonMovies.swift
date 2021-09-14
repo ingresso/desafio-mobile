@@ -14,19 +14,33 @@ struct ComingSoonMovies: View {
     private var columns = [GridItem(.flexible()),
                                  GridItem(.flexible())]
     
+    init() {
+        UINavigationBar.appearance().barTintColor = UIColor(.secondary)
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+
+    }
+    
     var body: some View {
-        ZStack {
-            Color(.darkGray)
-                .ignoresSafeArea()
+        
+        NavigationView {
             
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 0) {
-                    ForEach(viewModel.organizedMovies, id: \.self) { item in
-                        MovieItem(movie: item)
+            ZStack {
+                
+                Color(.darkGray)
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 0) {
+                        ForEach(viewModel.organizedMovies, id: \.self) { item in
+                            MovieItem(movie: item)
+                        }
                     }
+                    .padding()
                 }
-                .padding(.horizontal)
+                
             }
+            .navigationTitle("Em Breve")
         }
     }
     
