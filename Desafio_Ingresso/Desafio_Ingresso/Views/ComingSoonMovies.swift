@@ -9,12 +9,24 @@ import SwiftUI
 
 struct ComingSoonMovies: View {
     
-    @State var parsedMovies = [Movie]()
+    @EnvironmentObject var viewModel: ViewModel
+    
+    private var columns = [GridItem(.flexible()),
+                                 GridItem(.flexible())]
     
     var body: some View {
         ZStack {
+            Color(.darkGray)
+                .ignoresSafeArea()
             
-            
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 0) {
+                    ForEach(viewModel.orderedMovies, id: \.self) { item in
+                        MovieItem(movie: item)
+                    }
+                }
+                .padding(.horizontal)
+            }
         
         }
     }
@@ -24,5 +36,6 @@ struct ComingSoonMovies: View {
 struct ComingSoonMovies_Previews: PreviewProvider {
     static var previews: some View {
         ComingSoonMovies()
+            .environmentObject(ViewModel())
     }
 }

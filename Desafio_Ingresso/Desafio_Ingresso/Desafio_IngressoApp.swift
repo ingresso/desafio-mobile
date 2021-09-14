@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Desafio_IngressoApp: App {
+    
+    @StateObject private var viewModel = ViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }

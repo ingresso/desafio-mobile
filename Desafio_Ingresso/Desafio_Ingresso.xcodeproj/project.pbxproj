@@ -107,11 +107,10 @@
 		675A074126EEC3E900A94D35 /* Desafio_Ingresso */ = {
 			isa = PBXGroup;
 			children = (
+				675A074226EEC3E900A94D35 /* Desafio_IngressoApp.swift */,
 				675A077326EECEBC00A94D35 /* ViewModel */,
 				675A077026EECCE800A94D35 /* Views */,
 				675A076D26EECC2800A94D35 /* Model */,
-				675A074226EEC3E900A94D35 /* Desafio_IngressoApp.swift */,
-				675A074426EEC3E900A94D35 /* ContentView.swift */,
 				675A074626EEC3EC00A94D35 /* Assets.xcassets */,
 				675A074B26EEC3EC00A94D35 /* Info.plist */,
 				675A074826EEC3EC00A94D35 /* Preview Content */,
@@ -156,6 +155,7 @@
 		675A077026EECCE800A94D35 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				675A074426EEC3E900A94D35 /* ContentView.swift */,
 				675A077126EECE5900A94D35 /* ComingSoonMovies.swift */,
 				675A077D26EFCD7E00A94D35 /* MovieItem.swift */,
 				675A077F26EFD65C00A94D35 /* Loading.swift */,

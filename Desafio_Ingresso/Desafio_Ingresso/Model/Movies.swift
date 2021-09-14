@@ -5,28 +5,29 @@
 //  Created by Guilherme Vassallo on 13/09/21.
 //
 
-struct Movies: Codable {
+struct Movies: Codable, Hashable {
     let items: [Movie]
+    let count: Int
 }
 
-struct Movie: Codable {
+struct Movie: Codable, Hashable {
     let id: String
     let title: String
     var images: [ImageInfo]
     let premiereDate: PremiereDate?
 }
 
-struct ImageInfo: Codable {
+struct ImageInfo: Codable, Hashable {
     let url: String
     let type: ImageType
 }
 
-enum ImageType: String, Codable {
+enum ImageType: String, Codable, Hashable {
     case posterHorizontal = "PosterHorizontal"
     case posterPortrait = "PosterPortrait"
 }
 
-struct PremiereDate: Codable {
+struct PremiereDate: Codable, Hashable {
     let dayAndMonth: String
     let year: String
 }

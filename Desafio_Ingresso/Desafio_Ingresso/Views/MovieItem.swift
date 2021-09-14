@@ -9,9 +9,11 @@ import SwiftUI
 
 struct MovieItem: View {
     
-    //var movie: Movie
+    var movie: Movie
     
     var body: some View {
+        
+        //Inicializar imagem com URL do filme aqui.
         
         VStack {
             
@@ -28,15 +30,16 @@ struct MovieItem: View {
                 .frame(width: 110, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .offset(y: -35)
             
-            Text("09/11/2021")
+            Text("\(movie.premiereDate?.dayAndMonth ?? "Sem")/\(movie.premiereDate?.year ?? "data")")
                 .bold()
                 .offset(y: -65)
                 .foregroundColor(.white)
             
-            Text("Movie Title ohhhh yeaaahhhh")
+            Text(movie.title)
                 .bold()
                 .padding(.top, -60)
                 .padding(.horizontal)
+                .foregroundColor(.white)
         }
         .frame(width: 150, height: 230, alignment: .top)
     }
@@ -44,9 +47,12 @@ struct MovieItem: View {
 
 struct MovieItem_Previews: PreviewProvider {
     static var previews: some View {
-        
-        MovieItem()
-        .previewLayout(.fixed(width: 150, height: 230))
-        //MovieItem(movie: Movie(id: "123", title: "título do filme", images: [], premiereDate: PremiereDate(dayAndMonth: "02/10", year: "2022")))
+        ZStack {
+            Color(.gray)
+                .frame(width: 150, height: 230, alignment: .top)
+            MovieItem(movie:
+                        Movie(id: "Aaaaa", title: "O Selênio Dos Incandescentes", images: [], premiereDate: PremiereDate(dayAndMonth: "09/09", year: "2022")))
+            .previewLayout(.fixed(width: 150, height: 230))
+        }
     }
 }
