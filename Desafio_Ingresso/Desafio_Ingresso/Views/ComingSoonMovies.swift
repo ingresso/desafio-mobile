@@ -21,13 +21,12 @@ struct ComingSoonMovies: View {
             
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 0) {
-                    ForEach(viewModel.orderedMovies, id: \.self) { item in
+                    ForEach(viewModel.organizedMovies, id: \.self) { item in
                         MovieItem(movie: item)
                     }
                 }
                 .padding(.horizontal)
             }
-        
         }
     }
     

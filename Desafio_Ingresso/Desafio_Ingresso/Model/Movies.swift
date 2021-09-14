@@ -30,4 +30,5 @@ enum ImageType: String, Codable, Hashable {
 struct PremiereDate: Codable, Hashable {
     let dayAndMonth: String
     let year: String
+    let localDate: String
 }

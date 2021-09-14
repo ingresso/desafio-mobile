@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    
+    //Hmmm... o que acontece se mudar isso aqui pra true? 👀
     @State static var 🌎🎵 = false
-    //Mude para true para ter uma surpresa! :)
     
     @State private var isLoading = false
     @EnvironmentObject var viewModel: ViewModel
@@ -36,7 +37,6 @@ struct ContentView: View {
                 Loading()
             }
             else {
-                
                 TabView {
                     ComingSoonMovies()
                         .tabItem {
@@ -49,13 +49,12 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            
             if ContentView.🌎🎵 {
                 AudioPlayer.playSound(soundfile: "song.mp3", vol: 0.5)
             }
             isLoading = true
             viewModel.fetchAllMovies() {
-                print(viewModel.movies)
+                print("Filmes organizados: ", viewModel.organizedMovies)
                 
                 var fakeLoadTime: Double
                 if ContentView.🌎🎵 {

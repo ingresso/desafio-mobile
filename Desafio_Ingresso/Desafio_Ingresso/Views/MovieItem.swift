@@ -27,6 +27,8 @@ struct MovieItem: View {
             else {
                 if movie.images.count > 0 {
                     WebImage(url: URL(string: movie.images[0].url))
+                        .placeholder(
+                            Image(systemName: "exclamationmark.triangle"))
                         .renderingMode(.original)
                         .resizable()
                         .frame(width: 120, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -89,7 +91,7 @@ struct MovieItem_Previews: PreviewProvider {
                                     url: "https://ingresso-a.akamaihd.net/prd/img/movie/respect-a-historia-de-aretha-franklin/ea2b1022-a4ce-4cdc-956a-3e2088553c36.jpg",
                                     type: ImageType.posterPortrait)]*/,
                             premiereDate: PremiereDate(
-                                dayAndMonth: "09/09", year: "2022")
+                                dayAndMonth: "09/09", year: "2022",localDate: "bruh")
                         )
             )
             .previewLayout(.fixed(width: 150, height: 230))

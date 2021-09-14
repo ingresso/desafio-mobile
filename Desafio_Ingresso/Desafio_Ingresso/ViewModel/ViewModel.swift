@@ -7,14 +7,34 @@
 
 import Foundation
 import SwiftUI
-import SDWebImageSwiftUI
 
 final class ViewModel: ObservableObject {
     
     @Published var movies: [Movie] = []
     @Published var movieCount = 0
+    
+    var moviesWithDates: [Movie] {
+        movies.filter { $0.premiereDate != nil }
+    }
+    var moviesWithoutDates: [Movie] {
+        movies.filter { $0.premiereDate == nil }
+    }
+    var moviesWithDatesSorted: [Movie] {
+        moviesWithDates.sorted(by: {
+            $0.premiereDate!.localDate < $1.premiereDate!.localDate
+        })
+    }
+    var moviesWithoutDatesSorted: [Movie] {
+        moviesWithoutDates.sorted(by: {
+            $0.title < $1.title
+        })
+    }
+    
+    var organizedMovies: [Movie] {
+        moviesWithDates + moviesWithoutDates
+    }
 
-    var orderedMovies: [Movie] {
+    var sortedMoviesByTitle: [Movie] {
         movies.sorted(by: {
             $0.title < $1.title
         })
