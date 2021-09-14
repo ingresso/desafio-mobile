@@ -11,20 +11,21 @@ struct ComingSoonMovies: View {
     
     @State private var isLoading = false
     
-    @State var parsedMovies = Movies(items: [])
-    @State var movieArray = [Movie]()
+    @State var parsedMovies = [Movie]()
     
     var body: some View {
-        Text("Welcome")
-        .onAppear {
-            ApiCall().getMovies { (movies) in
-                parsedMovies = movies
-                self.movieArray = parsedMovies.items
+        ZStack {
+            Text("Welcome")
+            .onAppear {
+                isLoading = true
+                ApiCall().getMovies { (movies) in
+                    parsedMovies = movies.items
+                    isLoading = false
+                }
             }
         }
-        ProgressView()
-            .progressViewStyle(CircularProgressViewStyle(tint: .orange))
     }
+    
 }
 
 struct ComingSoonMovies_Previews: PreviewProvider {

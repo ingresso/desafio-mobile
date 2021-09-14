@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State static var parsedMovies = [Movie]()
+    
     var body: some View {
+        
         ComingSoonMovies()
     }
 }

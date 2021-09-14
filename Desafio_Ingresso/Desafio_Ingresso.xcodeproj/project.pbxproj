@@ -16,6 +16,8 @@
 		675A077226EECE5900A94D35 /* ComingSoonMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A077126EECE5900A94D35 /* ComingSoonMovies.swift */; };
 		675A077726EECEE000A94D35 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A077626EECEE000A94D35 /* ViewModel.swift */; };
 		675A077A26EF124800A94D35 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A077926EF124800A94D35 /* Movies.swift */; };
+		675A077E26EFCD7E00A94D35 /* MovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A077D26EFCD7E00A94D35 /* MovieItem.swift */; };
+		675A078026EFD65C00A94D35 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A077F26EFD65C00A94D35 /* Loading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		675A077626EECEE000A94D35 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		675A077826EEE09500A94D35 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		675A077926EF124800A94D35 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		675A077D26EFCD7E00A94D35 /* MovieItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItem.swift; sourceTree = "<group>"; };
+		675A077F26EFD65C00A94D35 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				675A077126EECE5900A94D35 /* ComingSoonMovies.swift */,
+				675A077D26EFCD7E00A94D35 /* MovieItem.swift */,
+				675A077F26EFD65C00A94D35 /* Loading.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 				675A077726EECEE000A94D35 /* ViewModel.swift in Sources */,
 				675A077226EECE5900A94D35 /* ComingSoonMovies.swift in Sources */,
 				675A077A26EF124800A94D35 /* Movies.swift in Sources */,
+				675A077E26EFCD7E00A94D35 /* MovieItem.swift in Sources */,
+				675A078026EFD65C00A94D35 /* Loading.swift in Sources */,
 				675A074526EEC3E900A94D35 /* ContentView.swift in Sources */,
 				675A074326EEC3E900A94D35 /* Desafio_IngressoApp.swift in Sources */,
 			);

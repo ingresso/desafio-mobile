@@ -10,7 +10,7 @@
 
 ## Comentários:
 
-O projeto está organizado conforme padrão MVVM, e utiliza Observer. 
+O projeto está organizado conforme padrão MVVM. 
 
 ## Considerações finais:
 
