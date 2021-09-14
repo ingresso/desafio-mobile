@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var 🌎🎵 = false
+    //Mude para true para ter uma surpresa! :)
+    
     @State private var isLoading = false
     @EnvironmentObject var viewModel: ViewModel
     
@@ -46,12 +49,24 @@ struct ContentView: View {
             }
         }
         .onAppear {
+            
+            if 🌎🎵 {
+                AudioPlayer.playSound(soundfile: "song.mp3", vol: 0.5)
+            }
             isLoading = true
             viewModel.fetchAllMovies() {
                 print(viewModel.movies)
                 
-                //Conta 3 segundos antes de apresentar a tela de filmes, só para podermos apreciar a beleza da tela de carregamento.
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                var fakeLoadTime: Double
+                if 🌎🎵 {
+                    fakeLoadTime = 13
+                }
+                else {
+                    fakeLoadTime = 3
+                }
+                
+                //Conta uns segundos antes de apresentar a tela de filmes, só para podermos apreciar a beleza da tela de carregamento.
+                DispatchQueue.main.asyncAfter(deadline: .now() + fakeLoadTime) {
                     isLoading = false
                 }
             }

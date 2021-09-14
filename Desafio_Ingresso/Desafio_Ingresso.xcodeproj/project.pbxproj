@@ -18,6 +18,8 @@
 		675A077A26EF124800A94D35 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A077926EF124800A94D35 /* Movies.swift */; };
 		675A077E26EFCD7E00A94D35 /* MovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A077D26EFCD7E00A94D35 /* MovieItem.swift */; };
 		675A078026EFD65C00A94D35 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A077F26EFD65C00A94D35 /* Loading.swift */; };
+		675A078226F0B77F00A94D35 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 675A078126F0B77F00A94D35 /* song.mp3 */; };
+		675A078426F0B9C900A94D35 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A078326F0B9C900A94D35 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		675A077926EF124800A94D35 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		675A077D26EFCD7E00A94D35 /* MovieItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItem.swift; sourceTree = "<group>"; };
 		675A077F26EFD65C00A94D35 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		675A078126F0B77F00A94D35 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
+		675A078326F0B9C900A94D35 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +116,10 @@
 				675A077026EECCE800A94D35 /* Views */,
 				675A076D26EECC2800A94D35 /* Model */,
 				675A074626EEC3EC00A94D35 /* Assets.xcassets */,
+				675A078126F0B77F00A94D35 /* song.mp3 */,
 				675A074B26EEC3EC00A94D35 /* Info.plist */,
 				675A074826EEC3EC00A94D35 /* Preview Content */,
+				675A078326F0B9C900A94D35 /* AudioPlayer.swift */,
 			);
 			path = Desafio_Ingresso;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 			files = (
 				675A074A26EEC3EC00A94D35 /* Preview Assets.xcassets in Resources */,
 				675A074726EEC3EC00A94D35 /* Assets.xcassets in Resources */,
+				675A078226F0B77F00A94D35 /* song.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +310,7 @@
 				675A077726EECEE000A94D35 /* ViewModel.swift in Sources */,
 				675A077226EECE5900A94D35 /* ComingSoonMovies.swift in Sources */,
 				675A077A26EF124800A94D35 /* Movies.swift in Sources */,
+				675A078426F0B9C900A94D35 /* AudioPlayer.swift in Sources */,
 				675A077E26EFCD7E00A94D35 /* MovieItem.swift in Sources */,
 				675A078026EFD65C00A94D35 /* Loading.swift in Sources */,
 				675A074526EEC3E900A94D35 /* ContentView.swift in Sources */,
