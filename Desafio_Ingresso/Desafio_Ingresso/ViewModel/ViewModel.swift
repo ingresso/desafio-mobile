@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+import SDWebImageSwiftUI
 
 final class ViewModel: ObservableObject {
     
@@ -31,6 +33,7 @@ final class ViewModel: ObservableObject {
                             DispatchQueue.main.async {
                                 self.movies = movies.items
                                 self.movieCount = movies.count
+                                
                                 return handler()
                             }
                         } catch {

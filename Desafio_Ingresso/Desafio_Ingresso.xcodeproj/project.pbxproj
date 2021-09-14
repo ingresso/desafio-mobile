@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		675A078026EFD65C00A94D35 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A077F26EFD65C00A94D35 /* Loading.swift */; };
 		675A078226F0B77F00A94D35 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 675A078126F0B77F00A94D35 /* song.mp3 */; };
 		675A078426F0B9C900A94D35 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A078326F0B9C900A94D35 /* AudioPlayer.swift */; };
+		675A078C26F0FFB700A94D35 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 675A078B26F0FFB700A94D35 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				675A078C26F0FFB700A94D35 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +195,9 @@
 			dependencies = (
 			);
 			name = Desafio_Ingresso;
+			packageProductDependencies = (
+				675A078B26F0FFB700A94D35 /* SDWebImageSwiftUI */,
+			);
 			productName = Desafio_Ingresso;
 			productReference = 675A073F26EEC3E900A94D35 /* Desafio_Ingresso.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +269,9 @@
 				Base,
 			);
 			mainGroup = 675A073626EEC3E900A94D35;
+			packageReferences = (
+				675A078A26F0FFB700A94D35 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 675A074026EEC3E900A94D35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -634,6 +642,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		675A078A26F0FFB700A94D35 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		675A078B26F0FFB700A94D35 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 675A078A26F0FFB700A94D35 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 675A073726EEC3E900A94D35 /* Project object */;
 }

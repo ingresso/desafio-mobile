@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var 🌎🎵 = false
+    @State static var 🌎🎵 = false
     //Mude para true para ter uma surpresa! :)
     
     @State private var isLoading = false
@@ -50,7 +50,7 @@ struct ContentView: View {
         }
         .onAppear {
             
-            if 🌎🎵 {
+            if ContentView.🌎🎵 {
                 AudioPlayer.playSound(soundfile: "song.mp3", vol: 0.5)
             }
             isLoading = true
@@ -58,8 +58,8 @@ struct ContentView: View {
                 print(viewModel.movies)
                 
                 var fakeLoadTime: Double
-                if 🌎🎵 {
-                    fakeLoadTime = 13
+                if ContentView.🌎🎵 {
+                    fakeLoadTime = 12.7
                 }
                 else {
                     fakeLoadTime = 3
