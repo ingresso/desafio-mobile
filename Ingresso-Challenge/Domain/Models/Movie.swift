@@ -42,6 +42,8 @@ struct Movie: Identifiable {
         
         // Format date to display format
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "pt_br")
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
         dateFormatter.dateFormat = "dd/MM/YY"
         
         // Set value
