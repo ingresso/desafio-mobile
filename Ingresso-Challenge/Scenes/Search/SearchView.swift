@@ -21,17 +21,34 @@ struct SearchView: View {
                     SearchBar(searchText: $viewModel.searchText, showSearchView: $isShowing)
                         .padding(.horizontal)
                     
-                    // Search results list
-                    ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(viewModel.filterMovies()) { movie in
-                            NavigationLink(destination: MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))){
-                                SearchListCell(movie: movie)
+                    if viewModel.filterMovies().isEmpty && viewModel.searchText != "" {
+                        Spacer()
+                        Image("confused-face")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.secondary)
+                        
+                        Text("Não encontramos o que você está procurando. Confira se pesquisou pelo nome certo, ou tente buscar outra palavra.")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal, 16)
+                        Spacer()
+                        Spacer()
+                    }
+                    else {
+                        // Search results list
+                        ScrollView(.vertical, showsIndicators: false) {
+                            ForEach(viewModel.filterMovies()) { movie in
+                                NavigationLink(destination: MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))){
+                                    SearchListCell(movie: movie)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                                .listRowBackground(Color.clear)
+                                .frame(height: 80)
+                                .padding(.horizontal)
+                                .padding(.bottom, 4)
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            .listRowBackground(Color.clear)
-                            .frame(height: 80)
-                            .padding(.horizontal)
-                            .padding(.bottom, 4)
                         }
                     }
                 }
