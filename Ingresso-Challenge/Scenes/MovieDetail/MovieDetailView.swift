@@ -40,21 +40,7 @@ struct MovieDetailView: View {
                     .frame(height: defaultHeaderHeight) // default size
                     
                     // Movie infos
-                    HStack(alignment: .bottom) {
-                        AsyncImage(imageString: viewModel.movie.imagesURL.portrait)
-                            .frame(height: 200)
-                        
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text(viewModel.movie.title)
-                                .fontWeight(.heavy)
-                            
-                            Text(viewModel.movie.genres.first ?? "" ).font(.footnote)
-                        }
-                        
-                        Spacer()
-                    }
-                    .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [.clear, Color(.darkerGray)]), startPoint: .top, endPoint: .bottom))
+                    MovieHeader(imageURL: viewModel.movie.imagesURL.portrait, title: viewModel.movie.title, genres: viewModel.movie.genres)
                 }
                 
                 //
