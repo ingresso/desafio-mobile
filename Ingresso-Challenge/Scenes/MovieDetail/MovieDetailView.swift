@@ -61,6 +61,13 @@ struct MovieDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(trailing: Button(action: {
+            viewModel.shareMovie()
+        }) {
+            Image(systemName: "square.and.arrow.up")
+                .foregroundColor(Color(.primaryBlue))
+                .imageScale(.large)
+        })
         .background(Color(.primaryGray).edgesIgnoringSafeArea(.all))
     }
 }

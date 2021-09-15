@@ -21,6 +21,7 @@ struct Movie: Identifiable {
     var contentRating: String
     var genres: [String]
     var premiereDate: String?
+    var siteURL: String
     
     init(from item: Item) {
         self.id = item.id
@@ -35,6 +36,7 @@ struct Movie: Identifiable {
         self.countryOrigin = item.countryOrigin
         self.contentRating = item.contentRating
         self.genres = item.genres
+        self.siteURL = item.siteURL
         
         // Transform string to date
         let isoDateFormatter = ISO8601DateFormatter()
