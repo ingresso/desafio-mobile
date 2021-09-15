@@ -61,6 +61,9 @@ struct MoviesView: View {
             SearchView(viewModel: SearchViewModel(movies: viewModel.movies), isShowing: $viewModel.showSearchView)
             
         })
+        .alert(isPresented: $viewModel.showErrorAlert, content: {
+            Alert(title: Text("Aviso"), message: Text("Erro ao carregar os filmes"), dismissButton: .default(Text("Ok")))
+        })
         .environment(\.urlImageService, urlImageService)
     }
 }
