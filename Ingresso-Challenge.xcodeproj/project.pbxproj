@@ -14,6 +14,7 @@
 		DA23CF7E26E5A033004E1C94 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23CF7D26E5A033004E1C94 /* SearchBar.swift */; };
 		DA23CF8226E5A139004E1C94 /* BackgroundBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23CF8126E5A139004E1C94 /* BackgroundBlurView.swift */; };
 		DA23CF8526E5A8B2004E1C94 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23CF8426E5A8B2004E1C94 /* AsyncImage.swift */; };
+		DA475FF726F2B3800096049C /* IngressoAPI_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA475FF626F2B3800096049C /* IngressoAPI_Tests.swift */; };
 		DA532C8226F16CA2004F77AC /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA532C8126F16CA2004F77AC /* SearchViewModel.swift */; };
 		DA532C8726F174C8004F77AC /* MovieInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA532C8626F174C8004F77AC /* MovieInfoRow.swift */; };
 		DA532C8926F177C7004F77AC /* MovieHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA532C8826F177C7004F77AC /* MovieHeader.swift */; };
@@ -37,12 +38,25 @@
 		DAECD43B26E41E62004EA880 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAECD43A26E41E62004EA880 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DA475FF926F2B3800096049C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAECD40026E3FC1C004EA880 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAECD40726E3FC1C004EA880;
+			remoteInfo = "Ingresso-Challenge";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		DA23CF7826E58D57004E1C94 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DA23CF7B26E59FD7004E1C94 /* SearchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListCell.swift; sourceTree = "<group>"; };
 		DA23CF7D26E5A033004E1C94 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		DA23CF8126E5A139004E1C94 /* BackgroundBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlurView.swift; sourceTree = "<group>"; };
 		DA23CF8426E5A8B2004E1C94 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		DA475FF426F2B3800096049C /* Ingresso-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ingresso-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA475FF626F2B3800096049C /* IngressoAPI_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngressoAPI_Tests.swift; sourceTree = "<group>"; };
+		DA475FF826F2B3800096049C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA532C8126F16CA2004F77AC /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		DA532C8626F174C8004F77AC /* MovieInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoRow.swift; sourceTree = "<group>"; };
 		DA532C8826F177C7004F77AC /* MovieHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHeader.swift; sourceTree = "<group>"; };
@@ -69,6 +83,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DA475FF126F2B3800096049C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAECD40526E3FC1C004EA880 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,6 +131,15 @@
 			path = ViewComponents;
 			sourceTree = "<group>";
 		};
+		DA475FF526F2B3800096049C /* Ingresso-ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA475FF626F2B3800096049C /* IngressoAPI_Tests.swift */,
+				DA475FF826F2B3800096049C /* Info.plist */,
+			);
+			path = "Ingresso-ChallengeTests";
+			sourceTree = "<group>";
+		};
 		DA532C8526F17489004F77AC /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				DAECD40A26E3FC1C004EA880 /* Ingresso-Challenge */,
+				DA475FF526F2B3800096049C /* Ingresso-ChallengeTests */,
 				DAECD40926E3FC1C004EA880 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				DAECD40826E3FC1C004EA880 /* Ingresso-Challenge.app */,
+				DA475FF426F2B3800096049C /* Ingresso-ChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,6 +302,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DA475FF326F2B3800096049C /* Ingresso-ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA475FFD26F2B3800096049C /* Build configuration list for PBXNativeTarget "Ingresso-ChallengeTests" */;
+			buildPhases = (
+				DA475FF026F2B3800096049C /* Sources */,
+				DA475FF126F2B3800096049C /* Frameworks */,
+				DA475FF226F2B3800096049C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA475FFA26F2B3800096049C /* PBXTargetDependency */,
+			);
+			name = "Ingresso-ChallengeTests";
+			productName = "Ingresso-ChallengeTests";
+			productReference = DA475FF426F2B3800096049C /* Ingresso-ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DAECD40726E3FC1C004EA880 /* Ingresso-Challenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAECD41C26E3FC1C004EA880 /* Build configuration list for PBXNativeTarget "Ingresso-Challenge" */;
@@ -300,6 +350,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					DA475FF326F2B3800096049C = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = DAECD40726E3FC1C004EA880;
+					};
 					DAECD40726E3FC1C004EA880 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -322,11 +376,19 @@
 			projectRoot = "";
 			targets = (
 				DAECD40726E3FC1C004EA880 /* Ingresso-Challenge */,
+				DA475FF326F2B3800096049C /* Ingresso-ChallengeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DA475FF226F2B3800096049C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAECD40626E3FC1C004EA880 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,6 +402,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DA475FF026F2B3800096049C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA475FF726F2B3800096049C /* IngressoAPI_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAECD40426E3FC1C004EA880 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +442,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DA475FFA26F2B3800096049C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAECD40726E3FC1C004EA880 /* Ingresso-Challenge */;
+			targetProxy = DA475FF926F2B3800096049C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DAECD41626E3FC1C004EA880 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -384,6 +462,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DA475FFB26F2B3800096049C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2F8K76LP8;
+				INFOPLIST_FILE = "Ingresso-ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yuri.Ingresso-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ingresso-Challenge.app/Ingresso-Challenge";
+			};
+			name = Debug;
+		};
+		DA475FFC26F2B3800096049C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2F8K76LP8;
+				INFOPLIST_FILE = "Ingresso-ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yuri.Ingresso-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ingresso-Challenge.app/Ingresso-Challenge";
+			};
+			name = Release;
+		};
 		DAECD41A26E3FC1C004EA880 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -547,6 +665,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DA475FFD26F2B3800096049C /* Build configuration list for PBXNativeTarget "Ingresso-ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA475FFB26F2B3800096049C /* Debug */,
+				DA475FFC26F2B3800096049C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DAECD40326E3FC1C004EA880 /* Build configuration list for PBXProject "Ingresso-Challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
