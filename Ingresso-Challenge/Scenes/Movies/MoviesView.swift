@@ -29,16 +29,24 @@ struct MoviesView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(viewModel.movies) { movie in
-                        NavigationLink(destination: MovieDetailView(viewModel: viewModel.didTapMovie(movie: movie))) {
-                            MovieCell(movie)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            VStack {
+                if viewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                }
+                else {
+                    ScrollView(showsIndicators: false) {
+                        LazyVGrid(columns: columns, spacing: 16) {
+                            ForEach(viewModel.movies) { movie in
+                                NavigationLink(destination: MovieDetailView(viewModel: viewModel.didTapMovie(movie: movie))) {
+                                    MovieCell(movie)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            }
+                        }.padding(.horizontal, 4)
                     }
-                }.padding(.horizontal, 4)
+                }
             }
             .navigationTitle("Filmes")
             .navigationBarTitleDisplayMode(.large)

@@ -13,13 +13,19 @@ final class MoviesViewModel: ObservableObject {
     @Published var movies: [Movie] = []
     @Published var showErrorAlert: Bool = false
     @Published var showSearchView: Bool = false
+    @Published var isLoading: Bool = false
     
     init() {
         self.dataSource = APIDataSource()
     }
     
     func getMovies() {
+        self.isLoading = true
         dataSource.getMovies { result in
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
+            
             switch result {
             case .success(let apiResponse):
                 DispatchQueue.main.async {
