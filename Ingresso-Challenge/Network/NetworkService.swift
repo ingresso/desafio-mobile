@@ -32,7 +32,7 @@ final class NetworkService {
             case .serverError:
                 return "Internal Server Error"
             case .noDataError:
-                return "No data send by the server"
+                return "No data sent by the server"
             case .unknownError:
                 return "Something went wrong."
             }
