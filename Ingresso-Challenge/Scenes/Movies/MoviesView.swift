@@ -33,6 +33,8 @@ struct MoviesView: View {
                 if viewModel.isLoading {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.clear)
                 }
                 else {
                     ScrollView(showsIndicators: false) {
