@@ -10,21 +10,20 @@ import URLImage
 
 struct SearchView: View {
     
-    var movies: [Movie]
-    @State var searchText: String = ""
-    @Binding var showSearchView: Bool
+    @ObservedObject var viewModel: SearchViewModel
+    @Binding var isShowing: Bool
     
     var body: some View {
         NavigationView {
             ZStack{
                 Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
                 VStack {
-                    SearchBar(searchText: $searchText, showSearchView: $showSearchView)
+                    SearchBar(searchText: $viewModel.searchText, showSearchView: $isShowing)
                         .padding(.horizontal)
                     
                     // Search results list
                     ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(movies.filter({ $0.title.lowercased().contains(searchText.lowercased()) })) { movie in
+                        ForEach(viewModel.filterMovies()) { movie in
                             NavigationLink(destination: MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))){
                                 SearchListCell(movie: movie)
                             }
@@ -45,6 +44,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(movies: [], showSearchView: .constant(true))
+        SearchView(viewModel: SearchViewModel(movies: []), isShowing: .constant(true))
     }
 }

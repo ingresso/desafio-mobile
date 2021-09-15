@@ -50,7 +50,7 @@ struct MoviesView: View {
             .background(Color(.primaryGray).ignoresSafeArea())
         }
         .fullScreenCover(isPresented: $viewModel.showSearchView, content: {
-            SearchView(movies: viewModel.movies, showSearchView: $viewModel.showSearchView)
+            SearchView(viewModel: SearchViewModel(movies: viewModel.movies), isShowing: $viewModel.showSearchView)
             
         })
         .environment(\.urlImageService, urlImageService)
