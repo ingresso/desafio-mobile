@@ -28,8 +28,16 @@ final class MoviesViewModel: ObservableObject {
             
             switch result {
             case .success(let apiResponse):
+                var response = apiResponse.items.map({ Movie(from: $0) })
+                
+                // Format date to display format
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/YY"
+                
+                response.sort(by: { dateFormatter.date(from: $0.premiereDate ?? "01/01/1900") ?? Date() < dateFormatter.date(from: $1.premiereDate ?? "01/01/1900") ?? Date()})
+                
                 DispatchQueue.main.async {
-                    self.movies = apiResponse.items.map({ Movie(from: $0) })
+                    self.movies = response
                 }
             case .failure(_):
                 DispatchQueue.main.async {
