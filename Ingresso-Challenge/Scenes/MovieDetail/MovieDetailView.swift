@@ -59,34 +59,14 @@ struct MovieDetailView: View {
                 
                 //
                 VStack(alignment: .leading) {
-                    Group {
-                        Text("Detalhes").font(.headline).fontWeight(.bold).padding(.bottom, 2)
-                        ContentRatingView(movie: viewModel.movie)
-                            .padding(.bottom)
-                        
-                        Text("Duração").font(.headline).fontWeight(.bold).padding(.bottom, 2)
-                        Text("\(viewModel.movie.duration) min").font(.footnote).padding(.bottom)
-                        
-                        Text("Nome Original").font(.headline).fontWeight(.bold).padding(.bottom, 2)
-                        Text(viewModel.movie.originalTitle).font(.footnote).padding(.bottom)
-                        
-                        Text("Elenco").fontWeight(.heavy).padding(.bottom, 2)
-                        Text(viewModel.movie.cast).font(.footnote).padding(.bottom)
-                    }
-                    
-                    Group {
-                        Text("Sinopse").font(.headline).fontWeight(.bold).padding(.bottom, 2)
-                        Text(viewModel.movie.synopsis).font(.footnote).padding(.bottom)
-                        
-                        Text("Diretor").font(.headline).fontWeight(.bold).padding(.bottom, 2)
-                        Text(viewModel.movie.director).font(.footnote).padding(.bottom)
-                        
-                        Text("Distribuidor").font(.headline).fontWeight(.bold).padding(.bottom, 2)
-                        Text(viewModel.movie.distributor).font(.footnote).padding(.bottom)
-                        
-                        Text("Pais de Origem").font(.headline).fontWeight(.bold).padding(.bottom, 2)
-                        Text(viewModel.movie.countryOrigin).font(.footnote).padding(.bottom)
-                    }
+                    MovieInfoRow(title: "Detalhes", description: viewModel.movie.contentRating, isContentRatingRow: true)
+                    MovieInfoRow(title: "Duração", description: viewModel.movie.duration)
+                    MovieInfoRow(title: "Nome Original", description: viewModel.movie.originalTitle)
+                    MovieInfoRow(title: "Elenco", description: viewModel.movie.cast)
+                    MovieInfoRow(title: "Sinopse", description: viewModel.movie.synopsis)
+                    MovieInfoRow(title: "Diretor", description: viewModel.movie.director)
+                    MovieInfoRow(title: "Distribuidor", description: viewModel.movie.distributor)
+                    MovieInfoRow(title: "Pais de Origem", description: viewModel.movie.countryOrigin)
                 }
                 .padding()
                 .frame(width: UIScreen.main.bounds.width - 16)

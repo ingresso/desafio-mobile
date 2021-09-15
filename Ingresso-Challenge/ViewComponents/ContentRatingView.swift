@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentRatingView: View {
     
-    let movie: Movie
+    let contentRating: String
     
     struct MovieLayout {
         let color: Color
@@ -28,10 +28,10 @@ struct ContentRatingView: View {
         ]
     
     var body: some View {
-        Text(movieMap[movie.contentRating]?.text ?? "?")
+        Text(movieMap[contentRating]?.text ?? "?")
             .font(.system(size: 12))
             .fontWeight(.heavy)
             .frame(width: 24.0, height: 24.0)
-            .background(movieMap[movie.contentRating]?.color ?? Color(.primaryGray))
+            .background(movieMap[contentRating]?.color ?? Color(.primaryGray))
     }
 }
