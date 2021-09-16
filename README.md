@@ -4,122 +4,50 @@ O desafio consiste em criar um aplicativo que consuma uma API da Ingresso.com e 
 A tela deve conter uma lista com os filmes que deverão entrar em cartaz em breve.
 
 
+## Interface
 
-## Requisitos Técnicos
+![inteface](Images/demo.png)
 
-1. Linguagens: Swift ou Kotlin;
-2. Utilizar uma IDE atualizada (latest stable version), XCode ou Android Studio;
-3. Utilize uma ou mais bibliotecas de terceiro;
-4. Faça pelo menos um teste unitário e/ou de interface;
-5. Log é bom! Nós gostamos, eles precisam ser úteis;
-6. Crie um Readme.md, organizado em tópicos, na raiz do projeto com instruções/comentários/explicações.
+## Features
 
-**No iOS utilize**
-- Swift UI.
+- [x] Tela de loading
+- [x] Lista dos filmes em breve em cartaz
+- [x] Busca
+- [x] Tela de detalhes
+- [x] Compartilhamento
 
-**No Android utilize**
-- Constraint Layout.
-
-
-
-## Requisitos do Produto
-
-Como foi dito anteriormente, deve-se criar uma tela de filmes que ainda vão entrar em cartaz.
-Alguns elementos precisam estar nessa interface como:
-
-1. Tela de loading;
-2. Poster (podem existir filmes ainda sem poster);
-3. Nome do filme;
-4. Data de estreia (se existir);
-5. Ordene os filmes pelos quais estejam próximos de entrarem em cartaz (campo `premiereDate`);
-6. Organize o projeto, preferêncialmente utilizando alguma arquitetura.
-
-Você determina a interface, use a criatividade.
-Nós fizemos essa tela assim.
+## Estrutura do projeto e Arquitetura
+O projeto foi desenvolvido adotando conceitos da Clean Architecture e MVVM. Existindo três grandes "camadas":
+- Network: Modelos da resposta da API + Chamada a API + Repositório/Data Source dos dados. Essa camada é responsável por fazer a chamada a API e foi desenvolvida usando o Repository Pattern, que para o projeto só foi preciso criar o DataSource da API. Porém, a escolha desse padrão permite a adoção de novas fontes de dados de maneira fácil, apenas precisando criar outros arquivos de DataSource que serão acessados pelo Repository.
+- Domain: Entidades usadas no contexto da aplicação (no caso o modelo do Filme). Essa camada armazena o modelo do dado do Filme contendo apenas os campos necessários para o contexto da aplicação.
+- Scenes: Interface do usuário, usando MVVM. Essa camada cria todas as telas do App de maneira modularizada.
 
 <p align="center">
-  <img src="filmes-em-breve-1.png" width="350" title="Tela de Filmes em breve, topo">
-  <img src="filmes-em-breve-2.png" width="350" title="Tela de Filmes em breve, com data de estreia">
+  <img src="Images/arquitetura.png" height="350" title="Tela de Filmes em breve, topo">
 </p>
 
-Observações:
+## Como rodar?
+1. Clonar o repositório ou fazer download do arquivo zip.
+2. Abrir o arquivo `Ingresso-Challenge.xcodeproj` com o Xcode.
+3. Rodar o projeto no Xcode.
 
-1. Não é necessário colocar o elemento de publicidade;
-2. A NavBar/Navigation Bar pode ser simples;
-3. Você pode mudar totalmente essa tela;
-4. Você pode implementar funcionalidades novas se desejar, abaixo existe uma lista com sugestões;
-5. Animações são bem-vindas mas não obrigatórias.
+## Requisitos
+- iOS 14+
+- Swift 5
+- SwiftUI 2.0
+- Xcode 12.5.1
 
+## Frameworks
 
+- [**URLImage**](https://github.com/dmytro-anokhin/url-image): É uma SwiftUI view que realiza o download e exibição de imagens de uma URL, permitindo colocar um placeholder enquanto o carregamento ocorre. Também faz o cache local da imagem tanto em memória quanto em disco. Foi adotado no projeto para facilitar o desenvolvimento, uma vez que esse framework faz o carregamento de imagens assíncronas sem causar travas na interface e faz o cache local sozinho.
 
-## Sugestões para o Produto
+O gerenciador de dependência escolhido foi o `Swift Package Manager`
 
-Gostou do desafio? Gostaria de avançar mais?
-As sugestões são:
+## Comentários
+De inicio, agradeço pela oportunidade de participar do desafio. Foi meu primeiro desafio técnico desenvolvido para um processo seletivo e tentei trazer nele a maior parte do meu conhecimento adquirido durante os quase 2 anos de desenvolvimento iOS na Apple Developer Academy | PUC-Rio.
 
-1. Busca;
-2. Pull to refresh;
-3. Tela de detalhes de um filme;
-4. Favoritar filme;
-5. Compartilhar;
-6. Filtrar por estreias do mês;
-7. Alguns filmes podem estar em pré-venda (campo `isPreSale`), pode incluir um elemento diferenciado;
-8. Animações são bem-vindas.
+Acabei me engajando bastante na jornada de criação do projeto pois estava há um tempo sem ver SwiftUI, já que meu último trabalho foi em UIKit. Pude me lembrar da facilidade e velocidade para entregar uma solução usando esse framework, ao mesmo tempo que alguns "workarounds" foram feitos para atingir os efeitos desejados. No projeto em si, para colocar a Navigation Bar transparente na tela de detalhes, mas não nas demais, foi um sufoco 😅.
 
+Pra fechar, acho válido comentar que poderia ser disponibilizado o esquema dos dados da API (formato do JSON). Durante o desenvolvimento um dos campos, que nas minhas chamadas anteriores vinha como nil (o que não permitia saber o formato dele), em um determinado momento veio com um valor diferente, fazendo a mensagem de erro ser exibida na interface, até que concertei.
 
-
-## API
-
-Utilize a URL da nossa API que retorna um JSON com os filmes que irão entrar em cartaz.
-
-**GET** [https://api-content.ingresso.com/v0/events/coming-soon/partnership/desafio](https://api-content.ingresso.com/v0/events/coming-soon/partnership/desafio)
-
-
-
-## Como vamos receber o desafio?
-
-**Opção 1 - Fork (preferêncial)**
-- Faça um fork do desafio e desenvolva o seu projeto;
-- Acabou de desenvolver? Submeta um pull request.
- 
-**Opção 2 - Repositório Privado**
-- Faça o seu projeto em um repositório privado seu;
-- Quando terminar vamos pedir para adicionar um avaliador como membro.
-
-**Opção 3 - Plano C**
-- Teve problema com as opções anteriores? Então compacte o seu projeto e envie para nós.
-
-
-
-## Avaliação
-
-**Código** 
-- Legível e clean. 
-- Pode usar comentários se achar necessário.
-
-**Organização** 
-- Separando em módulos/frameworks se possível;
-- Está utilizando alguma arquitetura.
-
-**Segurança** 
-- Encontrou alguma vulnerabilidade? Viu algo que ficou desconfortável durante o desenvolvimento? Coloque no README. 
-- Se for alguma falha grave, por favor nos acione por email.
-
-**Documentação Básica**
-- O README explica como rodar o projeto? 
-- Explique a tomada de decisão. Escreva de forma organizada, em tópicos. 
-- Imagine que você esteja escrevendo para você mesmo do futuro e não lembra de nada do projeto.
-
-**Objetivo**
-- O desafio está sendo feito o mínimo exigido.
-
-**Commits** 
-- Qualidade e padrão;
-- Pode ser em inglês ou português.
-
-**UX/UI**
-- Interface amigável;
-- Fácil de usar.
-
-**One more thing**
-- Tem mais alguma coisa que você queira nos contar?
+Mais uma vez, obrigado pela oportunidade e qualquer dúvida estou aberto para responder.
