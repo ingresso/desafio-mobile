@@ -39,7 +39,7 @@ O projeto foi desenvolvido adotando conceitos da Clean Architecture e MVVM. Exis
 
 ## Frameworks
 
-- [**URLImage**](https://github.com/dmytro-anokhin/url-image): É uma SwiftUI view que realiza o download e exibição de imagens de uma ULR, permitindo colocar um placeholder enquanto o carregamento ocorre. Também faz o cache local da imagem tando em memória quanto em disco. Foi adotado no projeto para facilitar o desenvolvimento, uma vez que esse framework faz o carregamento de imagens asincronas sem causar travas na interface e faz o cache local sozinho.
+- [**URLImage**](https://github.com/dmytro-anokhin/url-image): É uma SwiftUI view que realiza o download e exibição de imagens de uma ULR, permitindo colocar um placeholder enquanto o carregamento ocorre. Também faz o cache local da imagem tando em memória quanto em disco. Foi adotado no projeto para facilitar o desenvolvimento, uma vez que esse framework faz o carregamento de imagens assíncronas sem causar travas na interface e faz o cache local sozinho.
 
 O gerenciador de dependência escolhido foi o `Swift Package Manager`
 
