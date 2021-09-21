@@ -1,0 +1,67 @@
+package com.gabrielribeiro.desafio_mobile.ui
+
+import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.gabrielribeiro.desafio_mobile.R
+import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
+import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
+import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieViewModel
+import com.gabrielribeiro.desafio_mobile.utils.Resource
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+    lateinit var viewModel : MovieViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        supportActionBar?.title = getString(R.string.toolbar_tile_feed)
+
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout_main, FeedFragment()).commit()
+        bottom_navigation_main.selectedItemId = R.id.menu_feed
+        bottom_navigation_main.setOnItemSelectedListener {item ->
+            var selectedFragment : Fragment? = null
+            when(item.itemId) {
+                R.id.menu_debut -> {
+
+                }
+                R.id.menu_feed -> {
+                    selectedFragment = FeedFragment()
+                }
+
+                R.id.menu_favorite -> {
+                    selectedFragment = FavoriteFragment()
+                }
+            }
+            supportFragmentManager.beginTransaction().replace(R.id.frame_layout_main, selectedFragment!!).commit()
+            true
+        }
+
+
+        viewModel = ViewModelProvider(this, MovieViewModel.MovieViewModelFactory(
+            MovieRepositoryImplement(
+            RetrofitInstance().getApi()
+        )
+        )).get(MovieViewModel::class.java)
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_search) {
+            startActivity(SearchMovieActivity.newIntent(this))
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+}

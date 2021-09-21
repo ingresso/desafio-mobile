@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DesafioMobileTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="DesafioMobileTextView.Large">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="DesafioMobileTextView.Large.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="DesafioMobileTextView.Small">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="DesafioMobileTextView.Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="DesafioMobileToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextColor">@color/yellow</item>
+        <item name="android:background">@color/background_theme</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="DesafioMobileButton" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearance">@style/DesafioMobileButtonShapeAppearance</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="backgroundTint">@color/yellow</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+    </style>
+
+    <style name="DesafioMobileButtonShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+
+    <style name="DesafioMobileBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="DesafioMobileEditText.Search" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+
+</resources>

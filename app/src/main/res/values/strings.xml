@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">desafio-mobile</string>
+    <!-- MainActivity -->
+    <string name="menu_feed">Filmes</string>
+    <string name="menu_favorite">Favoritos</string>
+    <string name="menu_debut">Em breve</string>
+
+    <!-- FeedFragment -->
+    <string name="toolbar_tile_feed">Desafio mobile</string>
+
+    <!-- SearchMovieActivity -->
+    <string name="edit_hint_search_movie">Pesquise</string>
+
+    <!-- MovieDetailsActivity -->
+    <string name="cast_text"><b> Elenco: </b> %1$s</string>
+    <string name="director_text"><b> Diretor: </b> %1$s</string>
+    <string name="distribuidor_text"><b> Distribuidor: </b> %1$s</string>
+    <string name="country_text"><b> País de Origem: </b> %1$s</string>
+
+
+</resources>
