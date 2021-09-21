@@ -6,5 +6,5 @@ import retrofit2.Response
 
 interface MovieRepository {
 
-    suspend fun getMovies() : Resource<MoviesListResponse>
+    suspend fun getMovies() :Resource<MoviesListResponse>
 }
