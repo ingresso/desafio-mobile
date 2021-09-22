@@ -15,10 +15,11 @@ import com.gabrielribeiro.desafio_mobile.data.remote.model.MovieResponse
 import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
 import com.gabrielribeiro.desafio_mobile.utils.Resource
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.SearchMovieViewModel
+import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
 import kotlinx.android.synthetic.main.activity_search_movie.*
 import kotlinx.android.synthetic.main.include_progress_layout.view.*
 
-class SearchMovieActivity : AppCompatActivity() {
+class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
     private lateinit var searchAdapter : SearchAdapter
     private val listLock = Any()
     private var movieArray = mutableListOf<MovieResponse>()
@@ -32,19 +33,23 @@ class SearchMovieActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_movie)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        viewModel = ViewModelProvider(this, SearchMovieViewModel.SearchViewModelFactory(
+            MovieRepositoryImplement(
+                RetrofitInstance().getApi()
+            )
+        )).get(SearchMovieViewModel::class.java)
 
-
-
-        searchAdapter = SearchAdapter()
+        searchAdapter = SearchAdapter(this)
         recycler_view_search.adapter = searchAdapter
         edit_text_search.requestFocus()
         setupHooks()
-        //observerViewModel()
+        observerViewModel()
 
     }
 
-    /*private fun observerViewModel() {
-        viewModel.moviesResponse.observe(this, {
+    private fun observerViewModel() {
+        viewModel.getMovies().observe(this, {
             when (it) {
                 is Resource.Loading -> {
                     include_progress_indicator.progress_indicator.visibility = View.VISIBLE
@@ -57,16 +62,15 @@ class SearchMovieActivity : AppCompatActivity() {
                 }
                 is Resource.Success -> {
                     if (it.data != null) {
-                        val premiereDateFiltered =
-                            it.data.movieResponses.filter { movie -> movie.premiereDate != null }
-                        setMovieList(premiereDateFiltered.sortedBy { movie -> movie.dateMillis })
+                        setMovieList(it.data.movieResponses.sortedBy { movie -> movie.dateMillis })
+                        updateMovieList()
                         include_progress_indicator.progress_indicator.visibility = View.GONE
                     }
                 }
             }
 
         })
-    } */
+    }
 
     private fun setMovieList(movieResponses: List<MovieResponse>) {
         synchronized(listLock) {
@@ -111,5 +115,12 @@ class SearchMovieActivity : AppCompatActivity() {
            searchAdapter.submitList(filteredMovieArray)
         }
     }
+
+    override fun onMovieClick(movieResponse: MovieResponse?) {
+        if (movieResponse != null) {
+            startActivity(MovieDetailsActivity.newIntent(applicationContext, movieResponse))
+        }
+    }
+
 
 }

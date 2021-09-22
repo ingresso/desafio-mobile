@@ -28,7 +28,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
 
-
         movieResponse = intent.getParcelableExtra(ARG_MOVIE)!!
 
         if (movieResponse.cast.isNullOrEmpty()) {
@@ -46,7 +45,7 @@ class MovieDetailsActivity : AppCompatActivity() {
             }
             if (scrollRange + verticalOffset == 0){
                 collapsing_details.title = movieResponse.title
-                text_title_movie.visibility = View.INVISIBLE
+                text_title_movie.visibility = View.GONE
                 isShow = true
             } else if (isShow){
                 collapsing_details.title = " "
@@ -86,6 +85,15 @@ class MovieDetailsActivity : AppCompatActivity() {
                 HtmlCompat.FROM_HTML_MODE_LEGACY
             )
 
+            if (!genres.isNullOrEmpty()) {
+                text_view_genres.text = genresFormatted
+                text_view_genres.visibility = View.VISIBLE
+            }
+
+            if (premiereDate != null) {
+                text_view_premier_date.text = dateFormatted
+                text_view_premier_date.visibility = View.VISIBLE
+            }
             if (!trailers.isNullOrEmpty()) {
                 button_open_trailer.visibility = View.VISIBLE
             }

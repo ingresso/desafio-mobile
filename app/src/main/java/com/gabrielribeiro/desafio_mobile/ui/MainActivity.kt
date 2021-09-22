@@ -1,7 +1,6 @@
 package com.gabrielribeiro.desafio_mobile.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +10,6 @@ import com.gabrielribeiro.desafio_mobile.R
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
 import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieViewModel
-import com.gabrielribeiro.desafio_mobile.utils.Resource
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -53,12 +51,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_toolbar, menu)
+        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_search) {
+        if (item.itemId == R.id.menu_open_search) {
             startActivity(SearchMovieActivity.newIntent(this))
         }
         return super.onOptionsItemSelected(item)

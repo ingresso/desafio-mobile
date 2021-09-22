@@ -33,7 +33,7 @@ class MovieAdapter(val itemWidth : Int, val itemHeight : Int, private val onMovi
 
         fun bind(movie : MovieResponse) {
             Glide.with(itemView.context)
-                .load(if (movie.images.isEmpty()) R.drawable.bg_empty_movie else movie.images.first().url) // image url
+                .load(if (movie.images.isEmpty()) R.drawable.bg_empty_movie else movie.images.first().url)
                 .placeholder(R.drawable.bg_empty_movie)
                 .error(R.drawable.bg_empty_movie)
                 .into(imageViewMovie)

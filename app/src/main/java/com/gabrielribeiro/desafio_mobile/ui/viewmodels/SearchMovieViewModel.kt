@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepository
 
-class SearchMovieViewModel(private val repository : MovieRepository)  {
+class SearchMovieViewModel(private val repository: MovieRepository) : MovieViewModel(repository)  {
 
     class SearchViewModelFactory(private val repository : MovieRepository) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {

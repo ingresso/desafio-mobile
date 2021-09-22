@@ -7,10 +7,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gabrielribeiro.desafio_mobile.R
 import com.gabrielribeiro.desafio_mobile.data.remote.model.MovieResponse
-import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
 import com.gabrielribeiro.desafio_mobile.utils.Resource
 import com.gabrielribeiro.desafio_mobile.utils.Resource.Failure
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieViewModel
+import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
 import kotlinx.android.synthetic.main.fragment_feed.*
 import kotlinx.android.synthetic.main.include_progress_layout.view.*
 

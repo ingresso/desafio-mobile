@@ -82,6 +82,7 @@
                 android:layout_marginEnd="16dp">
 
                 <LinearLayout
+                    android:id="@+id/container_movie_information"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -100,16 +101,30 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/button_open_trailer"
+                        style="@style/DesafioMobileButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:icon="@drawable/ic_play"
-                        android:text="Trailer"
-                        android:textColor="@color/black"
-                        app:iconTint="@color/black"
-                        android:visibility="gone"
                         android:layout_marginTop="4dp"
+                        android:text="@string/button_open_trailer_text"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        app:icon="@drawable/ic_play"
                         app:iconGravity="textStart"
-                        style="@style/DesafioMobileButton"/>
+                        app:iconTint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/text_view_premier_date"
+                        style="@style/DesafioMobileTextView.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:textColor="@color/yellow"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_title_movie"
+                        tools:text="01/2020/10" />
 
                     <TextView
                         android:id="@+id/text_view_synopsis"
@@ -127,18 +142,28 @@
                         android:layout_height="1dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
-                        android:background="#52ffffff"/>
+                        android:background="#52ffffff" />
+
+                    <TextView
+                        android:id="@+id/text_view_genres"
+                        style="@style/DesafioMobileTextView.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/genres_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_synopsis" />
 
                     <TextView
                         android:id="@+id/text_view_cast"
                         style="@style/DesafioMobileTextView.Medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/cast_text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text_view_synopsis"
-                        android:text="@string/cast_text" />
-
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_synopsis" />
 
                     <TextView
                         android:id="@+id/text_view_director"
@@ -146,10 +171,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:text="@string/director_text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text_view_cast"
-                        android:text="@string/director_text"/>
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_cast" />
 
                     <TextView
                         android:id="@+id/text_view_distributor"
@@ -157,10 +182,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:text="@string/distribuidor_text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text_view_cast"
-                        android:text="@string/distribuidor_text"/>
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_cast" />
 
                     <TextView
                         android:id="@+id/text_view_country"
@@ -168,93 +193,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:text="@string/country_text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text_view_cast"
-                        android:text="@string/country_text"/>
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_cast" />
 
                 </LinearLayout>
-
-
-
-
-
-
-
-                <com.google.android.material.button.MaterialButton
-                    style="@style/DesafioMobileButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/background_theme"
-                    android:gravity="center_vertical"
-                    android:text="Trailer"
-                    android:visibility="gone"
-                    app:icon="@drawable/ic_play"
-                    app:iconPadding="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-    <!-- <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:fillViewport="true"
-        android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guide_line"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.3" />
-
-            <ImageView
-                android:id="@+id/image_movie_details"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:src="@drawable/ic_play"
-                android:adjustViewBounds="true"
-                app:layout_constraintBottom_toTopOf="@+id/guide_line"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/text_name_movie_details"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                style="@style/DesafioMobileTextView.Large.Bold"
-                android:layout_margin="16dp"
-                app:layout_constraintTop_toBottomOf="@id/guide_line"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:text="Nameeee" />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:icon="@drawable/ic_play"
-                android:text="Trailer"
-                style="@style/DesafioMobileButton"
-                android:gravity="center_vertical"
-                android:layout_margin="16dp"
-                app:iconPadding="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_name_movie_details" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView> -->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

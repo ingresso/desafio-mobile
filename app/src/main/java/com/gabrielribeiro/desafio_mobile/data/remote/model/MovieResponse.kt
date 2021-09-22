@@ -44,5 +44,9 @@ data class MovieResponse(
 
     val dateFormatted   : String? get() = premiereDateDate?.let { BackEndUtils.formatDateFormatPremiereDate(it) }
 
+    val genresFormatted : String get() = if (genres.size > 1) {
+        "${genres.first()}, ${genres.last()}"
+    } else genres.first()
+
 
 }

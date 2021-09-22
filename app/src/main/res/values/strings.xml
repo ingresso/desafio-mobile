@@ -14,8 +14,10 @@
     <!-- MovieDetailsActivity -->
     <string name="cast_text"><b> Elenco: </b> %1$s</string>
     <string name="director_text"><b> Diretor: </b> %1$s</string>
+    <string name="genres_text"><b> Gêneros: </b> %1$s</string>
     <string name="distribuidor_text"><b> Distribuidor: </b> %1$s</string>
     <string name="country_text"><b> País de Origem: </b> %1$s</string>
+    <string name="button_open_trailer_text">Trailer</string>
 
 
 </resources>

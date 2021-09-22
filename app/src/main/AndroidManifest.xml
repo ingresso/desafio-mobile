@@ -17,6 +17,7 @@
             android:theme="@style/DesafioMobie.NoActionBar"/>
         <activity
             android:name=".ui.SearchMovieActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:exported="true"
             android:theme="@style/DesafioMobie.NoActionBar" />
         <activity
