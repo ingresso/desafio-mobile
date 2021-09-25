@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/image_view_movie_item"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,23 +22,23 @@
         android:id="@+id/image_view_bg_shadow"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        app:layout_constraintStart_toStartOf="@+id/image_view_movie_item"
+        app:layout_constraintEnd_toEndOf="@id/image_view_movie_item"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/bg_image_item_shadow"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
         android:id="@+id/text_view_movie_title"
         style="@style/DesafioMobileTextView.Large.Bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxLines="2"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:maxLines="2"
         app:layout_constraintBottom_toTopOf="@+id/text_view_movie_date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_movie_item"
+        app:layout_constraintStart_toStartOf="@+id/image_view_movie_item"
         tools:text="Título filme" />
 
     <TextView
@@ -46,13 +46,13 @@
         style="@style/DesafioMobileTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="@+id/image_view_movie_item"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:textColor="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_movie_item"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_movie_item"
+        app:layout_constraintStart_toStartOf="@+id/image_view_movie_item"
         tools:text="00/00/0000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

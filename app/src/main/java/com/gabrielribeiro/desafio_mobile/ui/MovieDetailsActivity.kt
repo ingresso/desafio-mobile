@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_movie_details.*
 
 class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var movieResponse : MovieResponse
+    private lateinit var nationalUrl : String
     companion object {
         private const val TAG = "MovieDetailsActivity"
         private const val ARG_MOVIE = "arg_movie"
@@ -29,6 +30,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_movie_details)
 
         movieResponse = intent.getParcelableExtra(ARG_MOVIE)!!
+        nationalUrl = movieResponse.nationalSiteURL
 
         if (movieResponse.cast.isNullOrEmpty()) {
             text_view_cast.visibility = View.GONE
@@ -60,6 +62,19 @@ class MovieDetailsActivity : AppCompatActivity() {
             val uri = Uri.parse(movieResponse.trailers!!.first().url)
             startActivity(Intent(Intent.ACTION_VIEW, uri))
         }
+
+        button_share_movie.setOnClickListener {
+            val shareIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, generateShareContent())
+                type = "text/plain"
+            }
+            startActivity(Intent.createChooser(shareIntent, "Desafio Mobile"))
+        }
+    }
+
+    private fun generateShareContent(): String {
+        return "${getString(R.string.share_movie_text)} \n$nationalUrl"
     }
 
     private fun setupMovieDetails() {
@@ -91,7 +106,10 @@ class MovieDetailsActivity : AppCompatActivity() {
             }
 
             if (premiereDate != null) {
-                text_view_premier_date.text = dateFormatted
+                text_view_premier_date.text = HtmlCompat.fromHtml(
+                    getString(R.string.premiere_text, dateFormatted),
+                    HtmlCompat.FROM_HTML_MODE_LEGACY
+                )
                 text_view_premier_date.visibility = View.VISIBLE
             }
             if (!trailers.isNullOrEmpty()) {

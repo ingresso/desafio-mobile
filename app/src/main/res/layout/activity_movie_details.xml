@@ -84,7 +84,7 @@
                 <LinearLayout
                     android:id="@+id/container_movie_information"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -119,12 +119,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:gravity="center"
+                        android:text="@string/premiere_text"
                         android:textColor="@color/yellow"
                         android:visibility="gone"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text_title_movie"
-                        tools:text="01/2020/10" />
+                        app:layout_constraintTop_toBottomOf="@+id/text_title_movie" />
 
                     <TextView
                         android:id="@+id/text_view_synopsis"
@@ -199,6 +199,36 @@
                         app:layout_constraintTop_toBottomOf="@+id/text_view_cast" />
 
                 </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container_movie_information">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_share_movie"
+                        style="@style/DesafioMobileButton.Share"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="5"
+                        android:text="@string/button_share_movie" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/DesafioMobileButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="5"
+                        android:text="Favoritar" />
+
+                </LinearLayout>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

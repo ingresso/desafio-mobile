@@ -7,6 +7,23 @@
     android:background="?attr/backgroundColor"
     tools:context=".ui.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/include_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:text="@string/text_all"/>
+    </androidx.appcompat.widget.Toolbar>
+
     <FrameLayout
         android:id="@+id/frame_layout_main"
         android:layout_width="match_parent"
@@ -14,21 +31,21 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar">
 
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_main"
+        style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="match_parent"
-        android:background="@color/background_theme"
+        android:layout_height="wrap_content"
+        android:background="@color/background_theme_dark"
         app:itemIconTint="@color/bg_icon_color_navigation"
         app:itemTextColor="@color/bg_icon_color_navigation"
-        style="@style/Animation.Design.BottomSheetDialog"
-        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/menu_navigation_main"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navigation_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,17 +7,30 @@
 
     <!-- FeedFragment -->
     <string name="toolbar_tile_feed">Desafio mobile</string>
+    <string name="text_all">Todos</string>
+    <string name="text_debut">Em Breve</string>
+    <string name="label_pre_sale">Em Pré-venda</string>
+    <string name="label_coming_soon">Em Breve</string>
+    <string name="text_movies_empty">No momento não possuí filmes</string>
+
 
     <!-- SearchMovieActivity -->
     <string name="edit_hint_search_movie">Pesquise</string>
 
     <!-- MovieDetailsActivity -->
     <string name="cast_text"><b> Elenco: </b> %1$s</string>
+    <string name="premiere_text"><b> Entreia em: </b> %1$s</string>
     <string name="director_text"><b> Diretor: </b> %1$s</string>
     <string name="genres_text"><b> Gêneros: </b> %1$s</string>
     <string name="distribuidor_text"><b> Distribuidor: </b> %1$s</string>
     <string name="country_text"><b> País de Origem: </b> %1$s</string>
     <string name="button_open_trailer_text">Trailer</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="button_share_movie">Compartilhar</string>
+    <string name="share_movie_text">Confira esse filme</string>
 
 
 </resources>

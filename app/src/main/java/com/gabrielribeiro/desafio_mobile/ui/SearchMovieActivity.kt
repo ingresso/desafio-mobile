@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
 import com.gabrielribeiro.desafio_mobile.R
 import com.gabrielribeiro.desafio_mobile.data.remote.model.MovieResponse
+import com.gabrielribeiro.desafio_mobile.repositories.MovieDataSource
 import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
 import com.gabrielribeiro.desafio_mobile.utils.Resource
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.SearchMovieViewModel
@@ -33,11 +34,10 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_movie)
 
+        Log.d("SearchMovieActivity", "onCreate: ")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         viewModel = ViewModelProvider(this, SearchMovieViewModel.SearchViewModelFactory(
-            MovieRepositoryImplement(
-                RetrofitInstance().getApi()
-            )
+            MovieRepositoryImplement(RetrofitInstance().getApi())
         )).get(SearchMovieViewModel::class.java)
 
         searchAdapter = SearchAdapter(this)
@@ -49,7 +49,7 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
     }
 
     private fun observerViewModel() {
-        viewModel.getMovies().observe(this, {
+        viewModel.moviesListResponse.observe(this, {
             when (it) {
                 is Resource.Loading -> {
                     include_progress_indicator.progress_indicator.visibility = View.VISIBLE
@@ -62,6 +62,7 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
                 }
                 is Resource.Success -> {
                     if (it.data != null) {
+                        Log.d("Resource", "observerViewModel: ${it.data.movieResponses}")
                         setMovieList(it.data.movieResponses.sortedBy { movie -> movie.dateMillis })
                         updateMovieList()
                         include_progress_indicator.progress_indicator.visibility = View.GONE
@@ -72,6 +73,11 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
         })
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.getMovies()
+        Log.d("SearchMovieActivity", "onCreate: ")
+    }
     private fun setMovieList(movieResponses: List<MovieResponse>) {
         synchronized(listLock) {
             movieArray = movieResponses as MutableList<MovieResponse>

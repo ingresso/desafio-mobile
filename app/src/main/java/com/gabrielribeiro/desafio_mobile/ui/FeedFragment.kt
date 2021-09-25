@@ -3,10 +3,12 @@ package com.gabrielribeiro.desafio_mobile.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gabrielribeiro.desafio_mobile.R
 import com.gabrielribeiro.desafio_mobile.data.remote.model.MovieResponse
+import com.gabrielribeiro.desafio_mobile.data.remote.model.MoviesListResponse
 import com.gabrielribeiro.desafio_mobile.utils.Resource
 import com.gabrielribeiro.desafio_mobile.utils.Resource.Failure
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieViewModel
@@ -16,11 +18,14 @@ import kotlinx.android.synthetic.main.include_progress_layout.view.*
 
 
 class FeedFragment : Fragment(), OnMovieClickListener {
+    private var movieResponseList = mutableListOf<MovieResponse>()
     private lateinit var viewModel: MovieViewModel
     private lateinit var movieAdapter: MovieAdapter
+    private var currentActiveStatus = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -28,6 +33,7 @@ class FeedFragment : Fragment(), OnMovieClickListener {
         savedInstanceState: Bundle?
     ): View? {
 
+        viewModel = (activity as MainActivity).viewModel
         return inflater.inflate(R.layout.fragment_feed, container, false)
     }
 
@@ -35,14 +41,41 @@ class FeedFragment : Fragment(), OnMovieClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
-
-        viewModel = (activity as MainActivity).viewModel
+        setupHooks()
         observerViewModel()
 
     }
 
+    private fun setupHooks() {
+        radio_group_labels.setOnCheckedChangeListener { _, id ->
+            if (id == R.id.radio_button_exhibition) {
+                setActiveStatus(false)
+            } else if (id == R.id.radio_button_coming_soon) {
+                setActiveStatus(true)
+            }
+        }
+    }
+
+    private fun setActiveStatus(status: Boolean) {
+        currentActiveStatus = status
+        refreshRecycler()
+    }
+
+    private fun refreshRecycler() {
+        val list = if (currentActiveStatus) {
+            movieResponseList.filter { movie -> movie.premiereDate != null }.sortedBy { movie -> movie.dateMillis }
+        } else {
+            movieResponseList.filter { a -> a.isPlaying }
+        }
+        if (list.isEmpty()) {
+            text_movies_empty.visibility = View.VISIBLE
+        }
+        movieAdapter.submitList(list)
+    }
+
+
     private fun observerViewModel() {
-        viewModel.getMovies().observe(viewLifecycleOwner, {
+        viewModel.moviesListResponse.observe(viewLifecycleOwner, {
             when (it) {
                 is Resource.Loading -> {
                     include_progress_indicator.progress_indicator.visibility = View.VISIBLE
@@ -54,15 +87,15 @@ class FeedFragment : Fragment(), OnMovieClickListener {
                 }
                 is Resource.Success -> {
                     if (it.data != null) {
-                        val premiereDateFiltered =
-                            it.data.movieResponses.filter { movie -> movie.premiereDate != null }
-                        movieAdapter.submitList(premiereDateFiltered.sortedBy { movie -> movie.dateMillis })
+                        movieResponseList = it.data.movieResponses as MutableList<MovieResponse>
+                        refreshRecycler()
                         include_progress_indicator.progress_indicator.visibility = View.GONE
                     }
                 }
             }
         })
     }
+
 
     private fun setupRecyclerView() {
         recycler_view_feed.apply {
@@ -88,5 +121,9 @@ class FeedFragment : Fragment(), OnMovieClickListener {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.getMovies()
+    }
 
 }

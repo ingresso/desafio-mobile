@@ -14,11 +14,11 @@
         <activity
             android:name=".ui.MovieDetailsActivity"
             android:exported="true"
-            android:theme="@style/DesafioMobie.NoActionBar"/>
+            android:theme="@style/DesafioMobie.NoActionBar" />
         <activity
             android:name=".ui.SearchMovieActivity"
-            android:parentActivityName=".ui.MainActivity"
             android:exported="true"
+            android:parentActivityName=".ui.MainActivity"
             android:theme="@style/DesafioMobie.NoActionBar" />
         <activity
             android:name=".ui.MainActivity"

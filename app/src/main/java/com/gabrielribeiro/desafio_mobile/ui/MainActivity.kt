@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.gabrielribeiro.desafio_mobile.R
+import com.gabrielribeiro.desafio_mobile.repositories.MovieDataSource
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
 import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.include_custom_toolbar.view.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var viewModel : MovieViewModel
@@ -19,20 +21,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.title = getString(R.string.toolbar_tile_feed)
+        setSupportActionBar(include_toolbar)
+        supportActionBar?.title = ""
 
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout_main, FeedFragment()).commit()
         bottom_navigation_main.selectedItemId = R.id.menu_feed
         bottom_navigation_main.setOnItemSelectedListener {item ->
             var selectedFragment : Fragment? = null
             when(item.itemId) {
-                R.id.menu_debut -> {
-
-                }
                 R.id.menu_feed -> {
                     selectedFragment = FeedFragment()
                 }
-
                 R.id.menu_favorite -> {
                     selectedFragment = FavoriteFragment()
                 }
@@ -42,10 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        viewModel = ViewModelProvider(this, MovieViewModel.MovieViewModelFactory(
-            MovieRepositoryImplement(
-            RetrofitInstance().getApi()
-        )
+        viewModel = ViewModelProvider(this, MovieViewModel.MovieViewModelFactory(MovieRepositoryImplement(RetrofitInstance().getApi())
         )).get(MovieViewModel::class.java)
 
     }
