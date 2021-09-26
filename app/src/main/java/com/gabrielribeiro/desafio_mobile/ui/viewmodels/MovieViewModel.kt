@@ -1,22 +1,21 @@
 package com.gabrielribeiro.desafio_mobile.ui.viewmodels
 
 import androidx.lifecycle.*
-import com.gabrielribeiro.desafio_mobile.data.remote.model.MovieResponse
-import com.gabrielribeiro.desafio_mobile.data.remote.model.MoviesListResponse
+import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
+import com.gabrielribeiro.desafio_mobile.data.remote.models.MoviesListResponse
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepository
 import com.gabrielribeiro.desafio_mobile.utils.Resource
 import kotlinx.coroutines.launch
 
 open class MovieViewModel(private val repository : MovieRepository) : ViewModel() {
 
-    val moviesListResponse = MutableLiveData<Resource<MoviesListResponse>>()
+    private val _moviesListResponse = MutableLiveData<Resource<MoviesListResponse>>()
+    val moviesListResponse : LiveData<Resource<MoviesListResponse>> get() = _moviesListResponse
 
     fun getMovies()  {
         viewModelScope.launch {
-            moviesListResponse.value = Resource.Loading()
-            moviesListResponse.value = repository.getMovies()
-            //emit(Resource.Loading())
-            //emit(repository.getMovies())
+            _moviesListResponse.value = Resource.Loading()
+            _moviesListResponse.value = repository.getMovies()
         }
     }
 

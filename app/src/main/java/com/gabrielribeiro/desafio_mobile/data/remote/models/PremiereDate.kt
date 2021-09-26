@@ -1,4 +1,4 @@
-package com.gabrielribeiro.desafio_mobile.data.remote.model
+package com.gabrielribeiro.desafio_mobile.data.remote.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

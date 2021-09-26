@@ -1,10 +1,17 @@
 package com.gabrielribeiro.desafio_mobile.repositories
 
-import com.gabrielribeiro.desafio_mobile.data.remote.model.MoviesListResponse
+import androidx.lifecycle.LiveData
+import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
+import com.gabrielribeiro.desafio_mobile.data.remote.models.MoviesListResponse
 import com.gabrielribeiro.desafio_mobile.utils.Resource
-import retrofit2.Response
 
 interface MovieRepository {
 
     suspend fun getMovies() : Resource<MoviesListResponse>
+
+    suspend fun saveMovie(movie : MovieEntity) : Long
+
+    fun getAllMoviesSaved() : LiveData<List<MovieEntity>>
+
+
 }

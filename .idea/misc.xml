@@ -6,10 +6,17 @@
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2657407407407407" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/bg_empty_movie.xml" value="0.21944444444444444" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/bg_image_item_shadow.xml" value="0.21944444444444444" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/bg_radio_button_disable.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/bg_radio_button_home_enable.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/bg_radio_button_home_selector.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/bg_spinner_filter.xml" value="0.2657407407407407" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/color_radio_button_home.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_arrow_back.xml" value="0.2657407407407407" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.2890625" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_clear.xml" value="0.2657407407407407" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_debut.xml" value="0.2657407407407407" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_empty_movie.xml" value="0.2890625" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_end_icon.xml" value="0.2657407407407407" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_favorite.xml" value="0.2657407407407407" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2657407407407407" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_movies.xml" value="0.2657407407407407" />
@@ -18,15 +25,20 @@
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/drawable/ic_share.xml" value="0.2657407407407407" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout-land/activity_movie_details.xml" value="0.2310405643738977" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/activity_main.xml" value="0.18" />
-        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/activity_movie_details.xml" value="0.14" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/activity_main2.xml" value="0.13272543059777103" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/activity_movie_details.xml" value="0.33" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/activity_search_movie.xml" value="0.25" />
-        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/fragment_feed.xml" value="0.24094202898550723" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/dropdow_item.xml" value="0.23505434782608695" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/fragment_feed.xml" value="0.33" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/fragment_home.xml" value="0.24139492753623187" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/fragment_search.xml" value="0.18568840579710144" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/include_custom_toolbar.xml" value="0.22780797101449277" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/include_progress_layout.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/progress_layout.xml" value="0.22644927536231885" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/row_movie_item.xml" value="0.16" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/row_movie_search_item.xml" value="0.2223731884057971" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/layout/row_movie_time.xml" value="0.1802536231884058" />
+        <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/menu/menu_navigation_main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/menu/menu_toolbar.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Gabriel/AndroidStudioProjects/desafiomobile/app/src/main/res/menu/menu_toolbar_main.xml" value="0.14270833333333333" />

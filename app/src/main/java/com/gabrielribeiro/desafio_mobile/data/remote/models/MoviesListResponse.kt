@@ -1,4 +1,4 @@
-package com.gabrielribeiro.desafio_mobile.data.remote.model
+package com.gabrielribeiro.desafio_mobile.data.remote.models
 
 import com.google.gson.annotations.SerializedName
 

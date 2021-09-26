@@ -2,25 +2,26 @@ package com.gabrielribeiro.desafio_mobile.ui
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.gabrielribeiro.desafio_mobile.data.database.MovieDatabase
+import com.gabrielribeiro.desafio_mobile.data.remote.models.MovieResponse
+import com.gabrielribeiro.desafio_mobile.databinding.ActivitySearchMovieBinding
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
-import com.gabrielribeiro.desafio_mobile.R
-import com.gabrielribeiro.desafio_mobile.data.remote.model.MovieResponse
-import com.gabrielribeiro.desafio_mobile.repositories.MovieDataSource
 import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
-import com.gabrielribeiro.desafio_mobile.utils.Resource
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.SearchMovieViewModel
 import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
-import kotlinx.android.synthetic.main.activity_search_movie.*
-import kotlinx.android.synthetic.main.include_progress_layout.view.*
+import com.gabrielribeiro.desafio_mobile.utils.Resource
 
 class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
+    private var _binding : ActivitySearchMovieBinding? = null
+    private val binding : ActivitySearchMovieBinding get() = _binding!!
+
     private lateinit var searchAdapter : SearchAdapter
     private val listLock = Any()
     private var movieArray = mutableListOf<MovieResponse>()
@@ -32,17 +33,19 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search_movie)
+
+        _binding = ActivitySearchMovieBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         Log.d("SearchMovieActivity", "onCreate: ")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         viewModel = ViewModelProvider(this, SearchMovieViewModel.SearchViewModelFactory(
-            MovieRepositoryImplement(RetrofitInstance().getApi())
+            MovieRepositoryImplement(RetrofitInstance().getApi(), MovieDatabase(this))
         )).get(SearchMovieViewModel::class.java)
 
         searchAdapter = SearchAdapter(this)
-        recycler_view_search.adapter = searchAdapter
-        edit_text_search.requestFocus()
+        binding.recyclerViewSearch.adapter = searchAdapter
+        binding.editTextSearch.requestFocus()
         setupHooks()
         observerViewModel()
 
@@ -52,12 +55,12 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
         viewModel.moviesListResponse.observe(this, {
             when (it) {
                 is Resource.Loading -> {
-                    include_progress_indicator.progress_indicator.visibility = View.VISIBLE
+                    binding.includeProgressIndicator.progressIndicator.visibility = View.VISIBLE
                     Log.d("FeedFragment", "Loading:")
                 }
                 is Resource.Failure -> {
                     Log.d("FeedFragment", "Failure: ${it.message}")
-                    include_progress_indicator.progress_indicator.visibility = View.GONE
+                    binding.includeProgressIndicator.progressIndicator.visibility = View.GONE
 
                 }
                 is Resource.Success -> {
@@ -65,7 +68,7 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
                         Log.d("Resource", "observerViewModel: ${it.data.movieResponses}")
                         setMovieList(it.data.movieResponses.sortedBy { movie -> movie.dateMillis })
                         updateMovieList()
-                        include_progress_indicator.progress_indicator.visibility = View.GONE
+                        binding.includeProgressIndicator.progressIndicator.visibility = View.GONE
                     }
                 }
             }
@@ -85,15 +88,15 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
     }
 
     private fun setupHooks() {
-        edit_text_search.addTextChangedListener(object : TextWatcher {
+        binding.editTextSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(char: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if (char != null) {
                     if (char.isEmpty()) {
-                        image_clear.visibility = View.INVISIBLE
+                        binding.imageClear.visibility = View.INVISIBLE
                     } else {
-                        image_clear.visibility = View.VISIBLE
+                        binding.imageClear.visibility = View.VISIBLE
                     }
                 }
                 updateMovieList()
@@ -103,12 +106,12 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
 
         })
 
-        image_clear.setOnClickListener {
-            edit_text_search.setText("")
+        binding.imageClear.setOnClickListener {
+            binding.editTextSearch.setText("")
             filteredMovieArray.clear()
         }
 
-        image_back.setOnClickListener {
+        binding.imageBack.setOnClickListener {
             finish()
         }
     }
@@ -116,7 +119,7 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
     private fun updateMovieList() {
         synchronized(listLock) {
             filteredMovieArray = movieArray.filter {
-                it.title.contains(edit_text_search.text.toString(), ignoreCase = true)
+                it.title.contains(binding.editTextSearch.text.toString(), ignoreCase = true)
             } as MutableList<MovieResponse>
            searchAdapter.submitList(filteredMovieArray)
         }
@@ -128,5 +131,9 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
         }
     }
 
+    override fun onDestroy() {
+        _binding = null
+        super.onDestroy()
+    }
 
 }

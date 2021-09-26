@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gabrielribeiro.desafio_mobile.R
-import com.gabrielribeiro.desafio_mobile.data.remote.model.MovieResponse
+import com.gabrielribeiro.desafio_mobile.data.remote.models.MovieResponse
 import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
 import com.bumptech.glide.request.RequestOptions
 
@@ -41,6 +41,7 @@ class MovieAdapter(val itemWidth : Int, val itemHeight : Int, private val onMovi
             Glide.with(itemView.context)
                 .load(if (movie.images.isEmpty()) R.drawable.bg_empty_movie else movie.images.first().url)
                 .apply(options.fitCenter())
+                .centerCrop()
                 .placeholder(R.drawable.bg_empty_movie)
                 .error(R.drawable.bg_empty_movie)
                 .into(imageViewMovie)

@@ -7,26 +7,30 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.gabrielribeiro.desafio_mobile.R
-import com.gabrielribeiro.desafio_mobile.repositories.MovieDataSource
+import com.gabrielribeiro.desafio_mobile.data.database.MovieDatabase
+import com.gabrielribeiro.desafio_mobile.databinding.ActivityMainBinding
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
 import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieViewModel
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.include_custom_toolbar.view.*
 
 class MainActivity : AppCompatActivity() {
+    private var _binding : ActivityMainBinding? = null
+    private val binding : ActivityMainBinding get() = _binding!!
+
     lateinit var viewModel : MovieViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        setSupportActionBar(include_toolbar)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.includeToolbar)
         supportActionBar?.title = ""
 
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout_main, FeedFragment()).commit()
-        bottom_navigation_main.selectedItemId = R.id.menu_feed
-        bottom_navigation_main.setOnItemSelectedListener {item ->
+        binding.bottomNavigationMain.selectedItemId = R.id.menu_feed
+        binding.bottomNavigationMain.setOnItemSelectedListener {item ->
             var selectedFragment : Fragment? = null
             when(item.itemId) {
                 R.id.menu_feed -> {
@@ -41,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        viewModel = ViewModelProvider(this, MovieViewModel.MovieViewModelFactory(MovieRepositoryImplement(RetrofitInstance().getApi())
+        viewModel = ViewModelProvider(this, MovieViewModel.MovieViewModelFactory(MovieRepositoryImplement(RetrofitInstance().getApi(), MovieDatabase(this))
         )).get(MovieViewModel::class.java)
 
     }
@@ -58,4 +62,8 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onDestroy() {
+        _binding = null
+        super.onDestroy()
+    }
 }

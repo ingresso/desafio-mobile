@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gabrielribeiro.desafio_mobile.R
-import com.gabrielribeiro.desafio_mobile.data.remote.model.MovieResponse
+import com.gabrielribeiro.desafio_mobile.data.remote.models.MovieResponse
 import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
 
 class SearchAdapter(private val onMovieClickListener : OnMovieClickListener) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {

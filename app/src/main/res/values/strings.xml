@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">desafio-mobile</string>
+
     <!-- MainActivity -->
     <string name="menu_feed">Filmes</string>
     <string name="menu_favorite">Favoritos</string>
@@ -12,7 +13,6 @@
     <string name="label_pre_sale">Em Pré-venda</string>
     <string name="label_coming_soon">Em Breve</string>
     <string name="text_movies_empty">No momento não possuí filmes</string>
-
 
     <!-- SearchMovieActivity -->
     <string name="edit_hint_search_movie">Pesquise</string>
@@ -30,7 +30,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="button_share_movie">Compartilhar</string>
-    <string name="share_movie_text">Confira esse filme</string>
-
+    <string name="share_movie_text">Confira esse filme!</string>
 
 </resources>
