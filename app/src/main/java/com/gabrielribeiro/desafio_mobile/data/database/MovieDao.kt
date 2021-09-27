@@ -13,7 +13,6 @@ interface MovieDao {
     @Query("SELECT * FROM movies")
     fun getAllMoviesSaved(): LiveData<List<MovieEntity>?>
 
-    //@Delete
     @Query("DELETE FROM movies WHERE idDatabase = :idDatabase")
     suspend fun deleteMovie(idDatabase: Int)
 

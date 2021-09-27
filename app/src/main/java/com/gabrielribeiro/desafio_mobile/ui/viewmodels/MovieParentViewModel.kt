@@ -6,10 +6,13 @@ import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
 import com.gabrielribeiro.desafio_mobile.data.remote.models.MoviesListResponse
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepository
 import com.gabrielribeiro.desafio_mobile.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
-open class MovieParentViewModel(private val repository : MovieRepository) : ViewModel(){
+@HiltViewModel
+open class MovieParentViewModel @Inject constructor(private val repository : MovieRepository) : ViewModel(){
 
     private val _moviesListResponse = MutableLiveData<Resource<MoviesListResponse>>()
     val moviesListResponse : LiveData<Resource<MoviesListResponse>> get() = _moviesListResponse
@@ -45,9 +48,4 @@ open class MovieParentViewModel(private val repository : MovieRepository) : View
         }
     }
 
-    class MovieParentViewModelFactory(private val repository : MovieRepository) : ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return MovieParentViewModel(repository) as T
-        }
-    }
 }

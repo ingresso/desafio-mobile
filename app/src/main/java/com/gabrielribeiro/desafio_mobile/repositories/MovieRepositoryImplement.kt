@@ -5,8 +5,9 @@ import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
 import com.gabrielribeiro.desafio_mobile.data.remote.api.MovieAPi
 import com.gabrielribeiro.desafio_mobile.data.remote.models.MoviesListResponse
 import com.gabrielribeiro.desafio_mobile.utils.Resource
+import javax.inject.Inject
 
-class MovieRepositoryImplement(private val api: MovieAPi, private val movieDatabase: MovieDatabase) : MovieRepository {
+class MovieRepositoryImplement @Inject constructor (private val api: MovieAPi, private val movieDatabase: MovieDatabase) : MovieRepository {
 
     override suspend fun getMovies(): Resource<MoviesListResponse> {
         return try {

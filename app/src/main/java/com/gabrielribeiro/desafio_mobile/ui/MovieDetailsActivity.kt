@@ -6,28 +6,28 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.gabrielribeiro.desafio_mobile.R
-import com.gabrielribeiro.desafio_mobile.data.database.MovieDatabase
 import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
 import com.gabrielribeiro.desafio_mobile.data.remote.models.MovieResponse
 import com.gabrielribeiro.desafio_mobile.databinding.ActivityMovieDetailsBinding
-import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
-import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieDetailsViewModel
 import com.gabrielribeiro.desafio_mobile.utils.Resource
 import com.google.android.material.appbar.AppBarLayout
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MovieDetailsActivity : AppCompatActivity() {
     private var idMovieEntity: Int? = -1
     private var _binding: ActivityMovieDetailsBinding? = null
     private val binding: ActivityMovieDetailsBinding get() = _binding!!
-    private lateinit var viewModel: MovieDetailsViewModel
+
+    val viewModel : MovieDetailsViewModel by viewModels()
 
     private lateinit var movieResponse: MovieResponse
     private lateinit var nationalUrl: String
@@ -50,11 +50,6 @@ class MovieDetailsActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbarDetails)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        viewModel = ViewModelProvider(this,
-            MovieDetailsViewModel.MovieDetailsViewModelFactory(MovieRepositoryImplement(
-                RetrofitInstance().getApi(),
-                MovieDatabase(this)))).get(MovieDetailsViewModel::class.java)
 
         movieResponse = intent.getParcelableExtra(ARG_MOVIE)!!
         nationalUrl = movieResponse.nationalSiteURL

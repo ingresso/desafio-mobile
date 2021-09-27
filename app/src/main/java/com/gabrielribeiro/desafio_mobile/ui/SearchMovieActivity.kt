@@ -7,17 +7,16 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import com.gabrielribeiro.desafio_mobile.data.database.MovieDatabase
 import com.gabrielribeiro.desafio_mobile.data.remote.models.MovieResponse
 import com.gabrielribeiro.desafio_mobile.databinding.ActivitySearchMovieBinding
-import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
-import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
-import com.gabrielribeiro.desafio_mobile.ui.viewmodels.SearchHomeViewModel
+import com.gabrielribeiro.desafio_mobile.ui.viewmodels.SearchMovieViewModel
 import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
 import com.gabrielribeiro.desafio_mobile.utils.Resource
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
     private var _binding : ActivitySearchMovieBinding? = null
     private val binding : ActivitySearchMovieBinding get() = _binding!!
@@ -26,7 +25,8 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
     private val listLock = Any()
     private var movieArray = mutableListOf<MovieResponse>()
     private var filteredMovieArray = mutableListOf<MovieResponse>()
-    private lateinit var viewModel : SearchHomeViewModel
+
+    val viewModel : SearchMovieViewModel by viewModels()
 
     companion object {
         fun newIntent(context: Context) = Intent(context, SearchMovieActivity::class.java)
@@ -39,9 +39,6 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
 
         Log.d("SearchMovieActivity", "onCreate: ")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        viewModel = ViewModelProvider(this, SearchHomeViewModel.SearchViewModelFactory(
-            MovieRepositoryImplement(RetrofitInstance().getApi(), MovieDatabase(this))
-        )).get(SearchHomeViewModel::class.java)
 
         searchAdapter = SearchAdapter(this)
         binding.recyclerViewSearch.adapter = searchAdapter

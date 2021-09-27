@@ -1,18 +1,10 @@
 package com.gabrielribeiro.desafio_mobile.ui.viewmodels
 
-import android.util.Log
-import androidx.lifecycle.*
-import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepository
-import com.gabrielribeiro.desafio_mobile.utils.Resource
-import kotlinx.coroutines.launch
-import java.lang.Exception
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MovieDetailsViewModel(private val movieRepository: MovieRepository) : MovieParentViewModel(movieRepository) {
+@HiltViewModel
+class MovieDetailsViewModel @Inject constructor(private val repository: MovieRepository) : MovieParentViewModel(repository) {
 
-    class MovieDetailsViewModelFactory(private val movieRepository: MovieRepository) : ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return MovieDetailsViewModel(movieRepository) as T
-        }
-    }
 }

@@ -15,6 +15,7 @@
             android:name=".ui.MovieDetailsActivity"
             android:exported="true"
             android:screenOrientation="portrait"
+            android:parentActivityName=".ui.HomeActivity"
             android:theme="@style/DesafioMobie.NoActionBar" />
         <activity
             android:name=".ui.SearchMovieActivity"
