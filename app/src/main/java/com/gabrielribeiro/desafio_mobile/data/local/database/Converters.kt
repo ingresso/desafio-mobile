@@ -1,4 +1,4 @@
-package com.gabrielribeiro.desafio_mobile.data.database
+package com.gabrielribeiro.desafio_mobile.data.local.database
 
 import androidx.room.TypeConverter
 import com.gabrielribeiro.desafio_mobile.data.remote.models.Image

@@ -2,7 +2,7 @@ package com.gabrielribeiro.desafio_mobile.di
 
 import android.content.Context
 import androidx.room.Room
-import com.gabrielribeiro.desafio_mobile.data.database.MovieDatabase
+import com.gabrielribeiro.desafio_mobile.data.local.database.MovieDatabase
 import com.gabrielribeiro.desafio_mobile.data.remote.api.MovieAPi
 import com.gabrielribeiro.desafio_mobile.utils.Constants
 import com.gabrielribeiro.desafio_mobile.utils.Constants.Companion.MOVIE_DATABASE_NAME

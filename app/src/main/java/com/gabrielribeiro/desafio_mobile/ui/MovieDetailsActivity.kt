@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import com.bumptech.glide.Glide
 import com.gabrielribeiro.desafio_mobile.R
-import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
+import com.gabrielribeiro.desafio_mobile.data.local.entity.MovieEntity
 import com.gabrielribeiro.desafio_mobile.data.remote.models.MovieResponse
 import com.gabrielribeiro.desafio_mobile.databinding.ActivityMovieDetailsBinding
 import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieDetailsViewModel

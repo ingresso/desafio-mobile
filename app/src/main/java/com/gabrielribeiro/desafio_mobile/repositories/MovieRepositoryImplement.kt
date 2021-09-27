@@ -1,7 +1,7 @@
 package com.gabrielribeiro.desafio_mobile.repositories
 
-import com.gabrielribeiro.desafio_mobile.data.database.MovieDatabase
-import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
+import com.gabrielribeiro.desafio_mobile.data.local.database.MovieDatabase
+import com.gabrielribeiro.desafio_mobile.data.local.entity.MovieEntity
 import com.gabrielribeiro.desafio_mobile.data.remote.api.MovieAPi
 import com.gabrielribeiro.desafio_mobile.data.remote.models.MoviesListResponse
 import com.gabrielribeiro.desafio_mobile.utils.Resource

@@ -1,8 +1,8 @@
-package com.gabrielribeiro.desafio_mobile.data.database
+package com.gabrielribeiro.desafio_mobile.data.local.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
+import com.gabrielribeiro.desafio_mobile.data.local.entity.MovieEntity
 
 @Dao
 interface MovieDao {

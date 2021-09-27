@@ -1,4 +1,4 @@
-package com.gabrielribeiro.desafio_mobile.data.entity
+package com.gabrielribeiro.desafio_mobile.data.local.entity
 
 import android.os.Parcelable
 import androidx.room.Entity
@@ -8,9 +8,7 @@ import com.gabrielribeiro.desafio_mobile.data.remote.models.Image
 import com.gabrielribeiro.desafio_mobile.data.remote.models.MovieResponse
 import com.gabrielribeiro.desafio_mobile.data.remote.models.PremiereDate
 import com.gabrielribeiro.desafio_mobile.data.remote.models.Trailer
-import com.gabrielribeiro.desafio_mobile.utils.BackEndUtils
 import kotlinx.android.parcel.Parcelize
-import java.util.*
 
 @Entity(
     tableName = "movies"

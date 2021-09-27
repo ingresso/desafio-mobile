@@ -2,7 +2,7 @@ package com.gabrielribeiro.desafio_mobile.data.remote.models
 
 import android.os.Parcelable
 import com.gabrielribeiro.desafio_mobile.data.MovieParent
-import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
+import com.gabrielribeiro.desafio_mobile.data.local.entity.MovieEntity
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

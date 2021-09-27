@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gabrielribeiro.desafio_mobile.R
-import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
+import com.gabrielribeiro.desafio_mobile.data.local.entity.MovieEntity
 import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
 
 class FavoriteMovieAdapter(private val onDeleteMovieClickListener : OnDeleteMovieClickListener, private val onMovieClickListener : OnMovieClickListener) : RecyclerView.Adapter<FavoriteMovieAdapter.FavoriteMovieViewHolder>() {

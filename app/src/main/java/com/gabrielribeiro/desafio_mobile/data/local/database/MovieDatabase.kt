@@ -1,9 +1,9 @@
-package com.gabrielribeiro.desafio_mobile.data.database
+package com.gabrielribeiro.desafio_mobile.data.local.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.gabrielribeiro.desafio_mobile.data.entity.MovieEntity
+import com.gabrielribeiro.desafio_mobile.data.local.entity.MovieEntity
 
 @Database(
     entities = [MovieEntity::class], version = 1
