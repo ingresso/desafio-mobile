@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="DesafioMobie.ActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimaryDark">@color/background_theme</item>
-        <item name="backgroundColor">@color/background_theme</item>
-        <item name="colorPrimary">@color/yellow</item>
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="toolbarStyle">@style/DesafioMobileToolbar</item>
-        <item name="android:textViewStyle">@style/DesafioMobileTextView</item>
-    </style>
-
     <style name="DesafioMobie.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/background_theme</item>
         <item name="backgroundColor">@color/background_theme</item>
         <item name="colorPrimary">@color/yellow</item>
+        <item name="colorControlNormal">@color/white</item>
         <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:statusBarColor">@color/background_theme_light</item>
-        <item name="toolbarStyle">@style/DesafioMobileToolbar</item>
         <item name="android:textViewStyle">@style/DesafioMobileTextView</item>
     </style>
+
+    <style name="DesafioMobie.Splash" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/background_theme</item>
+        <item name="android:windowBackground">@drawable/bg_place_holder_splashscreen</item>
+    </style>
+
 </resources>

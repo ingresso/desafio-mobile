@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.HomeActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/include_toolbar"
@@ -14,15 +14,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:text="@string/text_all"/>
-    </androidx.appcompat.widget.Toolbar>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <FrameLayout
         android:id="@+id/frame_layout_main"
@@ -40,9 +32,9 @@
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background_theme_dark"
         app:itemIconTint="@color/bg_icon_color_navigation"
         app:itemTextColor="@color/bg_icon_color_navigation"
+        android:background="@color/background_theme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

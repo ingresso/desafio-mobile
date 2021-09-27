@@ -11,7 +11,8 @@ interface MovieRepository {
 
     suspend fun saveMovie(movie : MovieEntity) : Long
 
-    fun getAllMoviesSaved() : LiveData<List<MovieEntity>>
+    fun getAllMoviesSaved() : LiveData<List<MovieEntity>?>
 
+    suspend fun deleteMovie(idDatabase: Int)
 
 }

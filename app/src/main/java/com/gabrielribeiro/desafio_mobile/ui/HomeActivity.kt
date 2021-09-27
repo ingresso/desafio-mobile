@@ -8,25 +8,26 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.gabrielribeiro.desafio_mobile.R
 import com.gabrielribeiro.desafio_mobile.data.database.MovieDatabase
-import com.gabrielribeiro.desafio_mobile.databinding.ActivityMainBinding
+import com.gabrielribeiro.desafio_mobile.databinding.ActivityHomeBinding
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
 import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
-import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieViewModel
+import com.gabrielribeiro.desafio_mobile.ui.viewmodels.HomeViewModel
 
-class MainActivity : AppCompatActivity() {
-    private var _binding : ActivityMainBinding? = null
-    private val binding : ActivityMainBinding get() = _binding!!
+class HomeActivity : AppCompatActivity() {
+    private var _binding : ActivityHomeBinding? = null
+    private val binding : ActivityHomeBinding get() = _binding!!
 
-    lateinit var viewModel : MovieViewModel
+    lateinit var viewModel : HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setTheme(R.style.DesafioMobie_NoActionBar)
+        _binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.includeToolbar)
-        supportActionBar?.title = ""
+        supportActionBar?.title = getString(R.string.toolbar_title)
 
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout_main, FeedFragment()).commit()
         binding.bottomNavigationMain.selectedItemId = R.id.menu_feed
@@ -45,8 +46,10 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        viewModel = ViewModelProvider(this, MovieViewModel.MovieViewModelFactory(MovieRepositoryImplement(RetrofitInstance().getApi(), MovieDatabase(this))
-        )).get(MovieViewModel::class.java)
+        viewModel = ViewModelProvider(this,
+            HomeViewModel.MovieViewModelFactory(MovieRepositoryImplement(RetrofitInstance().getApi(),
+                MovieDatabase(this))
+            )).get(HomeViewModel::class.java)
 
     }
 

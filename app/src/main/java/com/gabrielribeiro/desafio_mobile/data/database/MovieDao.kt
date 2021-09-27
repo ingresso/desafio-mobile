@@ -11,9 +11,10 @@ interface MovieDao {
     suspend fun saveMovie(movie: MovieEntity): Long
 
     @Query("SELECT * FROM movies")
-    fun getAllMoviesSaved(): LiveData<List<MovieEntity>>
+    fun getAllMoviesSaved(): LiveData<List<MovieEntity>?>
 
-    @Delete
-    suspend fun deleteMovie(movie: MovieEntity)
+    //@Delete
+    @Query("DELETE FROM movies WHERE idDatabase = :idDatabase")
+    suspend fun deleteMovie(idDatabase: Int)
 
 }

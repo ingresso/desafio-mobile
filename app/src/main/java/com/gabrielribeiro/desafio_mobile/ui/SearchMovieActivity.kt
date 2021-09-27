@@ -14,7 +14,7 @@ import com.gabrielribeiro.desafio_mobile.data.remote.models.MovieResponse
 import com.gabrielribeiro.desafio_mobile.databinding.ActivitySearchMovieBinding
 import com.gabrielribeiro.desafio_mobile.repositories.MovieRepositoryImplement
 import com.gabrielribeiro.desafio_mobile.singletons.RetrofitInstance
-import com.gabrielribeiro.desafio_mobile.ui.viewmodels.SearchMovieViewModel
+import com.gabrielribeiro.desafio_mobile.ui.viewmodels.SearchHomeViewModel
 import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
 import com.gabrielribeiro.desafio_mobile.utils.Resource
 
@@ -26,7 +26,7 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
     private val listLock = Any()
     private var movieArray = mutableListOf<MovieResponse>()
     private var filteredMovieArray = mutableListOf<MovieResponse>()
-    private lateinit var viewModel : SearchMovieViewModel
+    private lateinit var viewModel : SearchHomeViewModel
 
     companion object {
         fun newIntent(context: Context) = Intent(context, SearchMovieActivity::class.java)
@@ -39,9 +39,9 @@ class SearchMovieActivity : AppCompatActivity(), OnMovieClickListener {
 
         Log.d("SearchMovieActivity", "onCreate: ")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        viewModel = ViewModelProvider(this, SearchMovieViewModel.SearchViewModelFactory(
+        viewModel = ViewModelProvider(this, SearchHomeViewModel.SearchViewModelFactory(
             MovieRepositoryImplement(RetrofitInstance().getApi(), MovieDatabase(this))
-        )).get(SearchMovieViewModel::class.java)
+        )).get(SearchHomeViewModel::class.java)
 
         searchAdapter = SearchAdapter(this)
         binding.recyclerViewSearch.adapter = searchAdapter

@@ -35,9 +35,9 @@ class SearchAdapter(private val onMovieClickListener : OnMovieClickListener) : R
             }
 
             Glide.with(itemView.context)
-                .load(if (movieResponse.images.isEmpty()) R.drawable.bg_empty_movie else movieResponse.images.first().url)
-                .placeholder(R.drawable.bg_empty_movie)
-                .error(R.drawable.bg_empty_movie)
+                .load(if (movieResponse.images.isEmpty()) R.drawable.bg_place_holder_movie else movieResponse.images.first().url)
+                .placeholder(R.drawable.bg_place_holder_movie)
+                .error(R.drawable.bg_place_holder_movie)
                 .into(imageViewMovieSearch)
         }
 

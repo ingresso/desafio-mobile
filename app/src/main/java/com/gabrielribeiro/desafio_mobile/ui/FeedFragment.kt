@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.gabrielribeiro.desafio_mobile.R
 import com.gabrielribeiro.desafio_mobile.data.remote.models.MovieResponse
 import com.gabrielribeiro.desafio_mobile.databinding.FragmentFeedBinding
-import com.gabrielribeiro.desafio_mobile.ui.viewmodels.MovieViewModel
+import com.gabrielribeiro.desafio_mobile.ui.viewmodels.HomeViewModel
 import com.gabrielribeiro.desafio_mobile.utils.OnMovieClickListener
 import com.gabrielribeiro.desafio_mobile.utils.Resource
 import com.gabrielribeiro.desafio_mobile.utils.Resource.Failure
@@ -18,7 +18,7 @@ class FeedFragment : Fragment(), OnMovieClickListener {
     private lateinit var binding :  FragmentFeedBinding
 
     private var movieResponseList = mutableListOf<MovieResponse>()
-    private lateinit var viewModel: MovieViewModel
+    private lateinit var viewModel: HomeViewModel
     private lateinit var movieAdapter: MovieAdapter
     private var currentActiveStatus = true
 
@@ -33,7 +33,7 @@ class FeedFragment : Fragment(), OnMovieClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = (activity as MainActivity).viewModel
+        viewModel = (activity as HomeActivity).viewModel
 
         binding = FragmentFeedBinding.inflate(inflater,container,false)
         return binding.root

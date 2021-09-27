@@ -46,4 +46,34 @@ data class MovieEntity(
     override val urlKey: String,
     override val creationDate: String
 ) : MovieParent(), Parcelable {
+
+    fun toMovieResponse() = MovieResponse(
+        ancineId = ancineId,
+        cast = cast,
+        city = city,
+        contentRating = contentRating,
+        countIsPlaying = countIsPlaying,
+        countryOrigin = countryOrigin,
+        director = director,
+        distributor = distributor,
+        duration = duration,
+        trailers = trailers,
+        genres = genres,
+        id = id,
+        images = images,
+        inPreSale = inPreSale,
+        isPlaying = isPlaying,
+        isReexhibition = isReexhibition,
+        movieIdUrl = movieIdUrl,
+        nationalSiteURL = nationalSiteURL,
+        originalTitle = originalTitle,
+        premiereDate = premiereDate,
+        priority = priority,
+        siteURL = siteURL,
+        synopsis = synopsis,
+        title = title,
+        urlKey = urlKey,
+        creationDate = creationDate
+
+    )
 }

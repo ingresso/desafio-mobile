@@ -39,11 +39,11 @@ class MovieAdapter(val itemWidth : Int, val itemHeight : Int, private val onMovi
             val options = RequestOptions()
 
             Glide.with(itemView.context)
-                .load(if (movie.images.isEmpty()) R.drawable.bg_empty_movie else movie.images.first().url)
+                .load(if (movie.images.isEmpty()) R.drawable.bg_place_holder_movie else movie.images.first().url)
                 .apply(options.fitCenter())
                 .centerCrop()
-                .placeholder(R.drawable.bg_empty_movie)
-                .error(R.drawable.bg_empty_movie)
+                .placeholder(R.drawable.bg_place_holder_movie)
+                .error(R.drawable.bg_place_holder_movie)
                 .into(imageViewMovie)
 
             textViewMovieTitle.text = movie.title
