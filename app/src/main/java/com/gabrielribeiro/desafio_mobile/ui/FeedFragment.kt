@@ -127,7 +127,7 @@ class FeedFragment : Fragment(), OnMovieClickListener {
 
     override fun onResume() {
         super.onResume()
-        viewModel.getMovies()
+
     }
 
 }

@@ -25,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
         _binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        viewModel.getMovies()
         setSupportActionBar(binding.includeToolbar)
         supportActionBar?.title = getString(R.string.toolbar_title)
 

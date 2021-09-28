@@ -125,16 +125,16 @@ class MovieDetailsActivity : AppCompatActivity() {
     }
 
     private fun checkIfMovieIsSaved(list: List<MovieEntity>): Boolean {
-        list.forEach {
-            if (it.id == movieResponse.id) {
-                isMovieAlreadySaved = true
-                idMovieEntity = it.idDatabase
-                Log.d(TAG, "checkIfMovieIsSaved: $idMovieEntity")
-            } else {
-                isMovieAlreadySaved = false
-                Log.d(TAG, "checkIfMovieIsSaved: $idMovieEntity")
+        run breaker@ {
+            list.forEach {
+                if (it.id == movieResponse.id) {
+                    isMovieAlreadySaved = true
+                    idMovieEntity = it.idDatabase
+                    return@breaker
+                }  else {
+                    isMovieAlreadySaved = false
+                }
             }
-
         }
         return isMovieAlreadySaved
     }
