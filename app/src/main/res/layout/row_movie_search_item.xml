@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image_view_movie_search_item"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+    <TextView
+        android:id="@+id/text_view_movie_title_search"
+        style="@style/DesafioMobileTextView.Large.Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintBottom_toBottomOf="@id/image_view_movie_search_item"
+        app:layout_constraintEnd_toStartOf="@+id/image_view_arrow"
+        app:layout_constraintStart_toEndOf="@id/image_view_movie_search_item"
+        app:layout_constraintTop_toTopOf="@id/image_view_movie_search_item"
+        app:layout_constraintVertical_bias="0"
+        tools:text="Título" />
+
+    <TextView
+        android:id="@+id/text_view_movie_gender_search"
+        style="@style/DesafioMobileTextView.Medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toTopOf="@+id/text_view_movie_premier_date_search"
+        app:layout_constraintEnd_toStartOf="@+id/image_view_arrow"
+        app:layout_constraintStart_toEndOf="@+id/image_view_movie_search_item"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_movie_title_search"
+        app:layout_constraintVertical_bias="0"
+        tools:text="Drama" />
+
+    <ImageView
+        android:id="@+id/image_view_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/yellow"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_movie_search_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_delete_movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_movie_search_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_movie_premier_date_search"
+        style="@style/DesafioMobileTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/image_view_arrow"
+        app:layout_constraintStart_toEndOf="@+id/image_view_movie_search_item"
+        tools:text="Drama" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
