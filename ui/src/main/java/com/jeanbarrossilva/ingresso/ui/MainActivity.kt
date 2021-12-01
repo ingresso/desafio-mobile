@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.ingresso
+package com.jeanbarrossilva.ingresso.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

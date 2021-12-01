@@ -1,0 +1,13 @@
+buildscript {
+    apply from: 'versions.gradle'
+
+    ext {
+        implementations = [
+            appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
+            ingresso: [
+                ui: project(':ui')
+            ],
+            material: "com.google.android.material:material:${versions.material}"
+        ]
+    }
+}
