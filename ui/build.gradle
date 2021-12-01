@@ -35,5 +35,6 @@ android {
 
 dependencies {
     implementation implementations.appcompat
+    implementation implementations.fragment
     implementation implementations.material
 }

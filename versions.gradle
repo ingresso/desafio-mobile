@@ -2,6 +2,7 @@ buildscript {
     ext {
         versions = [
             appcompat: '1.4.0',
+            fragment: '1.4.0',
             gradle: '7.0.3',
             ingresso: [
                 code: 1,
