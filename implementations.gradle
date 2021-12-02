@@ -4,11 +4,21 @@ buildscript {
     ext {
         implementations = [
             appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
+            core: "androidx.core:core-ktx:${versions.core}",
             fragment: "androidx.fragment:fragment-ktx:${versions.fragment}",
             ingresso: [
+                extensions: project(':extensions'),
                 ui: project(':ui')
             ],
-            material: "com.google.android.material:material:${versions.material}"
+            kotlin: [
+                reflect: "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}"
+            ],
+            material: "com.google.android.material:material:${versions.material}",
+            navigation: [
+                fragment: "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                ui: "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+            ],
+            recyclerview: "androidx.recyclerview:recyclerview:${versions.recyclerview}"
         ]
     }
 }

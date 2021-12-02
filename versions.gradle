@@ -2,6 +2,7 @@ buildscript {
     ext {
         versions = [
             appcompat: '1.4.0',
+            core: '1.7.0',
             fragment: '1.4.0',
             gradle: '7.0.3',
             ingresso: [
@@ -15,7 +16,9 @@ buildscript {
             ],
             java: JavaVersion.VERSION_1_8,
             kotlin: '1.6.0',
-            material: '1.4.0'
+            material: '1.4.0',
+            navigation: '2.3.5',
+            recyclerview: '1.2.1'
         ]
     }
 }

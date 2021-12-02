@@ -38,11 +38,6 @@ android {
 }
 
 dependencies {
-    implementation implementations.appcompat
-    implementation implementations.fragment
-    implementation implementations.ingresso.extensions
-    implementation implementations.kotlin.reflect
-    implementation implementations.material
-    implementation implementations.navigation.fragment
-    implementation implementations.navigation.ui
+    implementation implementations.core
+    implementation implementations.recyclerview
 }
