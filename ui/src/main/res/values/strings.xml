@@ -2,4 +2,8 @@
     <string name="app_name">Ingresso</string>
 
     <string name="soon_title">Filmes</string>
+
+    <string name="view_movie_poster_title_placeholder">Amor, sublime amor</string>
+    <string name="view_movie_poster_content_description">Pôster de %s</string>
+    <string name="view_movie_poster_premiere_date_placeholder">09/12/2021</string>
 </resources>

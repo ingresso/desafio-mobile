@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Could've done this with a LinearLayout, but that's the only layout where I found I could use ConstraintLayout. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="132dp"
+    android:layout_height="wrap_content"
+    tools:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="0.68:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@drawable/movie_poster_amor_sublime_amor"
+            tools:ignore="ContentDescription" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/image_view"
+            app:layout_constraintEnd_toEndOf="@id/image_view"
+            app:layout_constraintBottom_toBottomOf="@id/image_view">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:alpha="?android:primaryContentAlpha"
+                android:background="@drawable/view_movie_poster_premiere_date_shadow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:background="@drawable/view_movie_poster_premiere_date_border"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/premier_date_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    tools:text="@string/view_movie_poster_premiere_date_placeholder" />
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@id/image_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/view_movie_poster_title_placeholder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

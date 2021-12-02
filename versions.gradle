@@ -9,7 +9,7 @@ buildscript {
                 name: '1.0.0',
                 sdk: [
                     compile: 31,
-                    min: 21,
+                    min: 26,
                     target: 31
                 ]
             ],

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk versions.ingresso.sdk.compile
 
     defaultConfig {
         minSdk versions.ingresso.sdk.min
@@ -21,6 +21,10 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     compileOptions {
