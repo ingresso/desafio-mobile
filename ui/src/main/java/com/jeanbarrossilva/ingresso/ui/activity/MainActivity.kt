@@ -1,12 +1,8 @@
 package com.jeanbarrossilva.ingresso.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.jeanbarrossilva.ingresso.ui.R
+import com.jeanbarrossilva.ingresso.ui.core.IngressoActivity
+import com.jeanbarrossilva.ingresso.ui.databinding.ActivityMainBinding
 
-class MainActivity: AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+class MainActivity: IngressoActivity<ActivityMainBinding>() {
+    override val bindingClass = ActivityMainBinding::class
 }

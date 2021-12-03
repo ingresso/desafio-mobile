@@ -41,6 +41,7 @@ dependencies {
     implementation implementations.appcompat
     implementation implementations.fragment
     implementation implementations.ingresso.extensions
+    implementation implementations.ingresso.ui_core
     implementation implementations.material
     implementation implementations.navigation.fragment
     implementation implementations.navigation.ui

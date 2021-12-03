@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/soonFragment">
+    app:startDestination="@id/moviesFragment">
 
     <fragment
-        android:id="@+id/soonFragment"
+        android:id="@+id/moviesFragment"
         android:name="com.jeanbarrossilva.ingresso.ui.fragment.MoviesFragment"
         android:label="@string/movies_title"
         tools:layout="@layout/fragment_movies" />

@@ -15,7 +15,7 @@
         app:navGraph="@navigation/navigation_main"
         app:defaultNavHost="true"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -23,10 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?colorSurface"
-        app:title="@string/movies_title"
         app:titleTextColor="?android:textColor"
         app:menu="@menu/toolbar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:title="@string/movies_title" />
 
     <com.jeanbarrossilva.ingresso.ui.view.IngressoBottomNavigationView
         android:id="@+id/bottom_navigation_view"

@@ -2,3 +2,4 @@ rootProject.name = "Ingresso"
 include ':app'
 include ':ui'
 include ':extensions'
+include ':ui-core'
