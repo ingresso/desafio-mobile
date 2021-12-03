@@ -2,6 +2,14 @@
 <resources>
 
     <style
+        name="Theme.Ingresso.Toolbar"
+        parent="Widget.MaterialComponents.Toolbar">
+        <item name="colorControlNormal">?colorSecondary</item>
+        <item name="titleMarginTop">14dp</item>
+        <item name="titleCentered">true</item>
+    </style>
+
+    <style
         name="TextAppearance.Ingresso.Headline4"
         parent="TextAppearance.MaterialComponents.Headline4">
         <item name="android:textStyle">bold</item>

@@ -5,12 +5,12 @@
         parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">#0091EA</item>
         <item name="colorPrimaryVariant">#0091EA</item>
-        <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">#FF6F00</item>
         <item name="colorSecondaryVariant">#FF6F00</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:colorBackground">#424242</item>
+        <item name="colorSurface">#212121</item>
         <item name="textAppearanceHeadline4">@style/TextAppearance.Ingresso.Headline4</item>
+        <item name="android:colorControlHighlight">#42FFFFFF</item>
+        <item name="android:colorBackground">#424242</item>
         <item name="android:textColor">@android:color/white</item>
         <item
             name="android:statusBarColor"
