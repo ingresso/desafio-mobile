@@ -2,6 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@id/soonFragment"
-        android:title="@string/soon_title"
+        android:title="@string/movies_title"
         android:icon="@drawable/ic_baseline_movie_24" />
 </menu>

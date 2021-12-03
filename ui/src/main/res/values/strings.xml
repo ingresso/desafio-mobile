@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">Ingresso</string>
 
-    <string name="main_title">Filmes</string>
-
-    <string name="soon_title">Em breve</string>
-    <string name="soon_toolbar_search">Search</string>
+    <string name="movies_title">Filmes</string>
+    <string name="movies_toolbar_search">Pesquisar</string>
 
     <string name="view_movie_poster_title_placeholder">Amor, sublime amor</string>
     <string name="view_movie_poster_content_description">Pôster de %s</string>

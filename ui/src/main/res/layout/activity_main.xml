@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?colorSurface"
-        app:title="@string/main_title"
+        app:title="@string/movies_title"
         app:titleTextColor="?android:textColor"
         app:menu="@menu/toolbar"
         app:layout_constraintTop_toTopOf="parent" />

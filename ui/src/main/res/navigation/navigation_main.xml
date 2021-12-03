@@ -8,8 +8,8 @@
 
     <fragment
         android:id="@+id/soonFragment"
-        android:name="com.jeanbarrossilva.ingresso.ui.fragment.SoonFragment"
-        android:label="SoonFragment"
-        tools:layout="@layout/fragment_soon" />
+        android:name="com.jeanbarrossilva.ingresso.ui.fragment.MoviesFragment"
+        android:label="@string/movies_title"
+        tools:layout="@layout/fragment_movies" />
 
 </navigation>
