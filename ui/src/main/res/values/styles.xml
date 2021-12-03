@@ -4,7 +4,7 @@
     <style
         name="Theme.Ingresso.Toolbar"
         parent="Widget.MaterialComponents.Toolbar">
-        <item name="colorControlNormal">?colorSecondary</item>
+        <item name="colorControlNormal">?colorPrimary</item>
         <item name="titleMarginTop">14dp</item>
         <item name="titleCentered">true</item>
     </style>

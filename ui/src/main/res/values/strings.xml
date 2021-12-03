@@ -3,6 +3,7 @@
 
     <string name="main_title">Filmes</string>
 
+    <string name="soon_title">Em breve</string>
     <string name="soon_toolbar_search">Search</string>
 
     <string name="view_movie_poster_title_placeholder">Amor, sublime amor</string>

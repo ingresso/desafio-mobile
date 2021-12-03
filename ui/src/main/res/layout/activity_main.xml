@@ -28,4 +28,11 @@
         app:menu="@menu/toolbar"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.jeanbarrossilva.ingresso.ui.view.IngressoBottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
