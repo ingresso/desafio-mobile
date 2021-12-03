@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style
         name="Theme.Ingresso"
@@ -7,16 +7,13 @@
         <item name="colorPrimaryVariant">#0091EA</item>
         <item name="colorSecondary">#FF6F00</item>
         <item name="colorSecondaryVariant">#FF6F00</item>
-        <item name="colorSurface">#212121</item>
+        <item name="colorSurface">@color/surface</item>
         <item name="textAppearanceHeadline4">@style/TextAppearance.Ingresso.Headline4</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/background</item>
         <item name="android:colorControlHighlight">#42FFFFFF</item>
-        <item name="android:colorBackground">#424242</item>
+        <item name="android:colorBackground">@color/background</item>
         <item name="android:textColor">@android:color/white</item>
-        <item
-            name="android:statusBarColor"
-            tools:targetApi="l">
-            ?attr/colorPrimaryVariant
-        </item>
     </style>
 
 </resources>
