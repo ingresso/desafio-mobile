@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:background="?colorSurface"
         app:titleTextColor="?android:textColor"
-        app:menu="@menu/toolbar"
+        app:menu="@menu/toolbar_movies"
         app:layout_constraintTop_toTopOf="parent"
         tools:title="@string/movies_title" />
 
