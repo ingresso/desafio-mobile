@@ -14,6 +14,10 @@ class IngressoBottomNavigationView: BottomNavigationView {
     private val secondaryColor
         get() = context.colorOf(R.attr.colorSecondary)
 
+    /** Short-hand for getting the theme surface color through [colorOf]. **/
+    private val surfaceColor
+        get() = context.colorOf(R.attr.colorSurface)
+
     constructor(context: Context): super(context)
 
     constructor(context: Context, attrs: AttributeSet?): super(context, attrs)
@@ -28,5 +32,6 @@ class IngressoBottomNavigationView: BottomNavigationView {
             .copy(alpha = .026f)
             .toArgb()
             .let(ColorStateList::valueOf)
+        setBackgroundColor(surfaceColor)
     }
 }
