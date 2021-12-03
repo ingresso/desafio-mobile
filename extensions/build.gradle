@@ -38,8 +38,5 @@ android {
 }
 
 dependencies {
-    implementation implementations.appcompat
-    implementation implementations.fragment
-    implementation implementations.ingresso.extensions
-    implementation implementations.material
+    implementation implementations.core
 }

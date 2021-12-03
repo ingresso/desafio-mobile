@@ -4,8 +4,10 @@ buildscript {
     ext {
         implementations = [
             appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
+            core: "androidx.core:core-ktx:${versions.core}",
             fragment: "androidx.fragment:fragment-ktx:${versions.fragment}",
             ingresso: [
+                extensions: project(':extensions'),
                 ui: project(':ui')
             ],
             material: "com.google.android.material:material:${versions.material}"
