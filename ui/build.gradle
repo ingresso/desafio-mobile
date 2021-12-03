@@ -42,4 +42,6 @@ dependencies {
     implementation implementations.fragment
     implementation implementations.ingresso.extensions
     implementation implementations.material
+    implementation implementations.navigation.fragment
+    implementation implementations.navigation.ui
 }

@@ -10,7 +10,11 @@ buildscript {
                 extensions: project(':extensions'),
                 ui: project(':ui')
             ],
-            material: "com.google.android.material:material:${versions.material}"
+            material: "com.google.android.material:material:${versions.material}",
+            navigation: [
+                fragment: "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                ui: "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+            ]
         ]
     }
 }

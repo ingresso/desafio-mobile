@@ -16,7 +16,8 @@ buildscript {
             ],
             java: JavaVersion.VERSION_1_8,
             kotlin: '1.6.0',
-            material: '1.4.0'
+            material: '1.4.0',
+            navigation: '2.3.5'
         ]
     }
 }
