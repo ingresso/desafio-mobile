@@ -2,6 +2,13 @@
 <resources>
 
     <style
+        name="Theme.Ingresso.CardView"
+        parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">0dp</item>
+        <item name="cardBackgroundColor">?colorSurface</item>
+    </style>
+
+    <style
         name="Theme.Ingresso.Toolbar"
         parent="Widget.MaterialComponents.Toolbar">
         <item name="colorControlNormal">?colorPrimary</item>
