@@ -1,12 +1,5 @@
 package com.jeanbarrossilva.ingresso.model
 
-import android.content.Context
-import android.graphics.Bitmap
-import com.jeanbarrossilva.ingresso.extensions.any.orIf
-import com.jeanbarrossilva.ingresso.extensions.calendar.calendarOf
-import com.jeanbarrossilva.ingresso.extensions.context.bitmapOf
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 import java.util.Calendar
 
 data class Movie(
@@ -22,17 +15,6 @@ data class Movie(
     val synopsis: String,
     val url: String
 ) {
-    private var image: Bitmap? = null
-
-    suspend fun getImage(context: Context): Bitmap? {
-        return coroutineScope {
-            image.orIf(image == null) {
-                launch { image = context.bitmapOf(imageUrl) }
-                image
-            }
-        }
-    }
-
     companion object {
         val samples = listOf(
             Movie(

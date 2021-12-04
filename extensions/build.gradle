@@ -38,7 +38,6 @@ android {
 }
 
 dependencies {
-    implementation implementations.coil
     implementation implementations.core
     implementation implementations.kotlin.reflect
 }

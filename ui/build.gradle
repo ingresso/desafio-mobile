@@ -39,6 +39,7 @@ android {
 
 dependencies {
     implementation implementations.appcompat
+    implementation implementations.coil
     implementation implementations.fragment
     implementation implementations.ingresso.extensions
     implementation implementations.ingresso.model

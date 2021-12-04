@@ -35,6 +35,4 @@ android {
 
 dependencies {
     implementation implementations.annotation
-    implementation implementations.coroutines
-    implementation implementations.ingresso.extensions
 }
