@@ -1,6 +1,8 @@
 package com.jeanbarrossilva.ingresso.ui.fragment
 
-import androidx.fragment.app.Fragment
-import com.jeanbarrossilva.ingresso.ui.R
+import com.jeanbarrossilva.ingresso.ui.core.IngressoFragment
+import com.jeanbarrossilva.ingresso.ui.databinding.FragmentMoviesBinding
 
-class MoviesFragment: Fragment(R.layout.fragment_movies)
+class MoviesFragment: IngressoFragment<FragmentMoviesBinding>() {
+    override val bindingClass = FragmentMoviesBinding::class
+}
