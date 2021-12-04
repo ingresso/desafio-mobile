@@ -2,7 +2,7 @@ package com.jeanbarrossilva.ingresso.repository
 
 import com.jeanbarrossilva.ingresso.model.Movie
 
-class Repository {
+object Repository {
     val movies
         get() = Movie.samples
 }
