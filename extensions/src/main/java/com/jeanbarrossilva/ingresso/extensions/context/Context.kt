@@ -2,13 +2,38 @@ package com.jeanbarrossilva.ingresso.extensions.context
 
 import android.content.Context
 import android.content.res.TypedArray
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.util.AttributeSet
-import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.annotation.StyleableRes
 import androidx.core.content.withStyledAttributes
+import androidx.core.graphics.drawable.toBitmap
+import coil.Coil
+import coil.executeBlocking
+import coil.request.ImageRequest
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
+/**
+ * Loads the image in [url] asynchronously and turns it into a [Bitmap].
+ *
+ * @param url URL in which the image is located.
+ **/
+suspend fun Context.bitmapOf(url: String): Bitmap? {
+    return ImageRequest.Builder(this)
+        .data(url)
+        .build()
+        .let { request ->
+            withContext(Dispatchers.IO) {
+                Coil.imageLoader(this@bitmapOf)
+                    .executeBlocking(request)
+                    .drawable
+                    ?.toBitmap()
+            }
+        }
+}
 
 /** Gets the color that corresponds to [colorAttrRes]. **/
 @ColorInt

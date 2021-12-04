@@ -23,10 +23,6 @@ android {
         }
     }
 
-    buildFeatures {
-        viewBinding true
-    }
-
     compileOptions {
         sourceCompatibility versions.java
         targetCompatibility versions.java
@@ -38,7 +34,7 @@ android {
 }
 
 dependencies {
-    implementation implementations.coil
-    implementation implementations.core
-    implementation implementations.kotlin.reflect
+    implementation implementations.annotation
+    implementation implementations.coroutines
+    implementation implementations.ingresso.extensions
 }
