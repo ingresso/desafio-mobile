@@ -12,6 +12,7 @@ buildscript {
             ingresso: [
                 extensions: project(':extensions'),
                 model: project(':model'),
+                repository: project(':repository'),
                 ui: project(':ui'),
                 ui_core: project(':ui-core')
             ],

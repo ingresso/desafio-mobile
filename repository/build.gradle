@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk versions.ingresso.sdk.compile
+
+    defaultConfig {
+        minSdk versions.ingresso.sdk.min
+        targetSdk versions.ingresso.sdk.target
+        versionCode versions.ingresso.code
+        versionName versions.ingresso.name
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility versions.java
+        targetCompatibility versions.java
+    }
+
+    kotlinOptions {
+        jvmTarget = versions.java.toString()
+    }
+}
+
+dependencies {
+    implementation implementations.ingresso.model
+}
