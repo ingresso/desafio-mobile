@@ -41,6 +41,7 @@ dependencies {
     implementation implementations.appcompat
     implementation implementations.fragment
     implementation implementations.ingresso.extensions
+    implementation implementations.ingresso.model
     implementation implementations.ingresso.ui_core
     implementation implementations.kotlin.reflect
     implementation implementations.material

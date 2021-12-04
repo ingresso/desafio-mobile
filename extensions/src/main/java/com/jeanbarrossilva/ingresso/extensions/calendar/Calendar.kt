@@ -7,6 +7,11 @@ import java.util.Calendar.DAY_OF_MONTH
 import java.util.Calendar.MONTH
 import java.util.Calendar.YEAR
 
+val Calendar.displayable
+    get() = "${get(DAY_OF_MONTH)}/$monthValue/${get(YEAR)}"
+val Calendar.monthValue
+    get() = Month.of(get(MONTH))
+
 /** Gets an instance of [Calendar] and sets [year], [month] and [day] according to their equivalent fields. **/
 fun calendarOf(year: Int, @IntRange(from = 1, to = 12) month: Int, @IntRange(from = 1, to = 31) day: Int): Calendar {
     return Calendar.getInstance().apply {

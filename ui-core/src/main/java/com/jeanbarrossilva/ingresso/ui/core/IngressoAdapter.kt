@@ -7,9 +7,9 @@ import androidx.viewbinding.ViewBinding
 import kotlin.reflect.KClass
 
 /** [RecyclerView.Adapter] that automatically creates an instance of a [ViewBinding] of type [B]. **/
-abstract class IngressoAdapter<B: ViewBinding, H: RecyclerView.ViewHolder>: RecyclerView.Adapter<H>() {
+abstract class IngressoAdapter<B: ViewBinding, H: RecyclerView.ViewHolder, I>: RecyclerView.Adapter<H>() {
     abstract val bindingClass: KClass<B>
-    abstract val items: List<*>
+    abstract val items: List<I>
 
     lateinit var binding: B
         private set
@@ -17,8 +17,11 @@ abstract class IngressoAdapter<B: ViewBinding, H: RecyclerView.ViewHolder>: Recy
     /** @see [RecyclerView.Adapter.onCreateViewHolder] **/
     abstract fun onCreateViewHolder(): H
 
+    /** @see [RecyclerView.Adapter.onBindViewHolder] **/
+    abstract fun onBindViewHolder(holder: H, item: I)
+
     @Suppress("UNCHECKED_CAST")
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): H {
+    final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): H {
         LayoutInflater.from(parent.context).let { layoutInflater ->
             binding = bindingClass.java
                 .getDeclaredMethod("inflate", LayoutInflater::class.java, ViewGroup::class.java, Boolean::class.java)
@@ -26,6 +29,10 @@ abstract class IngressoAdapter<B: ViewBinding, H: RecyclerView.ViewHolder>: Recy
         }
 
         return onCreateViewHolder()
+    }
+
+    final override fun onBindViewHolder(holder: H, position: Int) {
+        onBindViewHolder(holder, items[position])
     }
 
     override fun getItemCount(): Int {
