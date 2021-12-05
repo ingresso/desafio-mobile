@@ -10,13 +10,15 @@
         <item name="colorSurface">@color/surface</item>
         <item name="textAppearanceHeadline4">@style/TextAppearance.Ingresso.Headline4</item>
         <item name="cardViewStyle">@style/Theme.Ingresso.CardView</item>
-        <item name="android:textColorSecondary">?android:textColorSecondaryInverse</item>
+        <item name="android:colorEdgeEffect">#43212121</item>
         <item name="android:statusBarColor">@color/surface</item>
         <item name="android:navigationBarColor">@color/surface</item>
         <item name="android:colorControlHighlight">#42FFFFFF</item>
         <item name="android:colorBackground">#424242</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textColorHint">?android:textColorTertiaryInverse</item>
+        <item name="android:textColorSecondary">?android:textColorSecondaryInverse</item>
+        <item name="android:textColorTertiary">?android:textColorTertiaryInverse</item>
+        <item name="android:textColorHint">?android:textColorTertiary</item>
     </style>
 
 </resources>

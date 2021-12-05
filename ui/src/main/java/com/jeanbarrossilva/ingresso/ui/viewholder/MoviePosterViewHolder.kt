@@ -1,5 +1,6 @@
 package com.jeanbarrossilva.ingresso.ui.viewholder
 
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.jeanbarrossilva.ingresso.extensions.date.displayable
@@ -12,9 +13,8 @@ class MoviePosterViewHolder(private val binding: ViewMoviePosterBinding): Recycl
         get() = binding.root.context
 
     private fun showPremiereDateOf(movie: Movie) {
-        movie.premiereDate?.displayable?.let {
-            binding.premierDateView.text = it
-        }
+        binding.premiereDateLayout.isVisible = movie.premiereDate != null
+        movie.premiereDate?.displayable?.let { binding.premierDateView.text = it }
     }
 
     fun bind(movie: Movie) {
