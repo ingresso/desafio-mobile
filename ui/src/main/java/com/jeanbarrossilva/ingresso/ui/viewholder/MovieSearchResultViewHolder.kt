@@ -12,6 +12,6 @@ class MovieSearchResultViewHolder(private val binding: ViewMovieSearchResultBind
         binding.imageView.contentDescription =
             binding.root.context.getString(R.string.view_movie_search_result_poster_content_description, movie.title.localized)
         binding.titleView.text = movie.title.localized
-        binding.genreView.text = movie.id.toString()
+        binding.genreView.text = movie.genres.joinToString()
     }
 }
