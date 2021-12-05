@@ -2,7 +2,7 @@ package com.jeanbarrossilva.ingresso.ui.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.jeanbarrossilva.ingresso.extensions.calendar.displayable
+import com.jeanbarrossilva.ingresso.extensions.date.displayable
 import com.jeanbarrossilva.ingresso.model.Movie
 import com.jeanbarrossilva.ingresso.ui.R
 import com.jeanbarrossilva.ingresso.ui.databinding.ViewMoviePosterBinding

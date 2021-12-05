@@ -1,10 +1,10 @@
 package com.jeanbarrossilva.ingresso.model
 
-import java.util.Calendar
+import java.util.Date
 
 data class Movie(
     val id: Long,
-    val premiereDate: Calendar?,
+    val premiereDate: Date?,
     val title: Title,
     val imageUrl: String,
     val score: Score?,
