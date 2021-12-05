@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.jeanbarrossilva.ingresso.ui.view.IngressoRecyclerView
+<androidx.recyclerview.widget.RecyclerView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/movies_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="18dp"
+    android:padding="4dp"
     android:clipToPadding="false"
-    app:spacing="18dp"
+    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+    app:spanCount="3"
     tools:listitem="@layout/view_movie_poster" />
