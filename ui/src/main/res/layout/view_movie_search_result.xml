@@ -31,7 +31,7 @@
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/movie_poster_amor_sublime_amor"
+                    tools:src="@drawable/movie_image_placeholder"
                     tools:ignore="ContentDescription" />
 
             </androidx.cardview.widget.CardView>

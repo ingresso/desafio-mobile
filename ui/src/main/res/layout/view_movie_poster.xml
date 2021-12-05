@@ -24,7 +24,7 @@
             app:layout_constraintDimensionRatio="0.68:1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:src="@drawable/movie_poster_amor_sublime_amor"
+            tools:src="@drawable/movie_image_placeholder"
             tools:ignore="ContentDescription" />
 
         <androidx.constraintlayout.widget.ConstraintLayout

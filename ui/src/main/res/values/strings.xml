@@ -7,12 +7,12 @@
     <string name="search_title">Search</string>
     <string name="search_hint">Search…</string>
 
-    <string name="view_movie_poster_title_placeholder">Amor, sublime amor</string>
+    <string name="view_movie_poster_title_placeholder">Matrix Resurrections</string>
     <string name="view_movie_poster_content_description">Pôster de %s</string>
-    <string name="view_movie_poster_premiere_date_placeholder">09/12/2021</string>
+    <string name="view_movie_poster_premiere_date_placeholder">22/12/2021</string>
 
     <string name="view_movie_search_result_poster_content_description">@string/view_movie_poster_content_description</string>
     <string name="view_movie_search_result_title_placeholder">@string/view_movie_poster_title_placeholder</string>
-    <string name="view_movie_search_result_genre_placeholder">Drama</string>
+    <string name="view_movie_search_result_genre_placeholder">Ação, Ficção</string>
     <string name="view_movie_search_result_navigation_icon">Navegar</string>
 </resources>
