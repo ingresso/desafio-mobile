@@ -4,6 +4,7 @@
     <string name="movies_title">Filmes</string>
     <string name="movies_toolbar_search">Pesquisar</string>
 
+    <string name="search_title">Search</string>
     <string name="search_hint">Search…</string>
 
     <string name="view_movie_poster_title_placeholder">Amor, sublime amor</string>

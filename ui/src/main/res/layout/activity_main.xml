@@ -24,9 +24,9 @@
         android:layout_height="wrap_content"
         android:background="?colorSurface"
         app:titleTextColor="?android:textColor"
-        app:menu="@menu/toolbar_movies"
         app:layout_constraintTop_toTopOf="parent"
-        tools:title="@string/movies_title" />
+        tools:title="@string/movies_title"
+        tools:menu="@menu/toolbar_movies" />
 
     <com.jeanbarrossilva.ingresso.ui.view.IngressoBottomNavigationView
         android:id="@+id/bottom_navigation_view"

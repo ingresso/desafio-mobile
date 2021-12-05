@@ -14,6 +14,11 @@ abstract class IngressoFragment<T: ViewBinding>: Fragment() {
     lateinit var binding: T
         private set
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     @Suppress("UNCHECKED_CAST")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = bindingClass.java

@@ -2,11 +2,11 @@ package com.jeanbarrossilva.ingresso.ui.core
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -33,6 +33,7 @@ abstract class IngressoActivity<T: ViewBinding>: AppCompatActivity() {
         private set
 
     private fun setUpNavigation() {
+        setSupportActionBar(toolbar)
         toolbar?.setupWithNavController(navController)
         bottomNavigationView?.setupWithNavController(navController)
     }
@@ -45,5 +46,9 @@ abstract class IngressoActivity<T: ViewBinding>: AppCompatActivity() {
             .invoke(null, layoutInflater) as T
         setContentView(binding.root)
         setUpNavigation()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return false
     }
 }

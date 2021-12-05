@@ -11,6 +11,7 @@ buildscript {
     dependencies {
         classpath _plugins.gradle
         classpath _plugins.kotlin
+        classpath _plugins.navigation.safe_args
     }
 }
 

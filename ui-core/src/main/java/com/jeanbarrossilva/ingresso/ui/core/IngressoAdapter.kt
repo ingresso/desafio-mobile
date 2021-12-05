@@ -17,9 +17,6 @@ abstract class IngressoAdapter<B: ViewBinding, H: RecyclerView.ViewHolder, I>: R
     /** @see [RecyclerView.Adapter.onCreateViewHolder] **/
     abstract fun onCreateViewHolder(): H
 
-    /** @see [RecyclerView.Adapter.onBindViewHolder] **/
-    abstract fun onBindViewHolder(holder: H, item: I)
-
     @Suppress("UNCHECKED_CAST")
     final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): H {
         LayoutInflater.from(parent.context).let { layoutInflater ->
@@ -29,10 +26,6 @@ abstract class IngressoAdapter<B: ViewBinding, H: RecyclerView.ViewHolder, I>: R
         }
 
         return onCreateViewHolder()
-    }
-
-    final override fun onBindViewHolder(holder: H, position: Int) {
-        onBindViewHolder(holder, items[position])
     }
 
     override fun getItemCount(): Int {

@@ -4,12 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:contentPadding="24dp">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:clickable="true"
+        android:background="?selectableItemBackground">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -29,7 +31,8 @@
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/movie_poster_amor_sublime_amor" />
+                    tools:src="@drawable/movie_poster_amor_sublime_amor"
+                    tools:ignore="ContentDescription" />
 
             </androidx.cardview.widget.CardView>
 

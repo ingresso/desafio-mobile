@@ -4,10 +4,16 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.Color
 import android.util.AttributeSet
+import android.view.inputmethod.InputMethodManager
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.annotation.StyleableRes
+import androidx.core.content.getSystemService
 import androidx.core.content.withStyledAttributes
+
+/** Short-hand for getting the [InputMethodManager] from this [Context]. **/
+val Context.inputMethodManager
+    get() = getSystemService<InputMethodManager>()
 
 /** Gets the color that corresponds to [colorAttrRes]. **/
 @ColorInt

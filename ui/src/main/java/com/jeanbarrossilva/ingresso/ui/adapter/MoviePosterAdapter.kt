@@ -12,7 +12,7 @@ class MoviePosterAdapter(override val items: List<Movie>): IngressoAdapter<ViewM
         return MoviePosterViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: MoviePosterViewHolder, item: Movie) {
-        holder.bind(item)
+    override fun onBindViewHolder(holder: MoviePosterViewHolder, position: Int) {
+        holder.bind(items[position])
     }
 }

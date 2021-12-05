@@ -15,6 +15,15 @@ data class Movie(
     val synopsis: String,
     val url: String
 ) {
+    operator fun contains(other: String): Boolean {
+        return other in title ||
+            country.contains(other, ignoreCase = true) ||
+            director.contains(other, ignoreCase = true) ||
+            cast.any { actor -> actor.contains(other, ignoreCase = true) } ||
+            distributor?.contains(other, ignoreCase = true) == true ||
+            synopsis.contains(other, ignoreCase = true)
+    }
+
     companion object {
         val samples = listOf(
             Movie(
