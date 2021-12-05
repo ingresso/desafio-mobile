@@ -7,6 +7,7 @@ data class Movie(
     val premiereDate: Date?,
     val title: Title,
     val imageUrl: String,
+    val genres: List<String>,
     val score: Score?,
     val country: String,
     val director: String,
@@ -24,6 +25,7 @@ data class Movie(
             synopsis.contains(other, ignoreCase = true)
     }
 
+    @Suppress("SpellCheckingInspection")
     companion object {
         val samples = listOf(
             Movie(
@@ -31,6 +33,7 @@ data class Movie(
                 premiereDate = null,
                 Title("Spencer"),
                 imageUrl = "https://ingresso-a.akamaihd.net/prd/img/movie/spencer/f27c5799-bd94-4698-b965-638ec2dc3e68.jpg",
+                genres = listOf("Ficção"),
                 Score(critics = 84, audience = 50),
                 country = "Reino Unido",
                 director = "Pablo Larraín",
@@ -48,6 +51,7 @@ data class Movie(
                 imageUrl = "https://ingresso-a.akamaihd.net/prd/img/movie/jogos-mortais-teatro-lpv/f4538e50-2895-48af-8508-" +
                     "4dc01d711775.jpg",
                 score = null,
+                genres = listOf("Teatro Contemporâneo"),
                 country = "Brasil",
                 director = "Vado Ferreira",
                 cast = emptyList(),
