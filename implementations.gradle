@@ -6,6 +6,7 @@ buildscript {
             annotation: "androidx.annotation:annotation:${versions.annotation}",
             appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
             coil: "io.coil-kt:coil:${versions.coil}",
+            constraintlayout: "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
             coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}",
             core: "androidx.core:core-ktx:${versions.core}",
             drawabletoolbox: "com.github.duanhong169:drawabletoolbox:${versions.drawabletoolbox}",
