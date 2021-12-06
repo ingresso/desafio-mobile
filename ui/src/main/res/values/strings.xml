@@ -4,15 +4,33 @@
     <string name="movies_title">Filmes</string>
     <string name="movies_toolbar_search">Pesquisar</string>
 
+    <string name="movie_info_title">Informações</string>
+    <string name="movie_info_tab_details">Detalhes</string>
+
+    <string name="movie_details_original_title">Título original</string>
+    <string name="movie_details_cast">Elenco</string>
+    <string name="movie_details_synopsis">Sinopse</string>
+    <string name="movie_details_director">Direção</string>
+    <string name="movie_details_distributor">Distribuidor</string>
+    <string name="movie_details_country">País de origem</string>
+
     <string name="search_title">Search</string>
     <string name="search_hint">Search…</string>
 
-    <string name="view_movie_poster_title_placeholder">Matrix Resurrections</string>
-    <string name="view_movie_poster_content_description">Pôster de %s</string>
-    <string name="view_movie_poster_premiere_date_placeholder">22/12/2021</string>
-
-    <string name="view_movie_search_result_poster_content_description">@string/view_movie_poster_content_description</string>
-    <string name="view_movie_search_result_title_placeholder">@string/view_movie_poster_title_placeholder</string>
-    <string name="view_movie_search_result_genre_placeholder">Ação, Ficção</string>
     <string name="view_movie_search_result_navigation_icon">Navegar</string>
+
+    <string name="movie_title_original_placeholder">Matrix Resurrections</string>
+    <string name="movie_title_localized_placeholder">@string/movie_title_original_placeholder</string>
+    <string name="movie_premiere_date_placeholder">22/12/2021</string>
+    <string name="movie_genres_placeholder">Ação, Ficção</string>
+    <string name="movie_country_placeholder">Estados Unidos</string>
+    <string name="movie_director_placeholder">Lana Wachowski</string>
+    <string name="movie_cast_placeholder">Keanu Reeves, Carrie-Anne Moss, Jada Pinkett Smith</string>
+    <string name="movie_distributor_placeholder">Warner Bros</string>
+    <string name="movie_synopsis_placeholder">
+        Em um mundo de duas realidades - a vida cotidiana e o que está por trás dela - Thomas Anderson terá que escolher seguir o
+        coelho branco mais uma vez. A escolha, embora seja uma ilusão, ainda é a única maneira de entrar ou sair da Matrix, que é mais
+        forte, mais segura e mais perigosa do que nunca.
+    </string>
+    <string name="movie_image_content_description">Pôster de %s</string>
 </resources>

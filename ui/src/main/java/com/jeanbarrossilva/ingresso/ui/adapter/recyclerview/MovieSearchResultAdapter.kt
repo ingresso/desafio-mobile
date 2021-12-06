@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.ingresso.ui.adapter
+package com.jeanbarrossilva.ingresso.ui.adapter.recyclerview
 
 import android.widget.Filter
 import android.widget.Filterable

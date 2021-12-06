@@ -27,11 +27,11 @@
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <ImageView
-                    android:id="@+id/image_view"
+                    android:id="@+id/image_portrait_view"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/movie_image_placeholder"
+                    tools:src="@drawable/movie_image_portrait_placeholder"
                     tools:ignore="ContentDescription" />
 
             </androidx.cardview.widget.CardView>
@@ -59,7 +59,7 @@
                     android:textColor="?android:textColorSecondary"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    tools:text="@string/view_movie_search_result_genre_placeholder" />
+                    tools:text="@string/movie_genres_placeholder" />
 
             </LinearLayout>
 

@@ -18,28 +18,27 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/image_view"
+            android:id="@+id/image_portrait_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintDimensionRatio="0.68:1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:src="@drawable/movie_image_placeholder"
+            tools:src="@drawable/movie_image_portrait_placeholder"
             tools:ignore="ContentDescription" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/premiere_date_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/image_view"
-            app:layout_constraintEnd_toEndOf="@id/image_view"
-            app:layout_constraintBottom_toBottomOf="@id/image_view">
+            app:layout_constraintStart_toStartOf="@id/image_portrait_view"
+            app:layout_constraintEnd_toEndOf="@id/image_portrait_view"
+            app:layout_constraintBottom_toBottomOf="@id/image_portrait_view">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
-                android:alpha="?android:primaryContentAlpha"
-                android:background="@drawable/view_movie_poster_premiere_date_shadow"
+                android:background="@drawable/shadow_downwards"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +61,7 @@
                     android:layout_gravity="center"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    tools:text="@string/view_movie_poster_premiere_date_placeholder" />
+                    tools:text="@string/movie_premiere_date_placeholder" />
 
             </FrameLayout>
 
@@ -79,6 +78,6 @@
         android:ellipsize="end"
         app:layout_constraintTop_toBottomOf="@id/image_layout"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="@string/view_movie_poster_title_placeholder" />
+        tools:text="@string/movie_title_localized_placeholder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

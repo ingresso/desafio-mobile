@@ -2,12 +2,11 @@ package com.jeanbarrossilva.ingresso.ui.view
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.util.AttributeSet
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.jeanbarrossilva.ingresso.extensions.color.copy
 import com.jeanbarrossilva.ingresso.extensions.context.colorOf
 import com.jeanbarrossilva.ingresso.ui.R
+import com.jeanbarrossilva.ingresso.ui.extensions.context.defaultRippleColor
 
 class IngressoBottomNavigationView: BottomNavigationView {
     /** Short-hand for getting the theme secondary color through [colorOf]. **/
@@ -27,11 +26,7 @@ class IngressoBottomNavigationView: BottomNavigationView {
     init {
         itemIconTintList = ColorStateList.valueOf(secondaryColor)
         itemTextColor = ColorStateList.valueOf(secondaryColor)
-        itemRippleColor = secondaryColor
-            .let(Color::valueOf)
-            .copy(alpha = .026f)
-            .toArgb()
-            .let(ColorStateList::valueOf)
+        itemRippleColor = context.defaultRippleColor.let(ColorStateList::valueOf)
         setBackgroundColor(surfaceColor)
     }
 }

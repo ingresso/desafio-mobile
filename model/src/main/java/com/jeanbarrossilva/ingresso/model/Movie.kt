@@ -1,7 +1,10 @@
 package com.jeanbarrossilva.ingresso.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import java.util.Date
 
+@Parcelize
 data class Movie(
     val id: Long,
     val premiereDate: Date?,
@@ -15,7 +18,7 @@ data class Movie(
     val distributor: String?,
     val synopsis: String,
     val url: String
-) {
+): Parcelable {
     operator fun contains(other: String): Boolean {
         return other in title ||
             country.contains(other, ignoreCase = true) ||

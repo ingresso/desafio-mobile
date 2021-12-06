@@ -9,7 +9,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.jeanbarrossilva.ingresso.repository.Repository
 import com.jeanbarrossilva.ingresso.ui.R
-import com.jeanbarrossilva.ingresso.ui.adapter.MoviePosterAdapter
+import com.jeanbarrossilva.ingresso.ui.adapter.recyclerview.MoviePosterAdapter
 import com.jeanbarrossilva.ingresso.ui.core.IngressoFragment
 import com.jeanbarrossilva.ingresso.ui.databinding.FragmentMoviesBinding
 
@@ -18,7 +18,9 @@ class MoviesFragment: IngressoFragment<FragmentMoviesBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.moviesView.adapter = MoviePosterAdapter(Repository.movies)
+        binding.moviesView.adapter = MoviePosterAdapter(Repository.movies, onClick = {
+            findNavController().navigate(MoviesFragmentDirections.detailsOf(it))
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

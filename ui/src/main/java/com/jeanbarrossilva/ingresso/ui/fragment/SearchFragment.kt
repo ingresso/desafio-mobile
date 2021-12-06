@@ -10,7 +10,7 @@ import com.jeanbarrossilva.ingresso.extensions.view.edittext.doOnTextChanged
 import com.jeanbarrossilva.ingresso.extensions.view.edittext.openKeyboard
 import com.jeanbarrossilva.ingresso.extensions.view.searchFor
 import com.jeanbarrossilva.ingresso.repository.Repository
-import com.jeanbarrossilva.ingresso.ui.adapter.MovieSearchResultAdapter
+import com.jeanbarrossilva.ingresso.ui.adapter.recyclerview.MovieSearchResultAdapter
 import com.jeanbarrossilva.ingresso.ui.core.IngressoFragment
 import com.jeanbarrossilva.ingresso.ui.databinding.FragmentSearchBinding
 

@@ -1,10 +1,17 @@
 package com.jeanbarrossilva.ingresso.extensions.view
 
+import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.children
 import kotlin.reflect.KClass
 import kotlin.reflect.full.isSubclassOf
+
+val View.dp: Int.() -> Int
+    get() = {
+        val value = this.toFloat()
+        TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, context.resources.displayMetrics).toInt()
+    }
 
 /**
  * Searches for a [View] of type [V]. If [isInclusive] is set to `true` and the [View] from which this function is being called
