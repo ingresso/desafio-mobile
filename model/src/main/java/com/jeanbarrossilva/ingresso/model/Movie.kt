@@ -11,7 +11,7 @@ data class Movie(
     val title: Title,
     val imageUrl: ImageUrl,
     val genres: List<String>,
-    val score: Score?,
+    val score: Score,
     val country: String,
     val director: String,
     val cast: List<String>,
@@ -59,7 +59,7 @@ data class Movie(
                         "4dc01d711775.jpg",
                     landscape = null
                 ),
-                score = null,
+                score = Score(null, null),
                 genres = listOf("Teatro Contemporâneo"),
                 country = "Brasil",
                 director = "Vado Ferreira",

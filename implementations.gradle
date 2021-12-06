@@ -9,7 +9,7 @@ buildscript {
             constraintlayout: "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
             coroutines: [
                 core: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}",
-                rxjava3: "org.jetbrains.kotlinx:kotlinx-coroutines-rxjava3:${versions.coroutines}"
+                rxjava3: "org.jetbrains.kotlinx:kotlinx-coroutines-rx3:${versions.coroutines}"
             ],
             core: "androidx.core:core-ktx:${versions.core}",
             drawabletoolbox: "com.github.duanhong169:drawabletoolbox:${versions.drawabletoolbox}",
@@ -17,6 +17,7 @@ buildscript {
             ingresso: [
                 extensions: project(':extensions'),
                 model: project(':model'),
+                network: project(':network'),
                 repository: project(':repository'),
                 ui: project(':ui'),
                 ui_core: project(':ui-core')

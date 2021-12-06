@@ -34,5 +34,7 @@ android {
 }
 
 dependencies {
+    implementation implementations.coroutines.rxjava3
     implementation implementations.ingresso.model
+    implementation implementations.ingresso.network
 }

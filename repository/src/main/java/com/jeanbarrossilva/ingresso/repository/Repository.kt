@@ -1,13 +1,23 @@
 package com.jeanbarrossilva.ingresso.repository
 
 import com.jeanbarrossilva.ingresso.model.Movie
+import com.jeanbarrossilva.ingresso.network.IngressoService
+import com.jeanbarrossilva.ingresso.network.dto.MovieDto
+import com.jeanbarrossilva.ingresso.network.extensions.movie.toMovie
+import kotlinx.coroutines.rx3.awaitFirst
 
 object Repository {
-    val movies
-        get() = Movie.samples
+    private val service = IngressoService()
 
-    fun search(query: String): List<Movie> {
-        return movies.filter {
+    suspend fun getMovies(): List<Movie> {
+        return service
+            .getMovies()
+            .awaitFirst()
+            .map(MovieDto::toMovie)
+    }
+
+    suspend fun search(query: String): List<Movie> {
+        return getMovies().filter {
             query in it
         }
     }

@@ -11,7 +11,7 @@ data class MovieDto(
     val distributor: String,
     val premiereDate: PremiereDateDto?,
     val siteURL: String,
-    val images: Pair<Image, Image>,
+    val images: List<Image>,
     val genres: List<String>,
     val rottenTomatoe: RottenTomatoe?
 )
