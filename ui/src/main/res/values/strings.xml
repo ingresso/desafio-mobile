@@ -19,18 +19,5 @@
 
     <string name="view_movie_search_result_navigation_icon">Navegar</string>
 
-    <string name="movie_title_original_placeholder">Matrix Resurrections</string>
-    <string name="movie_title_localized_placeholder">@string/movie_title_original_placeholder</string>
-    <string name="movie_premiere_date_placeholder">22/12/2021</string>
-    <string name="movie_genres_placeholder">Ação, Ficção</string>
-    <string name="movie_country_placeholder">Estados Unidos</string>
-    <string name="movie_director_placeholder">Lana Wachowski</string>
-    <string name="movie_cast_placeholder">Keanu Reeves, Carrie-Anne Moss, Jada Pinkett Smith</string>
-    <string name="movie_distributor_placeholder">Warner Bros</string>
-    <string name="movie_synopsis_placeholder">
-        Em um mundo de duas realidades - a vida cotidiana e o que está por trás dela - Thomas Anderson terá que escolher seguir o
-        coelho branco mais uma vez. A escolha, embora seja uma ilusão, ainda é a única maneira de entrar ou sair da Matrix, que é mais
-        forte, mais segura e mais perigosa do que nunca.
-    </string>
     <string name="movie_image_content_description">Pôster de %s</string>
 </resources>

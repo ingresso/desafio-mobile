@@ -61,7 +61,7 @@
                     android:layout_gravity="center"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    tools:text="@string/movie_premiere_date_placeholder" />
+                    tools:text="@string/movie_premiere_date" />
 
             </FrameLayout>
 
@@ -78,6 +78,6 @@
         android:ellipsize="end"
         app:layout_constraintTop_toBottomOf="@id/image_layout"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="@string/movie_title_localized_placeholder" />
+        tools:text="@string/movie_title_localized" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

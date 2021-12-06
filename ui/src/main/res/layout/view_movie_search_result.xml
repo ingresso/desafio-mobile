@@ -59,7 +59,7 @@
                     android:textColor="?android:textColorSecondary"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    tools:text="@string/movie_genres_placeholder" />
+                    tools:text="@string/movie_genres" />
 
             </LinearLayout>
 

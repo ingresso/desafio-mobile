@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             app:title="@string/movie_details_original_title"
             app:description=""
-            tools:description="@string/movie_title_original_placeholder" />
+            tools:description="@string/movie_title_original" />
 
         <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
             android:id="@+id/cast_view"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             app:title="@string/movie_details_cast"
             app:description=""
-            tools:description="@string/movie_cast_placeholder" />
+            tools:description="@string/movie_cast" />
 
         <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
             android:id="@+id/synopsis_view"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             app:title="@string/movie_details_synopsis"
             app:description=""
-            tools:description="@string/movie_synopsis_placeholder" />
+            tools:description="@string/movie_synopsis" />
 
         <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
             android:id="@+id/director_view"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             app:title="@string/movie_details_director"
             app:description=""
-            tools:description="@string/movie_director_placeholder" />
+            tools:description="@string/movie_director" />
 
         <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
             android:id="@+id/distributor_view"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             app:title="@string/movie_details_distributor"
             app:description=""
-            tools:description="@string/movie_distributor_placeholder" />
+            tools:description="@string/movie_distributor" />
 
         <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
             android:id="@+id/country_view"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             app:title="@string/movie_details_country"
             app:description=""
-            tools:description="@string/movie_country_placeholder" />
+            tools:description="@string/movie_country" />
 
     </com.jeanbarrossilva.ingresso.ui.core.view.IngressoLinearLayout>
 

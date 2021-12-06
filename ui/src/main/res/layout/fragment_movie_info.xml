@@ -71,7 +71,7 @@
                         android:textAppearance="?textAppearanceHeadline6"
                         android:textStyle="bold"
                         android:textColor="?android:textColorPrimary"
-                        tools:text="@string/movie_title_localized_placeholder" />
+                        tools:text="@string/movie_title_localized" />
 
                     <TextView
                         android:id="@+id/genres_view"
@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:textColor="?android:textColorSecondary"
-                        tools:text="@string/movie_genres_placeholder" />
+                        tools:text="@string/movie_genres" />
 
                 </LinearLayout>
 
