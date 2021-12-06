@@ -3,7 +3,6 @@ package com.jeanbarrossilva.ingresso.repository
 import com.jeanbarrossilva.ingresso.model.Movie
 import com.jeanbarrossilva.ingresso.network.IngressoService
 import com.jeanbarrossilva.ingresso.network.dto.MovieDto
-import com.jeanbarrossilva.ingresso.network.extensions.movie.toMovie
 import kotlinx.coroutines.rx3.awaitFirst
 
 object Repository {

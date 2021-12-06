@@ -34,6 +34,7 @@ android {
 }
 
 dependencies {
+    implementation implementations.ingresso.extensions
     implementation implementations.ingresso.model
     implementation implementations.retrofit2.adapter_rxjava3
     implementation implementations.retrofit2.converter_gson

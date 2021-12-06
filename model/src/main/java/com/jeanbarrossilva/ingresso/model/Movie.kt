@@ -12,20 +12,20 @@ data class Movie(
     val imageUrl: ImageUrl,
     val genres: List<String>,
     val score: Score,
-    val country: String,
-    val director: String,
+    val country: String?,
+    val director: String?,
     val cast: List<String>,
     val distributor: String?,
-    val synopsis: String,
+    val synopsis: String?,
     val url: String
 ): Parcelable {
     operator fun contains(other: String): Boolean {
         return other in title ||
-            country.contains(other, ignoreCase = true) ||
-            director.contains(other, ignoreCase = true) ||
+            country?.contains(other, ignoreCase = true) == true ||
+            director?.contains(other, ignoreCase = true) == true ||
             cast.any { actor -> actor.contains(other, ignoreCase = true) } ||
             distributor?.contains(other, ignoreCase = true) == true ||
-            synopsis.contains(other, ignoreCase = true)
+            synopsis?.contains(other, ignoreCase = true) == true
     }
 
     @Suppress("SpellCheckingInspection")

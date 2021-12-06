@@ -19,12 +19,18 @@ class MovieDetailsFragment: IngressoFragment<FragmentMovieDetailsBinding>() {
         binding.castView
             .apply { description = movie.cast.joinToString() }
             .also { it.isVisible = movie.cast.isNotEmpty() }
-        binding.synopsisView.description = movie.synopsis
-        binding.directorView.description = movie.director
+        binding.synopsisView
+            .apply { description = movie.synopsis.orEmpty() }
+            .also { it.isVisible = movie.synopsis != null }
+        binding.directorView
+            .apply { description = movie.director.orEmpty() }
+            .also { it.isVisible = movie.director != null }
         binding.distributorView
             .apply { description = movie.distributor.orEmpty() }
             .also { it.isVisible = movie.distributor != null }
-        binding.countryView.description = movie.country
+        binding.countryView
+            .apply { description = movie.country.orEmpty() }
+            .also { it.isVisible = movie.country != null }
     }
 
     companion object {
