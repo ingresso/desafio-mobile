@@ -51,4 +51,5 @@ dependencies {
     implementation implementations.material
     implementation implementations.navigation.fragment
     implementation implementations.navigation.ui
+    implementation implementations.swiperefreshlayout
 }

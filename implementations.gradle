@@ -36,6 +36,7 @@ buildscript {
                 retrofit: "com.squareup.retrofit2:retrofit:${versions.retrofit2}"
             ],
             rxjava3: "io.reactivex.rxjava3:rxjava:${versions.rxjava3}",
+            swiperefreshlayout: "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swiperefreshlayout}",
             viewpager2: "androidx.viewpager2:viewpager2:${versions.viewpager2}"
         ]
     }

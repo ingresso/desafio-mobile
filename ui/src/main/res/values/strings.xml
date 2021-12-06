@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Ingresso</string>
 
+    <string name="no_internet_connection">Não foi possível estabelecer uma conexão com a internet. Tente novamente mais tarde.</string>
+
     <string name="movies_title">Filmes</string>
     <string name="movies_toolbar_search">Pesquisar</string>
 

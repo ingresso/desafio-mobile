@@ -22,6 +22,16 @@ class MoviesFragment: IngressoFragment<FragmentMoviesBinding>() {
 
     override val bindingClass = FragmentMoviesBinding::class
 
+    private fun setUpRefresh() {
+        with(binding.refreshLayout) {
+            setOnRefreshListener {
+                viewModel.refresh {
+                    isRefreshing = false
+                }
+            }
+        }
+    }
+
     private fun setUpMovies() {
         lifecycleScope.launchWhenResumed {
             viewModel.moviesFlow.collect { movies ->
@@ -36,6 +46,7 @@ class MoviesFragment: IngressoFragment<FragmentMoviesBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpRefresh()
         setUpMovies()
     }
 
