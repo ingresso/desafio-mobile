@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.isVisible
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -36,6 +38,9 @@ abstract class IngressoActivity<T: ViewBinding>: AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar?.setupWithNavController(navController)
         bottomNavigationView?.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            bottomNavigationView?.isVisible = !shouldHideBottomNavigationViewOn(destination)
+        }
     }
 
     @Suppress("UNCHECKED_CAST")
@@ -49,6 +54,11 @@ abstract class IngressoActivity<T: ViewBinding>: AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return false
+    }
+
+    /** Whether [bottomNavigationView] should be hidden when the user navigates to [destination]. **/
+    open fun shouldHideBottomNavigationViewOn(destination: NavDestination): Boolean {
         return false
     }
 }

@@ -6,7 +6,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.jeanbarrossilva.ingresso.extensions.context.activity.view
 import com.jeanbarrossilva.ingresso.extensions.view.edittext.doOnTextChanged
 import com.jeanbarrossilva.ingresso.extensions.view.edittext.openKeyboard
@@ -24,9 +23,8 @@ class SearchFragment: IngressoFragment<FragmentSearchBinding>() {
 
     override val bindingClass = FragmentSearchBinding::class
 
-    private fun setBarsVisible(areBarsVisible: Boolean) {
-        activity?.view?.searchFor<Toolbar>()?.isVisible = areBarsVisible
-        activity?.view?.searchFor<BottomNavigationView>()?.isVisible = areBarsVisible
+    private fun setToolbarVisible(isToolbarVisible: Boolean) {
+        activity?.view?.searchFor<Toolbar>()?.isVisible = isToolbarVisible
     }
 
     private fun setUpSearchField() {
@@ -45,13 +43,13 @@ class SearchFragment: IngressoFragment<FragmentSearchBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setBarsVisible(false)
+        setToolbarVisible(false)
         setUpSearchField()
         setUpResults()
     }
 
     override fun onDestroy() {
-        setBarsVisible(true)
+        setToolbarVisible(true)
         super.onDestroy()
     }
 }
