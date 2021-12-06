@@ -32,6 +32,7 @@ buildscript {
             ],
             retrofit2: [
                 adapter_rxjava3: "com.squareup.retrofit2:adapter-rxjava3:${versions.retrofit2}",
+                converter_gson: "com.squareup.retrofit2:converter-gson:${versions.retrofit2}",
                 retrofit: "com.squareup.retrofit2:retrofit:${versions.retrofit2}"
             ],
             rxjava3: "io.reactivex.rxjava3:rxjava:${versions.rxjava3}",

@@ -1,16 +1,17 @@
 package com.jeanbarrossilva.ingresso.network
 
-import com.jeanbarrossilva.ingresso.network.dto.MovieDto
+import com.jeanbarrossilva.ingresso.network.dto.Result
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import retrofit2.http.GET
 
 /** Service interface for executing HTTP requests to the given Ingresso API. **/
 interface IngressoService {
     @GET("events/coming-soon/partnership/desafio")
-    fun getMovies(): Observable<List<MovieDto>>
+    fun getMovies(): Observable<Result>
 
     companion object {
         /** Creates an instance of [IngressoService] through [Retrofit.Builder]. **/
@@ -18,6 +19,7 @@ interface IngressoService {
             return Retrofit.Builder()
                 .baseUrl("https://api-content.ingresso.com/v0/")
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create()
         }

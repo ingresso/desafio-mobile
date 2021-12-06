@@ -13,6 +13,7 @@ object Repository {
         return service
             .getMovies()
             .awaitFirst()
+            .items
             .map(MovieDto::toMovie)
     }
 

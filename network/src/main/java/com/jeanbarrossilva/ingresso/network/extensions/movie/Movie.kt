@@ -10,11 +10,15 @@ import java.util.Date
 fun MovieDto.toMovie(): Movie {
     val id = id.toLong()
     val premiereDate = premiereDate?.localDate
-        ?.let(Date::parse)
-        ?.let { Date(it) }
+        ?.run { substring(0, indexOf('T')) }
+        ?.split('-')
+        ?.map(String::toInt)
+        ?.let { (year, month, day) -> Date(year, month, day) }
     val title = Title(originalTitle, title)
-    val imageUrl = ImageUrl(portrait = images[0].url, landscape = images[1].url)
-    val (criticsScore, audienceScore) = rottenTomatoe?.criticsScore?.toInt() to rottenTomatoe?.audienceScore?.toInt()
+    val (portraitImageUrl, landscapeImageUrl) = images.firstOrNull()?.url to images.elementAtOrNull(1)?.url
+    val imageUrl = ImageUrl(portraitImageUrl, landscapeImageUrl)
+    val (criticsScore, audienceScore) =
+        rottenTomatoe?.criticsScore?.ifBlank { null }?.toInt() to rottenTomatoe?.audienceScore?.ifBlank { null }?.toInt()
     val score = Score(criticsScore, audienceScore)
     val cast = cast.split(", ")
 
