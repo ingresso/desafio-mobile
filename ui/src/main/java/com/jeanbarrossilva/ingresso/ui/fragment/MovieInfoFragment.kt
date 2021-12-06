@@ -16,7 +16,8 @@ class MovieInfoFragment: IngressoFragment<FragmentMovieInfoBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.imagePortraitView.load(movie.imageUrl)
+        binding.imageLandscapeView.load(movie.imageUrl.landscape) { crossfade(true) }
+        binding.imagePortraitView.load(movie.imageUrl.portrait) { crossfade(true) }
         binding.titleView.text = movie.title.localized
         binding.genresView.text = movie.genres.joinToString()
         binding.viewpager.adapter = MovieInfoAdapter(this, movie)

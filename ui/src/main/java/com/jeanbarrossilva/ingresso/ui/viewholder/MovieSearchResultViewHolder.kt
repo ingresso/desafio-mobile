@@ -8,7 +8,7 @@ import com.jeanbarrossilva.ingresso.ui.databinding.ViewMovieSearchResultBinding
 
 class MovieSearchResultViewHolder(private val binding: ViewMovieSearchResultBinding): RecyclerView.ViewHolder(binding.root) {
     fun bind(movie: Movie) {
-        binding.imagePortraitView.load(movie.imageUrl)
+        binding.imagePortraitView.load(movie.imageUrl.portrait)
         binding.imagePortraitView.contentDescription =
             binding.root.context.getString(R.string.movie_image_content_description, movie.title.localized)
         binding.titleView.text = movie.title.localized

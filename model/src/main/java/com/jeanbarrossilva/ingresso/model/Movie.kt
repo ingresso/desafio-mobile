@@ -9,7 +9,7 @@ data class Movie(
     val id: Long,
     val premiereDate: Date?,
     val title: Title,
-    val imageUrl: String,
+    val imageUrl: ImageUrl,
     val genres: List<String>,
     val score: Score?,
     val country: String,
@@ -35,7 +35,10 @@ data class Movie(
                 id = 24405,
                 premiereDate = null,
                 Title("Spencer"),
-                imageUrl = "https://ingresso-a.akamaihd.net/prd/img/movie/spencer/f27c5799-bd94-4698-b965-638ec2dc3e68.jpg",
+                ImageUrl(
+                    portrait = "https://ingresso-a.akamaihd.net/prd/img/movie/spencer/f27c5799-bd94-4698-b965-638ec2dc3e68.jpg",
+                    landscape = "https://ingresso-a.akamaihd.net/prd/img/movie/spencer/df55cf69-0439-4d74-ae14-a906e625ea24.jpg"
+                ),
                 genres = listOf("Ficção"),
                 Score(critics = 84, audience = 50),
                 country = "Reino Unido",
@@ -51,8 +54,11 @@ data class Movie(
                 id = 24453,
                 premiereDate = null,
                 Title("Jogos Mortais -  Teatro LPV"),
-                imageUrl = "https://ingresso-a.akamaihd.net/prd/img/movie/jogos-mortais-teatro-lpv/f4538e50-2895-48af-8508-" +
-                    "4dc01d711775.jpg",
+                ImageUrl(
+                    portrait = "https://ingresso-a.akamaihd.net/prd/img/movie/jogos-mortais-teatro-lpv/f4538e50-2895-48af-8508-" +
+                        "4dc01d711775.jpg",
+                    landscape = null
+                ),
                 score = null,
                 genres = listOf("Teatro Contemporâneo"),
                 country = "Brasil",

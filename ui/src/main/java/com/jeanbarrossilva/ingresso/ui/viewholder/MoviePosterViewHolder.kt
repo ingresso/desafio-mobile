@@ -19,7 +19,7 @@ class MoviePosterViewHolder(private val binding: ViewMoviePosterBinding): Recycl
 
     fun bind(movie: Movie, onClick: (Movie) -> Unit) {
         binding.root.setOnClickListener { onClick(movie) }
-        binding.imagePortraitView.load(movie.imageUrl) { crossfade(true) }
+        binding.imagePortraitView.load(movie.imageUrl.portrait) { crossfade(true) }
         binding.imagePortraitView.contentDescription = context.getString(R.string.movie_image_content_description, movie.title)
         showPremiereDateOf(movie)
         binding.titleView.text = movie.title.localized
