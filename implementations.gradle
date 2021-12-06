@@ -7,7 +7,10 @@ buildscript {
             appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
             coil: "io.coil-kt:coil:${versions.coil}",
             constraintlayout: "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
-            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}",
+            coroutines: [
+                core: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}",
+                rxjava3: "org.jetbrains.kotlinx:kotlinx-coroutines-rxjava3:${versions.coroutines}"
+            ],
             core: "androidx.core:core-ktx:${versions.core}",
             drawabletoolbox: "com.github.duanhong169:drawabletoolbox:${versions.drawabletoolbox}",
             fragment: "androidx.fragment:fragment-ktx:${versions.fragment}",
@@ -26,6 +29,11 @@ buildscript {
                 fragment: "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
                 ui: "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
             ],
+            retrofit2: [
+                adapter_rxjava3: "com.squareup.retrofit2:adapter-rxjava3:${versions.retrofit2}",
+                retrofit: "com.squareup.retrofit2:retrofit:${versions.retrofit2}"
+            ],
+            rxjava3: "io.reactivex.rxjava3:rxjava:${versions.rxjava3}",
             viewpager2: "androidx.viewpager2:viewpager2:${versions.viewpager2}"
         ]
     }
