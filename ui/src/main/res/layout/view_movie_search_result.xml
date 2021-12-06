@@ -31,7 +31,7 @@
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/movie_image_portrait_placeholder"
+                    tools:src="@drawable/movie_image_portrait"
                     tools:ignore="ContentDescription" />
 
             </androidx.cardview.widget.CardView>

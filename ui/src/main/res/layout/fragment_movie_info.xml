@@ -25,7 +25,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/movie_image_landscape_placeholder"
+                    tools:src="@drawable/movie_image_landscape"
                     tools:ignore="ContentDescription" />
 
                 <View
@@ -51,7 +51,7 @@
                     app:layout_constraintDimensionRatio="0.68:1"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:src="@drawable/movie_image_portrait_placeholder"
+                    tools:src="@drawable/movie_image_portrait"
                     tools:ignore="ContentDescription" />
 
                 <LinearLayout

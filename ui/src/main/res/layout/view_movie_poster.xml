@@ -24,7 +24,7 @@
             app:layout_constraintDimensionRatio="0.68:1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:src="@drawable/movie_image_portrait_placeholder"
+            tools:src="@drawable/movie_image_portrait"
             tools:ignore="ContentDescription" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
