@@ -11,8 +11,8 @@
         <item name="textAppearanceHeadline4">@style/TextAppearance.Ingresso.Headline4</item>
         <item name="cardViewStyle">@style/Theme.Ingresso.CardView</item>
         <item name="android:colorEdgeEffect">#43212121</item>
-        <item name="android:statusBarColor">@color/surface</item>
-        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:statusBarColor">?backgroundColor</item>
+        <item name="android:navigationBarColor">?backgroundColor</item>
         <item name="android:colorControlHighlight">#42FFFFFF</item>
         <item name="android:colorBackground">#424242</item>
         <item name="android:textColor">?android:textColorPrimary</item>

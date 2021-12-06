@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.jeanbarrossilva.ingresso.ui.core.data.SystemBarsColors
 import kotlin.reflect.KClass
 
 abstract class IngressoFragment<T: ViewBinding>: Fragment() {
@@ -25,5 +26,10 @@ abstract class IngressoFragment<T: ViewBinding>: Fragment() {
             .getDeclaredMethod("inflate", LayoutInflater::class.java, ViewGroup::class.java, Boolean::class.java)
             .invoke(null, inflater, container, false) as T
         return binding.root
+    }
+
+    /** Sets the returned [SystemBarsColors] as the colors of the system bars. **/
+    open fun IngressoActivity<*>.onSetSystemBarsColors(): SystemBarsColors {
+        return SystemBarsColors.getDefault(this)
     }
 }
