@@ -1,12 +1,14 @@
 package com.jeanbarrossilva.ingresso.extensions.context
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.TypedArray
 import android.graphics.Color
 import android.util.AttributeSet
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
+import androidx.annotation.StringRes
 import androidx.annotation.StyleableRes
 import androidx.core.content.getSystemService
 import androidx.core.content.withStyledAttributes
@@ -23,6 +25,22 @@ fun Context.colorOf(@AttrRes colorAttrRes: Int): Int {
 
     typedArray.recycle()
     return color
+}
+
+/** @see share **/
+fun Context.share(@StringRes titleRes: Int, text: String) {
+    share(getString(titleRes), text)
+}
+
+/** Opens the share sheet with [title] to share the given [text]. **/
+fun Context.share(title: String, text: String) {
+    Intent(Intent.ACTION_SEND)
+        .apply {
+            type = "text/html"
+            putExtra(Intent.EXTRA_TEXT, text)
+        }
+        .let { Intent.createChooser(it, title) }
+        .let(::startActivity)
 }
 
 /** @see withStyledAttributes **/

@@ -1,8 +1,13 @@
 package com.jeanbarrossilva.ingresso.ui.fragment
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.navigation.fragment.navArgs
+import com.jeanbarrossilva.ingresso.extensions.context.share
+import com.jeanbarrossilva.ingresso.ui.R
 import com.jeanbarrossilva.ingresso.ui.adapter.viewpager.MovieInfoAdapter
 import com.jeanbarrossilva.ingresso.ui.core.IngressoFragment
 import com.jeanbarrossilva.ingresso.ui.databinding.FragmentMovieInfoBinding
@@ -22,5 +27,19 @@ class MovieInfoFragment: IngressoFragment<FragmentMovieInfoBinding>() {
         binding.titleView.text = movie.title.localized
         binding.genresView.text = movie.genres.joinToString()
         binding.viewpager.adapter = MovieInfoAdapter(this, movie)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.toolbar_movie_info, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_item_share -> {
+                context?.share(R.string.movie_info_share_sheet_title, movie.url)
+                true
+            }
+            else -> false
+        }
     }
 }

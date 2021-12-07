@@ -7,6 +7,8 @@
     <string name="movies_toolbar_search">Pesquisar</string>
 
     <string name="movie_info_title">Informações</string>
+    <string name="movie_info_toolbar_share">Compartilhar</string>
+    <string name="movie_info_share_sheet_title">@string/movie_info_toolbar_share</string>
     <string name="movie_info_tab_details">Detalhes</string>
 
     <string name="movie_details_original_title">Título original</string>
