@@ -11,8 +11,11 @@ import com.jeanbarrossilva.ingresso.ui.fragment.SearchFragment
 import com.jeanbarrossilva.ingresso.ui.viewholder.MovieSearchResultViewHolder
 import kotlinx.coroutines.launch
 
-class MovieSearchResultAdapter(private val fragment: SearchFragment, override val items: List<Movie>):
-    IngressoAdapter<ViewMovieSearchResultBinding, MovieSearchResultViewHolder, Movie>(), Filterable {
+class MovieSearchResultAdapter(
+    private val fragment: SearchFragment,
+    override val items: List<Movie>,
+    private val onClick: (Movie) -> Unit
+): IngressoAdapter<ViewMovieSearchResultBinding, MovieSearchResultViewHolder, Movie>(), Filterable {
     private var movies = items
         @Suppress("NotifyDataSetChanged")
         set(movies) {
@@ -27,7 +30,7 @@ class MovieSearchResultAdapter(private val fragment: SearchFragment, override va
     }
 
     override fun onBindViewHolder(holder: MovieSearchResultViewHolder, position: Int) {
-        holder.bind(movies[position])
+        holder.bind(movies[position], onClick)
     }
 
     override fun getItemCount(): Int {

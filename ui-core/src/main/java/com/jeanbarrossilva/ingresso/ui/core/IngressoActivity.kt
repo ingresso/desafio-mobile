@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -18,7 +17,7 @@ import com.jeanbarrossilva.ingresso.extensions.view.searchFor
 import com.jeanbarrossilva.ingresso.ui.core.extensions.window.setSystemBarsColors
 import kotlin.reflect.KClass
 
-/** [AppCompatActivity] that uses view binding by default and configures navigation and system bars colors automatically. **/
+/** [AppCompatActivity] that uses view binding by default and configures navigation and system bars automatically. **/
 abstract class IngressoActivity<T: ViewBinding>: AppCompatActivity() {
     private val navHostFragment
         get() = supportFragmentManager
@@ -44,15 +43,20 @@ abstract class IngressoActivity<T: ViewBinding>: AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar?.setupWithNavController(navController)
         bottomNavigationView?.setupWithNavController(navController)
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            bottomNavigationView?.isVisible = !shouldHideBottomNavigationViewOn(destination)
+        doOnFragmentChange { fragment ->
+            toolbar?.isVisible = !shouldHideToolbarOn(fragment)
+            bottomNavigationView?.isVisible = !shouldHideBottomNavigationViewOn(fragment)
         }
     }
 
     private fun setUpSystemBarsColors() {
         currentFragment?.let(::onFragmentChange)
-        navHostFragment?.childFragmentManager?.addFragmentOnAttachListener { _, fragment -> onFragmentChange(fragment) }
-        navHostFragment?.childFragmentManager?.addOnBackStackChangedListener { currentFragment?.let(::onFragmentChange) }
+        doOnFragmentChange { fragment -> onFragmentChange(fragment) }
+    }
+
+    private fun doOnFragmentChange(operation: (Fragment) -> Unit) {
+        navHostFragment?.childFragmentManager?.addFragmentOnAttachListener { _, fragment -> operation(fragment) }
+        navHostFragment?.childFragmentManager?.addOnBackStackChangedListener { currentFragment?.let(operation) }
     }
 
     private fun onFragmentChange(fragment: Fragment) {
@@ -79,8 +83,13 @@ abstract class IngressoActivity<T: ViewBinding>: AppCompatActivity() {
         return false
     }
 
-    /** Whether [bottomNavigationView] should be hidden when the user navigates to [destination]. **/
-    open fun shouldHideBottomNavigationViewOn(destination: NavDestination): Boolean {
+    /** Whether [toolbar] should be hidden when the user navigates to [fragment]. **/
+    open fun shouldHideToolbarOn(fragment: Fragment): Boolean {
+        return false
+    }
+
+    /** Whether [bottomNavigationView] should be hidden when the user navigates to [fragment]. **/
+    open fun shouldHideBottomNavigationViewOn(fragment: Fragment): Boolean {
         return false
     }
 
