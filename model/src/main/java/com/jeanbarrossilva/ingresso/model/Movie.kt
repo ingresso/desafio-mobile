@@ -8,6 +8,7 @@ import java.util.Date
 data class Movie(
     val id: Long,
     val premiereDate: Date?,
+    val isInPreSale: Boolean,
     val title: Title,
     val imageUrl: ImageUrl,
     val genres: List<String>,
@@ -34,6 +35,7 @@ data class Movie(
             Movie(
                 id = 24405,
                 premiereDate = null,
+                isInPreSale = false,
                 Title("Spencer"),
                 ImageUrl(
                     portrait = "https://ingresso-a.akamaihd.net/prd/img/movie/spencer/f27c5799-bd94-4698-b965-638ec2dc3e68.jpg",
@@ -53,6 +55,7 @@ data class Movie(
             Movie(
                 id = 24453,
                 premiereDate = null,
+                isInPreSale = false,
                 Title("Jogos Mortais -  Teatro LPV"),
                 ImageUrl(
                     portrait = "https://ingresso-a.akamaihd.net/prd/img/movie/jogos-mortais-teatro-lpv/f4538e50-2895-48af-8508-" +

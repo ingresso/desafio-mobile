@@ -15,6 +15,7 @@ data class MovieDto(
     val cast: String,
     val director: String,
     val distributor: String,
+    val inPreSale: Boolean,
     val premiereDate: PremiereDateDto?,
     val siteURL: String,
     val images: List<Image>,
@@ -35,6 +36,20 @@ data class MovieDto(
         val distributor = distributor.trim().orIf<String?>({ this == "Sem Distribuidor" }) { null }
         val synopsis = synopsis.trim().ifBlank { null }
 
-        return Movie(id, premiereDate, title, imageUrl, genres, score, country, director, cast, distributor, synopsis, siteURL)
+        return Movie(
+            id,
+            premiereDate,
+            inPreSale,
+            title,
+            imageUrl,
+            genres,
+            score,
+            country,
+            director,
+            cast,
+            distributor,
+            synopsis,
+            siteURL
+        )
     }
 }

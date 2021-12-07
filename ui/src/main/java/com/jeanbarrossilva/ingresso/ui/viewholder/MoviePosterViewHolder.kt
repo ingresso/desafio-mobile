@@ -21,6 +21,7 @@ class MoviePosterViewHolder(private val binding: ViewMoviePosterBinding): Recycl
         binding.root.setOnClickListener { onClick(movie) }
         binding.imagePortraitView.loadPortraitOf(movie.imageUrl)
         binding.imagePortraitView.contentDescription = context.getString(R.string.movie_image_content_description, movie.title)
+        binding.preSaleLayout.isVisible = movie.isInPreSale
         showPremiereDateOf(movie)
         binding.titleView.text = movie.title.localized
     }

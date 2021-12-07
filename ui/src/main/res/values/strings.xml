@@ -22,4 +22,5 @@
     <string name="view_movie_search_result_navigation_icon">Navegar</string>
 
     <string name="movie_image_content_description">Pôster de %s</string>
+    <string name="movie_pre_sale_content_description">Indicador de pré-venda</string>
 </resources>

@@ -28,6 +28,40 @@
             tools:ignore="ContentDescription" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pre_sale_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible">
+
+            <View
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:translationX="24dp"
+                android:translationY="-32dp"
+                android:rotation="-135"
+                android:background="@drawable/shadow_downwards"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/pre_sale_view"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:alpha="?android:secondaryContentAlpha"
+                android:src="@drawable/ic_baseline_local_offer_24"
+                android:contentDescription="@string/movie_pre_sale_content_description"
+                app:tint="?colorSecondary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/premiere_date_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
