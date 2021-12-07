@@ -17,8 +17,9 @@ import com.jeanbarrossilva.ingresso.ui.databinding.FragmentMoviesBinding
 import com.jeanbarrossilva.ingresso.ui.viewmodel.MoviesViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.launch
 
 class MoviesFragment: IngressoFragment<FragmentMoviesBinding>() {
     private val viewModel by viewModels<MoviesViewModel>()
@@ -27,11 +28,21 @@ class MoviesFragment: IngressoFragment<FragmentMoviesBinding>() {
 
     private fun setUpRefresh() {
         with(binding.refreshLayout) {
-            setOnRefreshListener(viewModel::refresh)
             viewModel.getMoviesFlow()
                 .onStart { isRefreshing = true }
-                .onCompletion { isRefreshing = false }
-                .launchIn(lifecycleScope)
+                .onEach { isRefreshing = false }
+                .run {
+                    setOnRefreshListener {
+                        launchIn(lifecycleScope)
+                    }
+                }
+                .also { refresh() }
+        }
+    }
+
+    private fun refresh() {
+        lifecycleScope.launch {
+            viewModel.refresh()
         }
     }
 
