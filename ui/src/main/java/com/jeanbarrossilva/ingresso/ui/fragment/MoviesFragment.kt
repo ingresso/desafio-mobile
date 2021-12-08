@@ -24,6 +24,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import ru.beryukhov.reactivenetwork.ReactiveNetwork
@@ -59,6 +60,7 @@ class MoviesFragment: IngressoFragment<FragmentMoviesBinding>() {
                         .getMoviesFlow()
                         .onStart { if (!hasBeenTriggeredBySwipe) isRefreshing = true }
                         .catch { noInternetConnectionSnackbar.show() }
+                        .onEach { noInternetConnectionSnackbar.dismiss() }
                         .onCompletion { isRefreshing = false }
                         .collect { updateMoviesView(it) }
                 }
