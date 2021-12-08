@@ -42,6 +42,7 @@ dependencies {
     implementation implementations.appcompat
     implementation implementations.coil
     implementation implementations.constraintlayout
+    implementation implementations.flowreactivenetwork
     implementation implementations.fragment
     implementation implementations.ingresso.extensions
     implementation implementations.ingresso.model

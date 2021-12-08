@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.TypedArray
 import android.graphics.Color
+import android.net.ConnectivityManager
 import android.util.AttributeSet
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.AttrRes
@@ -16,6 +17,10 @@ import androidx.core.content.withStyledAttributes
 /** Short-hand for getting the [InputMethodManager] from this [Context]. **/
 val Context.inputMethodManager
     get() = getSystemService<InputMethodManager>()
+
+/** Whether the device is connected to a network or not. **/
+val Context.isOnline
+    get() = getSystemService<ConnectivityManager>()?.isDefaultNetworkActive == true
 
 /** Gets the color that corresponds to [colorAttrRes]. **/
 @ColorInt
