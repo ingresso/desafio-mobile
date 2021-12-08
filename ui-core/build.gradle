@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
 }
 
@@ -7,13 +7,13 @@ android {
     compileSdk versions.ingresso.sdk.compile
 
     defaultConfig {
-        applicationId 'com.jeanbarrossilva.ingresso'
         minSdk versions.ingresso.sdk.min
         targetSdk versions.ingresso.sdk.target
         versionCode versions.ingresso.code
         versionName versions.ingresso.name
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
@@ -21,6 +21,10 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     compileOptions {
@@ -34,5 +38,12 @@ android {
 }
 
 dependencies {
-    implementation implementations.ingresso.ui
+    implementation implementations.appcompat
+    implementation implementations.drawabletoolbox
+    implementation implementations.ingresso.extensions
+    implementation implementations.kotlin.reflect
+    implementation implementations.material
+    implementation implementations.navigation.fragment
+    implementation implementations.navigation.ui
+    implementation implementations.viewpager2
 }

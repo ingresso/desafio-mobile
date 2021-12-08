@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdk versions.ingresso.sdk.compile
+
+    defaultConfig {
+        minSdk versions.ingresso.sdk.min
+        targetSdk versions.ingresso.sdk.target
+        versionCode versions.ingresso.code
+        versionName versions.ingresso.name
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility versions.java
+        targetCompatibility versions.java
+    }
+
+    kotlinOptions {
+        jvmTarget = versions.java.toString()
+    }
+}
+
+dependencies {
+    implementation implementations.appcompat
+    implementation implementations.coil
+    implementation implementations.constraintlayout
+    implementation implementations.flowreactivenetwork
+    implementation implementations.fragment
+    implementation implementations.ingresso.extensions
+    implementation implementations.ingresso.model
+    implementation implementations.ingresso.repository
+    implementation implementations.ingresso.ui_core
+    implementation implementations.kotlin.reflect
+    implementation implementations.material
+    implementation implementations.navigation.fragment
+    implementation implementations.navigation.ui
+    implementation implementations.swiperefreshlayout
+}

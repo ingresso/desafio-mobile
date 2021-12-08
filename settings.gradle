@@ -1,10 +1,8 @@
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-    }
-}
 rootProject.name = "Ingresso"
 include ':app'
+include ':ui'
+include ':extensions'
+include ':ui-core'
+include ':model'
+include ':repository'
+include ':network'

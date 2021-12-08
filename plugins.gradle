@@ -1,0 +1,13 @@
+buildscript {
+    ext {
+        apply from: 'versions.gradle'
+
+        _plugins = [
+            gradle: "com.android.tools.build:gradle:${versions.gradle}",
+            kotlin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+            navigation: [
+                safe_args: "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.navigation}"
+            ]
+        ]
+    }
+}
