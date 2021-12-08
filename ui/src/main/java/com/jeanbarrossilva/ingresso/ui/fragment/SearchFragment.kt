@@ -10,6 +10,7 @@ import com.jeanbarrossilva.ingresso.extensions.view.edittext.closeKeyboard
 import com.jeanbarrossilva.ingresso.extensions.view.edittext.doOnTextChanged
 import com.jeanbarrossilva.ingresso.extensions.view.edittext.openKeyboard
 import com.jeanbarrossilva.ingresso.model.Movie
+import com.jeanbarrossilva.ingresso.repository.Repository
 import com.jeanbarrossilva.ingresso.ui.R
 import com.jeanbarrossilva.ingresso.ui.adapter.recyclerview.MovieSearchResultAdapter
 import com.jeanbarrossilva.ingresso.ui.core.IngressoActivity
@@ -22,7 +23,6 @@ import kotlinx.coroutines.launch
 
 class SearchFragment: IngressoFragment<FragmentSearchBinding>() {
     private val viewModel by viewModels<SearchViewModel>()
-    private var adapter = MovieSearchResultAdapter(this, emptyList(), onClick = ::navigateToDetailsOf)
 
     override val bindingClass = FragmentSearchBinding::class
 
@@ -33,16 +33,27 @@ class SearchFragment: IngressoFragment<FragmentSearchBinding>() {
 
     private fun setUpSearchField() {
         binding.textInputLayout.editText?.openKeyboard()
-        binding.textInputLayout.editText?.doOnTextChanged { text -> adapter.filter.filter(text) }
+        binding.textInputLayout.editText?.doOnTextChanged(::search)
+    }
+
+    private fun search(query: String) {
+        lifecycleScope.launch {
+            Repository.search(query).collect {
+                updateResultsView(it)
+            }
+        }
     }
 
     private fun setUpResults() {
         lifecycleScope.launch {
-            viewModel.moviesFlow.collect { movies ->
-                adapter = MovieSearchResultAdapter(this@SearchFragment, movies, onClick = ::navigateToDetailsOf)
-                binding.resultsView.adapter = adapter
+            viewModel.moviesFlow.collect {
+                updateResultsView(it)
             }
         }
+    }
+
+    private fun updateResultsView(movies: List<Movie>) {
+        binding.resultsView.adapter = MovieSearchResultAdapter(movies, onClick = ::navigateToDetailsOf)
     }
 
     override fun IngressoActivity<*>.onSetSystemBarsColors(): SystemBarsColors {
@@ -53,9 +64,5 @@ class SearchFragment: IngressoFragment<FragmentSearchBinding>() {
         super.onViewCreated(view, savedInstanceState)
         setUpSearchField()
         setUpResults()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 }
