@@ -14,7 +14,10 @@ buildscript {
             core: "androidx.core:core-ktx:${versions.core}",
             drawabletoolbox: "com.github.duanhong169:drawabletoolbox:${versions.drawabletoolbox}",
             flowreactivenetwork: "ru.beryukhov:flowreactivenetwork:${versions.flowreactivenetwork}",
-            fragment: "androidx.fragment:fragment-ktx:${versions.fragment}",
+            fragment: [
+                ktx: "androidx.fragment:fragment-ktx:${versions.fragment}",
+                testing: "androidx.fragment:fragment-testing:${versions.fragment}"
+            ],
             ingresso: [
                 extensions: project(':extensions'),
                 model: project(':model'),
@@ -29,6 +32,7 @@ buildscript {
             material: "com.google.android.material:material:${versions.material}",
             navigation: [
                 fragment: "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                testing: "androidx.navigation:navigation-testing:${versions.navigation}",
                 ui: "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
             ],
             retrofit2: [
@@ -38,6 +42,10 @@ buildscript {
             ],
             rxjava3: "io.reactivex.rxjava3:rxjava:${versions.rxjava3}",
             swiperefreshlayout: "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swiperefreshlayout}",
+            test: [
+                espresso: "androidx.test.espresso:espresso-core:${versions.test.espresso}",
+                espresso_contrib: "androidx.test.espresso:espresso-contrib:${versions.test.espresso}"
+            ],
             viewpager2: "androidx.viewpager2:viewpager2:${versions.viewpager2}"
         ]
     }
