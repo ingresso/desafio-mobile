@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Ingresso</string>
+
+    <string name="no_internet_connection">Não foi possível estabelecer uma conexão com a internet. Tente novamente mais tarde.</string>
+
+    <string name="movies_title">Filmes</string>
+    <string name="movies_toolbar_search">Pesquisar</string>
+
+    <string name="movie_info_title">Informações</string>
+    <string name="movie_info_toolbar_share">Compartilhar</string>
+    <string name="movie_info_share_sheet_title">@string/movie_info_toolbar_share</string>
+    <string name="movie_info_tab_details">Detalhes</string>
+
+    <string name="movie_details_original_title">Título original</string>
+    <string name="movie_details_cast">Elenco</string>
+    <string name="movie_details_synopsis">Sinopse</string>
+    <string name="movie_details_director">Direção</string>
+    <string name="movie_details_distributor">Distribuidor</string>
+    <string name="movie_details_country">País de origem</string>
+
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search…</string>
+
+    <string name="view_movie_search_result_navigation_icon">Navegar</string>
+
+    <string name="movie_image_content_description">Pôster de %s</string>
+    <string name="movie_pre_sale_content_description">Indicador de pré-venda</string>
+</resources>

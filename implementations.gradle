@@ -1,0 +1,52 @@
+buildscript {
+    apply from: 'versions.gradle'
+
+    ext {
+        implementations = [
+            annotation: "androidx.annotation:annotation:${versions.annotation}",
+            appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
+            coil: "io.coil-kt:coil:${versions.coil}",
+            constraintlayout: "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+            coroutines: [
+                core: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}",
+                rxjava3: "org.jetbrains.kotlinx:kotlinx-coroutines-rx3:${versions.coroutines}"
+            ],
+            core: "androidx.core:core-ktx:${versions.core}",
+            drawabletoolbox: "com.github.duanhong169:drawabletoolbox:${versions.drawabletoolbox}",
+            flowreactivenetwork: "ru.beryukhov:flowreactivenetwork:${versions.flowreactivenetwork}",
+            fragment: [
+                ktx: "androidx.fragment:fragment-ktx:${versions.fragment}",
+                testing: "androidx.fragment:fragment-testing:${versions.fragment}"
+            ],
+            ingresso: [
+                extensions: project(':extensions'),
+                model: project(':model'),
+                network: project(':network'),
+                repository: project(':repository'),
+                ui: project(':ui'),
+                ui_core: project(':ui-core')
+            ],
+            kotlin: [
+                reflect: "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}"
+            ],
+            material: "com.google.android.material:material:${versions.material}",
+            navigation: [
+                fragment: "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                testing: "androidx.navigation:navigation-testing:${versions.navigation}",
+                ui: "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+            ],
+            retrofit2: [
+                adapter_rxjava3: "com.squareup.retrofit2:adapter-rxjava3:${versions.retrofit2}",
+                converter_gson: "com.squareup.retrofit2:converter-gson:${versions.retrofit2}",
+                retrofit: "com.squareup.retrofit2:retrofit:${versions.retrofit2}"
+            ],
+            rxjava3: "io.reactivex.rxjava3:rxjava:${versions.rxjava3}",
+            swiperefreshlayout: "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swiperefreshlayout}",
+            test: [
+                espresso: "androidx.test.espresso:espresso-core:${versions.test.espresso}",
+                espresso_contrib: "androidx.test.espresso:espresso-contrib:${versions.test.espresso}"
+            ],
+            viewpager2: "androidx.viewpager2:viewpager2:${versions.viewpager2}"
+        ]
+    }
+}

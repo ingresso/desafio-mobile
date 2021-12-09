@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="18dp">
+
+    <!--
+    MovieDetailsSectionView must be set with an initial empty description. Otherwise, for some weird reason, the layout looks fine on
+    the preview, but breaks when run on a device.
+    -->
+    <com.jeanbarrossilva.ingresso.ui.core.view.IngressoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:orientation="vertical"
+        android:background="?colorSurface"
+        app:spacing="24dp">
+
+        <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
+            android:id="@+id/original_title_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@string/movie_details_original_title"
+            app:description=""
+            tools:description="@string/movie_title_original" />
+
+        <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
+            android:id="@+id/cast_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@string/movie_details_cast"
+            app:description=""
+            tools:description="@string/movie_cast" />
+
+        <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
+            android:id="@+id/synopsis_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@string/movie_details_synopsis"
+            app:description=""
+            tools:description="@string/movie_synopsis" />
+
+        <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
+            android:id="@+id/director_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@string/movie_details_director"
+            app:description=""
+            tools:description="@string/movie_director" />
+
+        <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
+            android:id="@+id/distributor_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@string/movie_details_distributor"
+            app:description=""
+            tools:description="@string/movie_distributor" />
+
+        <com.jeanbarrossilva.ingresso.ui.view.MovieDetailsSectionView
+            android:id="@+id/country_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@string/movie_details_country"
+            app:description=""
+            tools:description="@string/movie_country" />
+
+    </com.jeanbarrossilva.ingresso.ui.core.view.IngressoLinearLayout>
+
+</FrameLayout>
