@@ -39,11 +39,13 @@ android {
 }
 
 dependencies {
+    debugImplementation implementations.fragment.testing
+
     implementation implementations.appcompat
     implementation implementations.coil
     implementation implementations.constraintlayout
     implementation implementations.flowreactivenetwork
-    implementation implementations.fragment
+    implementation implementations.fragment.ktx
     implementation implementations.ingresso.extensions
     implementation implementations.ingresso.model
     implementation implementations.ingresso.repository
@@ -53,4 +55,8 @@ dependencies {
     implementation implementations.navigation.fragment
     implementation implementations.navigation.ui
     implementation implementations.swiperefreshlayout
+
+    androidTestImplementation implementations.navigation.testing
+    androidTestImplementation implementations.test.espresso
+    androidTestImplementation implementations.test.espresso_contrib
 }
