@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#383838</color>
+    <color name="medium_grey">#4D4B4B</color>
+    <color name="light_grey">#C8BDBD</color>
+
+    <color name="shimmer_color">#BFBDBD</color>
+    <color name="premiere_color">#FF9800</color>
+    <color name="opacity_premiere">#80FFFFFF</color>
+    <color name="pre_sale">#FF5722</color>
+</resources>
