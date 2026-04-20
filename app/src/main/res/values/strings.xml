@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name" translatable="false">Ingresso</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="movies">Movies</string>
+    <string name="pre_sale">Pre-Sale</string>
+    <string name="all">All</string>
+    <string name="empty_filter">No movies found for this filter.</string>
+    <string name="back">Back</string>
+    <string name="duration">Duration</string>
+    <string name="duration_minutes">%s min</string>
+    <string name="premiere">Premiere</string>
+    <string name="genres">Genres</string>
+    <string name="rating">Rating</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="search_placeholder">Search movies by name…</string>
+    <string name="favorites">Favorites</string>
+    <string name="favorites_empty">No favorites yet.</string>
+    <string name="pre_sale_empty">No movies in pre-sale currently.</string>
+    <string name="related_movies">You might also like</string>
+    <string name="details_favorite_cd">Toggle Favorite</string>
+    <string name="error_title">Oops! Something went wrong</string>
+    <string name="error_retry">Try again</string>
+    <string name="error_unexpected">An unexpected error occurred</string>
+    <string name="error_not_found">Movie not found</string>
+    <string name="error_load">Error loading details</string>
+</resources>

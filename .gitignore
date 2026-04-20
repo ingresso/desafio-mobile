@@ -1,0 +1,32 @@
+# Project-wide Gradle settings
+.gradle
+/build
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log Files
+*.log
+
+# Android Studio / IntelliJ
+.idea
+*.iml
+*.ipr
+*.iws
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# macOS
+.DS_Store
+
+# Built variants
+**/build/
+captures/
+
+# External Native Build
+.externalNativeBuild
+.cxx
