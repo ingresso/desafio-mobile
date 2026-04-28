@@ -1,125 +1,89 @@
-# Desafio Mobile
+# 🎟️ Meu Ingresso - Android
 
-O desafio consiste em criar um aplicativo que consuma uma API da Ingresso.com e apresente o resultado na tela.
-A tela deve conter uma lista com os filmes que deverão entrar em cartaz em breve.
+![Kotlin](https://img.shields.io/badge/Kotlin-1.9+-blue.svg)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-1.6+-green.svg)
+![Architecture](https://img.shields.io/badge/Architecture-Clean_Architecture-orange.svg)
+![Testing](https://img.shields.io/badge/Tests-Unit_%26_UI-brightgreen.svg)
 
+**Meu Ingresso** é uma aplicação de alto desempenho voltada para o setor de entretenimento e cinema. O projeto foi concebido sob princípios rigorosos de engenharia de software, focando em **escalabilidade**, **manutenibilidade** e **testabilidade**, utilizando as tecnologias mais recentes do ecossistema Android moderno.
 
+---
 
-## Requisitos Técnicos
+## 🏛️ Arquitetura e Engenharia
 
-1. Linguagens: Swift ou Kotlin;
-2. Utilizar uma IDE atualizada (latest stable version), XCode ou Android Studio;
-3. Utilize uma ou mais bibliotecas de terceiro;
-4. Faça pelo menos um teste unitário e/ou de interface;
-5. Log é bom! Nós gostamos, eles precisam ser úteis;
-6. Crie um Readme.md, organizado em tópicos, na raiz do projeto com instruções/comentários/explicações.
-
-**No iOS utilize**
-- Swift UI.
-
-**No Android utilize**
-- Jetpack Compose.
+O projeto implementa **Clean Architecture** para garantir o desacoplamento entre a lógica de negócio e os frameworks de infraestrutura (UI, Banco de Dados, Rede).
 
 
 
-## Requisitos do Produto
+### Camadas do Projeto:
+* **`domain`**: Camada central (Kotlin puro). Contém as entidades de negócio, as interfaces dos repositórios e os *Use Cases* (Interactors). Não possui dependências do Android.
+* **`data`**: Implementa as interfaces de repositório da camada de domínio. Gerencia o fluxo de dados entre fontes locais (Room) e remotas (Retrofit), implementando o padrão *Single Source of Truth*.
+* **`presentation`**: Camada de UI utilizando **Jetpack Compose**. Implementa o padrão **MVVM (Model-View-ViewModel)** aliado ao **MVI (Model-View-Intent)** para garantir um fluxo de dados unidirecional (**UDF**).
 
-Como foi dito anteriormente, deve-se criar uma tela de filmes que ainda vão entrar em cartaz.
-Alguns elementos precisam estar nessa interface como:
+---
 
-1. Tela de loading;
-2. Poster (podem existir filmes ainda sem poster);
-3. Nome do filme;
-4. Data de estreia (se existir);
-5. Ordene os filmes pelos quais estejam próximos de entrarem em cartaz (campo `premiereDate`);
-6. Organize o projeto, preferêncialmente utilizando alguma arquitetura.
+## 🛠️ Stack Tecnológica
 
-Você determina a interface, use a criatividade.
-Nós fizemos essa tela assim.
+### Core e UI
+* **Jetpack Compose:** UI 100% declarativa com **Material Design 3**.
+* **Kotlin Coroutines & Flow:** Gestão de concorrência e fluxos de dados reativos.
+* **Navigation Compose:** Navegação *type-safe* entre telas.
+* **Coil:** Carregamento de imagens otimizado para Compose com suporte a cache.
 
-<p align="center">
-  <img src="filmes-em-breve-1.png" width="350" title="Tela de Filmes em breve, topo">
-  <img src="filmes-em-breve-2.png" width="350" title="Tela de Filmes em breve, com data de estreia">
-</p>
+### Injeção de Dependência e Dados
+* **Koin:** Framework de DI pragmático para gestão de dependências e escopos de ViewModel.
+* **Retrofit & OkHttp:** Consumo de APIs REST com interceptores de log e tratamento de erros.
+* **Room Database:** Persistência local para suporte offline e cache de dados.
 
-Observações:
+---
 
-1. Não é necessário colocar o elemento de publicidade;
-2. A NavBar/Navigation Bar pode ser simples;
-3. Você pode mudar totalmente essa tela;
-4. Você pode implementar funcionalidades novas se desejar, abaixo existe uma lista com sugestões;
-5. Animações são bem-vindas mas não obrigatórias.
+## 🧪 Estratégia de Qualidade (Testes)
 
+O projeto segue a pirâmide de testes para garantir a entrega de código resiliente:
 
+### Testes Unitários (`test`)
+* Validação de **Use Cases** e lógica de negócio.
+* Teste de estados de **ViewModels** utilizando `StateFlow` e mocks de repositórios.
 
-## Sugestões para o Produto
+### Testes Instrumentados (`androidTest`)
+* **UI Tests:** Interação com a árvore de semântica do Compose.
+* **Navigation Tests:** Uso de `TestNavHostController` para validar a integridade dos grafos de navegação.
+* **State Hoisting:** Todos os Composables foram desenhados para permitir injeção de estados e controladores, facilitando o isolamento durante os testes de UI.
 
-Gostou do desafio? Gostaria de avançar mais?
-As sugestões são:
+---
 
-1. Busca;
-2. Pull to refresh;
-3. Tela de detalhes de um filme;
-4. Favoritar filme;
-5. Compartilhar;
-6. Filtrar por estreias do mês;
-7. Alguns filmes podem estar em pré-venda (campo `isPreSale`), pode incluir um elemento diferenciado;
-8. Animações são bem-vindas.
+## 🏗️ Padrões de Projeto e Princípios Aplicados
 
+* **SOLID:** Rigorosa aplicação para facilitar a extensão do sistema sem modificar o código existente.
+* **Dependency Inversion:** Dependência de abstrações, facilitando a troca de implementações (ex: trocar API real por Mock).
+* **State Hoisting:** Elevação de estado em componentes de UI para torná-los "puros" e testáveis.
+* **Mappers:** Conversão de modelos de API (DTOs) para modelos de Domínio, protegendo o app de mudanças externas na API.
 
+---
 
-## API
+## 🚀 Como Executar o Projeto
 
-Utilize a URL da nossa API que retorna um JSON com os filmes que irão entrar em cartaz.
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/DannielRoque/desafio-mobile.git
+    ```
+2.  **Configuração de API:**
+    Este projeto utiliza a API 
+    GET https://api-content.ingresso.com/v0/events/coming-soon/partnership/desafio
+    ```
+3.  **Build:**
+    Execute o Build no Android Studio ou via terminal:
+    ```bash
+    ./gradlew assembleDebug
+    ```
 
-**GET** [https://api-content.ingresso.com/v0/events/coming-soon/partnership/desafio](https://api-content.ingresso.com/v0/events/coming-soon/partnership/desafio)
+---
 
+## 👨‍💻 Desenvolvedor
 
+**Daniel Roque**
+*Senior Android Developer | Mobile Software Engineer*
 
-## Como vamos receber o desafio?
+Com mais de 6 anos de experiência no ecossistema Android, sou especialista em arquiteturas modernas, Jetpack Compose e desenvolvimento de aplicativos escaláveis com foco em performance e experiência do usuário.
 
-**Opção 1 - Fork (preferêncial)**
-- Faça um fork do desafio e desenvolva o seu projeto;
-- Acabou de desenvolver? Submeta um pull request.
- 
-**Opção 2 - Repositório Privado**
-- Faça o seu projeto em um repositório privado seu;
-- Quando terminar vamos pedir para adicionar um avaliador como membro.
-
-**Opção 3 - Plano C**
-- Teve problema com as opções anteriores? Então compacte o seu projeto e envie para nós.
-
-
-
-## Avaliação
-
-**Código** 
-- Legível e clean. 
-- Pode usar comentários se achar necessário.
-
-**Organização** 
-- Separando em módulos/frameworks se possível;
-- Está utilizando alguma arquitetura.
-
-**Segurança** 
-- Encontrou alguma vulnerabilidade? Viu algo que ficou desconfortável durante o desenvolvimento? Coloque no README. 
-- Se for alguma falha grave, por favor nos acione por email.
-
-**Documentação Básica**
-- O README explica como rodar o projeto? 
-- Explique a tomada de decisão. Escreva de forma organizada, em tópicos. 
-- Imagine que você esteja escrevendo para você mesmo do futuro e não lembra de nada do projeto.
-
-**Objetivo**
-- O desafio está sendo feito o mínimo exigido.
-
-**Commits** 
-- Qualidade e padrão;
-- Pode ser em inglês ou português.
-
-**UX/UI**
-- Interface amigável;
-- Fácil de usar.
-
-**One more thing**
-- Tem mais alguma coisa que você queira nos contar?
+---
