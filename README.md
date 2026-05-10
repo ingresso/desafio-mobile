@@ -1,125 +1,75 @@
-# Desafio Mobile
+#  Desafio Mobile - Ingresso.com
 
-O desafio consiste em criar um aplicativo que consuma uma API da Ingresso.com e apresente o resultado na tela.
-A tela deve conter uma lista com os filmes que deverão entrar em cartaz em breve.
+1 - Tecnologias e Frameworks
 
+Swift / SwiftUI: Interface declarativa e moderna.
 
+MVVM (Model-View-ViewModel): Arquitetura estruturada para separação clara de responsabilidades.
 
-## Requisitos Técnicos
+Async/Await: Gerenciamento moderno de concorrência e chamadas de rede.
 
-1. Linguagens: Swift ou Kotlin;
-2. Utilizar uma IDE atualizada (latest stable version), XCode ou Android Studio;
-3. Utilize uma ou mais bibliotecas de terceiro;
-4. Faça pelo menos um teste unitário e/ou de interface;
-5. Log é bom! Nós gostamos, eles precisam ser úteis;
-6. Crie um Readme.md, organizado em tópicos, na raiz do projeto com instruções/comentários/explicações.
+Kingfisher: Biblioteca robusta para download e cache de imagens.
 
-**No iOS utilize**
-- Swift UI.
+XCTest: Testes unitários para validação de regras de negócio.
 
-**No Android utilize**
-- Jetpack Compose.
+2 - Arquitetura Offline-First & Persistência de Dados
 
+O aplicativo foi construído para ser resiliente e funcionar de forma fluida mesmo em cenários de conectividade instável ou nula (Modo Avião).
 
+Fallback Offline (JSON): Interceptação do sucesso da requisição da API para salvar os dados brutos (Data) localmente via UserDefaults. Em caso de falha de rede, o app decodifica os dados locais, garantindo que listas e detalhes operem 100% offline.
 
-## Requisitos do Produto
+Cache em Duas Camadas (Kingfisher): Imagens cacheadas automaticamente em memória (RAM) para transições instantâneas e em disco (Storage) para uso offline contínuo, substituindo limitações do framework nativo.
 
-Como foi dito anteriormente, deve-se criar uma tela de filmes que ainda vão entrar em cartaz.
-Alguns elementos precisam estar nessa interface como:
+Image Prefetching Silencioso: Utilização do ImagePrefetcher para baixar todos os pôsteres em background assim que o JSON é recebido, evitando carregamentos pendentes (lazy loading) caso o usuário perca a conexão durante a navegação.
 
-1. Tela de loading;
-2. Poster (podem existir filmes ainda sem poster);
-3. Nome do filme;
-4. Data de estreia (se existir);
-5. Ordene os filmes pelos quais estejam próximos de entrarem em cartaz (campo `premiereDate`);
-6. Organize o projeto, preferêncialmente utilizando alguma arquitetura.
+Persistência de Estado do Usuário: Fluxo de perfil sem fricção. Os dados de sessão (Login/Logout) e a lista de Favoritos (Set de IDs) são preservados no UserDefaults, garantindo que a curadoria do usuário sobreviva ao encerramento completo do app.
 
-Você determina a interface, use a criatividade.
-Nós fizemos essa tela assim.
+Sincronização de Logout: Implementação de uma lógica de segurança que limpa automaticamente a lista de favoritos local e do disco quando o usuário realiza o logout, garantindo a privacidade dos dados.
 
-<p align="center">
-  <img src="filmes-em-breve-1.png" width="350" title="Tela de Filmes em breve, topo">
-  <img src="filmes-em-breve-2.png" width="350" title="Tela de Filmes em breve, com data de estreia">
-</p>
+3 - Desafios Técnicos & Soluções Estruturais
 
-Observações:
+Gestão Segura de Concorrência: Implementação de locks de estado no ViewModel para prevenir chamadas simultâneas à rede e tratamento amigável de interrupções de renderização do sistema (URLError.cancelled), mantendo o ciclo de vida da UI estável.
 
-1. Não é necessário colocar o elemento de publicidade;
-2. A NavBar/Navigation Bar pode ser simples;
-3. Você pode mudar totalmente essa tela;
-4. Você pode implementar funcionalidades novas se desejar, abaixo existe uma lista com sugestões;
-5. Animações são bem-vindas mas não obrigatórias.
+Tratamento de Dados Inconsistentes: Identificação de falhas no payload da API (ex: strings vazias em imagens ou campos nulos). O app reage exibindo placeholders com suporte a Glassmorphism e fallbacks de texto (ex: "- min" para durações nulas), evitando quebras de layout.
 
+Sincronização de Estado Reativa: Utilização de Set<String> no ViewModel (injetado via @ObservedObject) para gerenciamento global. Favoritar um filme na tela de Detalhes reflete instantaneamente na Home, sem necessidade de callbacks complexos.
 
+Aritmética de Datas Nativa: Refatoração da lógica de "Últimas Estreias" vs "Em Breve". O app realiza a extração do prefixo ISO (yyyy-MM-dd) e compara estritamente com a data do dispositivo local, ignorando falsos positivos da flag genérica inPreSale do servidor.
 
-## Sugestões para o Produto
+4 - UI/UX Imersiva e Funcionalidades Core
 
-Gostou do desafio? Gostaria de avançar mais?
-As sugestões são:
+Carrossel:
 
-1. Busca;
-2. Pull to refresh;
-3. Tela de detalhes de um filme;
-4. Favoritar filme;
-5. Compartilhar;
-6. Filtrar por estreias do mês;
-7. Alguns filmes podem estar em pré-venda (campo `isPreSale`), pode incluir um elemento diferenciado;
-8. Animações são bem-vindas.
+Foco e Profundidade: O filme em destaque recebe escala (focusScale) e sombra profunda. Uso de desfoque progressivo (.blur) nos cards adjacentes para simular profundidade de campo de uma lente fotográfica.
 
+Física de Molas e Haptics: Navegação por gestos usando .interactiveSpring e feedback tátil (UISelectionFeedbackGenerator), simulando peso físico na troca de cards.
 
+Aritmética Modular Infinita: Lógica de loop contínuo para meses com alto volume de filmes, alternando automaticamente para rolagem finita em listas curtas (como a aba Favoritos).
 
-## API
+Search UX Imersiva:
 
-Utilize a URL da nossa API que retorna um JSON com os filmes que irão entrar em cartaz.
+Animação Dinâmica: A barra de busca "sequestra" a Navigation Bar. Ícones realizam fade out enquanto o campo de texto assume o centro da tela.
 
-**GET** [https://api-content.ingresso.com/v0/events/coming-soon/partnership/desafio](https://api-content.ingresso.com/v0/events/coming-soon/partnership/desafio)
+Gestão de Foco Inteligente: Integração com @FocusState, acionando o teclado instantaneamente no primeiro toque na lupa.
 
+Inteligência de Contexto & Localização:
 
+Verificação assíncrona (MKReverseGeocodingRequest) para converter coordenadas em cidades sem travar a Main Thread.
 
-## Como vamos receber o desafio?
+Match dinâmico entre a localização do usuário e os metadados da API para exibir o badge de "Ingressos disponíveis na sua localização". Caso a permissão do iOS seja revogada, a memória de localização é limpa imediatamente por segurança.
 
-**Opção 1 - Fork (preferêncial)**
-- Faça um fork do desafio e desenvolva o seu projeto;
-- Acabou de desenvolver? Submeta um pull request.
- 
-**Opção 2 - Repositório Privado**
-- Faça o seu projeto em um repositório privado seu;
-- Quando terminar vamos pedir para adicionar um avaliador como membro.
+Apple Guidelines & Liquid Glass:
 
-**Opção 3 - Plano C**
-- Teve problema com as opções anteriores? Então compacte o seu projeto e envie para nós.
+Implementação nativa do .glassEffect (materials translúcidos) para botões flutuantes e modais, permitindo que a arte visual dos pôsteres domine o background escuro da aplicação.
 
+5 - Integrações Nativas e Qualidade
 
+Deep Links e Compartilhamento:
 
-## Avaliação
+ShareLink Nativo: O sistema detecta a presença da URL da API. Se existente, gera um Rich Preview; caso contrário, compartilha um fallback em texto formatado com a sinopse do filme.
 
-**Código** 
-- Legível e clean. 
-- Pode usar comentários se achar necessário.
+OpenURL: Botões de "Trailer" e "Ingressos" integrados ao ambiente do iOS para transições suaves para o YouTube ou Safari.
 
-**Organização** 
-- Separando em módulos/frameworks se possível;
-- Está utilizando alguma arquitetura.
+Cobertura de Testes (XCTest):
 
-**Segurança** 
-- Encontrou alguma vulnerabilidade? Viu algo que ficou desconfortável durante o desenvolvimento? Coloque no README. 
-- Se for alguma falha grave, por favor nos acione por email.
-
-**Documentação Básica**
-- O README explica como rodar o projeto? 
-- Explique a tomada de decisão. Escreva de forma organizada, em tópicos. 
-- Imagine que você esteja escrevendo para você mesmo do futuro e não lembra de nada do projeto.
-
-**Objetivo**
-- O desafio está sendo feito o mínimo exigido.
-
-**Commits** 
-- Qualidade e padrão;
-- Pode ser em inglês ou português.
-
-**UX/UI**
-- Interface amigável;
-- Fácil de usar.
-
-**One more thing**
-- Tem mais alguma coisa que você queira nos contar?
+Validação das regras de ordenação cronológica do EventViewModel, garantindo que algoritmos de exibição respeitem a ordem crescente de datas de estreia e não quebrem com payloads de meses futuros.

@@ -1,0 +1,14 @@
+# Xcode
+#
+build/
+DerivedData/
+*.xcuserstate
+project.xcworkspace/xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.db
+
+# macOS
+#
+.DS_Store
